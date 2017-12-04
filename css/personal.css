@@ -1,0 +1,145 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	font-family: "microsoft yahei";
+}
+
+
+p{
+	margin-bottom: 0;
+}
+
+
+.mui-table-view:before,.mui-table-view:after{
+	height:0;
+	background: none;
+}
+
+.header{
+	background: #FF6699;
+	padding-bottom: 10px;
+}
+
+
+.header .mui-table-view{
+	background: none;
+}
+
+.haeder_titnav{
+	width: 100%; 
+}
+.header a {
+	display: flex;
+	/*flex-flow: row nowrap;*/
+	width: 100%;
+	height: 60px;
+}
+
+.header .mui-navigate-right:after{
+	color: white;
+}
+
+.header a .headerimg{
+	flex: 0 0 60px;
+	margin: 0 15px;
+}
+
+.header a .headerimg img{
+	display: block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.header a .fonts{
+	flex: 0 0 120px;
+	display: flex;
+	align-items: center;	
+}
+
+.header a .fonts p{
+	color: white;
+
+}
+
+/*滚动框*/
+.mui-scroll-wrapper{
+	top: 72px;
+}
+
+
+/*个人页面菜单*/
+.infomation .mui-table-view{
+	margin: 8px 0;
+}
+
+
+.infomation .mui-table-view-cell p {
+	width: 90%;
+	display: table;
+}
+
+.infomation .mui-table-view-cell p span{
+	width: 90%;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 14px;
+}
+
+.infomation .mui-table-view-cell p span:nth-of-type(2){
+	color: black;
+}
+
+/*小图标*/
+.infomation .mui-table-view-cell p .icon{
+	font-size: 30px;
+	width: 45px;
+}
+
+/*会员特权-大图标*/
+
+.icon-wallet:before {
+ 	font-size: 24px;
+ 	float: left;
+ 	margin: 2px 6px 0 0;
+}
+.icon-Order:before{
+	font-size:18px;
+	float: left;
+	margin: 4px 3px;
+}
+.icon-activity:before{
+	font-size:21px;
+	float: left;
+	margin: 4px 2px;
+	color: #b0e96e;
+}
+.icon-Real:before{
+	font-size:21px;
+	float: left;
+	margin: 4px 2px;
+	color: #e5e96e;
+}
+.icon-Agreement:before{
+	font-size:21px;
+	float: left;
+	margin: 4px 2px;
+}
+.icon--Setup-:before{
+	font-size:21px;
+	float: left;
+	margin: 4px 2px;
+	color: #6e99e9;
+}
+.iconBig img{
+	width: 44px;
+}
+.mui-table-view-cell>a:not(.mui-btn) {
+	margin: -11px -20px;
+}
+.xbheader:after{
+	right: 10px;
+}

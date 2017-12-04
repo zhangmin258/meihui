@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>竞赛详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhcontentnav.css" />		
+	</head>
+	<style type="text/css">
+		.mnh_banner_nav_state {
+			position: absolute;
+			width: 75px;
+			height: 32px;
+			font-size: 12px;
+			line-height: 32px;
+			text-align: center;
+			border-radius: 6px;
+			transform: rotate(-30deg);
+			-webkit-transform: rotate(-30deg);
+			right: 20px;
+			bottom: 60px;
+		}
+
+		.compDuring{
+			background-color: #ff6699;
+			color: #fff;
+			opacity: 0.7;	
+		}
+		
+		.compFinish{
+			background: #CCCCCC;
+			color: white;
+		}		
+		
+		.mnh_nav_content{
+			position: relative;
+		}
+		.mnhfooter_s{
+			margin: 9px 0px 0 12px;
+		}
+		.mnhbuttonone,
+		.mnhbuttontwo{
+			float: right;
+			width:30%;
+			line-height: 49px;
+			background-color: #ff6699;
+			text-align: center;
+			font-size: 14px;
+			color: #fff;
+		}
+		
+		.yjcy{
+			background-color: #CCCCCC;
+		}
+		
+		.mnhbuttontwo{
+			background-color: orange;
+		}
+	</style>
+
+	<body id="compBody">
+
+		<!--数据列表-->
+		<div class="mui-content">
+			<!--静态图片-->
+			<img id="img1" :src="compData.img_small" />
+			<!--简单详情内容-->
+			<div class="mnh_nav_content">
+				<div class="mnh_nav_content_tit">{{compData.subject}}</div>
+				<div class="mnh_nav_content_liu">浏览：{{compData.see}}  &nbsp;&nbsp; 关注：{{compData.focus}}</div>
+				<div class="mnh_nav_content_time">时间：{{compData.time_start | tiemFormate}}- {{compData.time_end | tiemFormate}}</div>
+				<div class="mnh_nav_content_addes">地点：  {{compData.province+compData.city+compData.area+compData.address}}</div>
+				<div class="mnh_nav_content_Sponsor">主办方：  {{compData.owner}}</div>
+				<div class="mnh_nav_content_number">比赛范围：{{compData.match_activity_form}}</div>
+				<div class="mnh_banner_nav_state" :class="{compDuring:compData.status_info=='火热进行中',compFinish:compData.status_info=='活动已结束'}">{{compData.status_info}}</div>
+			</div>
+			<div class="mnhContnet">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{compData.detail}}
+			</div>
+			<div class="mnhpeople" v-if="compData.match_join" v-show="compData.match_join.length>0">
+				<div class="mnhpeople_tit">参与者:</div>
+				<div class="mnh_mud_po"> 
+					<div class="mnh_mud_po_img" v-for="item in compData.match_join" v-cloak track-by="$index" v-show="$index<8">
+						<img :src="item.app_logo ? item.app_logo : item.wx_logo" />
+					</div>
+					<div class="mnh_mud_po_more" v-show="compData.match_join.length>8">...</div>
+				</div>
+			</div>
+
+			<div class="mnhcomment" v-if="compComList" v-show="compComList.length>0">
+				<div class="mnhcommentText">全部讨论：</div>
+				<ul class="mnhcommentcontent" v-for="item in compComList" v-cloak track-by="$index">
+					<li class="mnhcommentcontent_name">
+						<img class="mnhcommentcontent_nameimg" :src="item.app_logo" />
+						<div class="mnhcommentcontent_nametext">{{item.name}}</div>
+						<p class="mui-pull-right">{{item.timestamp}}</p>
+					</li>
+					<li class="mnhcommentcontent_text">
+						<p>{{item.content}}</p>
+					</li>
+				</ul>
+				<button type="button" class="mui-btn mui-btn-block" @tap="comploadMore()" v-if="compComList" v-show="pageNumber<totalPage">点击加载更多</button>
+			</div>
+		</div>
+		<footer>
+			<div class="mnhfooter_s icomoon icon-followes" @tap="compFocus()" :class="{ygz:isFocus=='未关注'}"></div>
+			<div class="mnhfooter_s icomoon icon-comment comp-taolun"></div>
+			<div class="mnhfooter_s mui-icon mui-icon-redo" onclick="shareHref()"></div>
+			<div class="mnhbuttonone" @tap="compJoin()" :class="{yjcy:isJoin=='已经参与'}">{{isJoin}}</div>			
+			<div class="mnhbuttontwo" onclick="animateWindow('slide-in-bottom','mnhmeititreadonly.html')">查看竞赛</div>
+		</footer>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/page.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/jnop.js"></script>
+	
+	<script type="text/javascript" src="../js/store.min.js"></script>
+	<script type="text/javascript" src="../js/ajax/url.js"></script>
+	<script type="text/javascript" src="../js/jiazai.js"></script>	
+
+	
+	<script type="text/javascript" src="../js/vue.js"></script>
+	<script type="text/javascript" src="../js/vue-resource.js"></script>
+	<script type="text/javascript" src="../js/mnhCompetion.js"></script>
+	<!--分享-->
+	<script src="../js/upload/tn_share.js" type="text/javascript" charset="utf-8"></script>
+			
+</html>

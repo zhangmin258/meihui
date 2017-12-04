@@ -1,0 +1,149 @@
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	border: none;
+}
+
+
+p{
+	margin-bottom: 0;
+}
+
+
+.haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+
+.mui-bar{
+	width: 100%;
+	height: 64px;
+	background: #ff6797;
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+}
+
+.mui-scroll ul li p span:nth-of-type(1){
+	color: black;
+}
+
+
+
+/*充值页面*/
+ .mui-content{
+	padding-top: 75px;
+}
+
+ .mui-content>.mui-table-view:first-child {
+     margin-top:0; 
+     /*padding-top: 15px;*/
+}
+
+ .rechargeContent .mui-content>.mui-table-view:last-child{
+	padding-bottom: 15px;
+}
+
+ .mui-content input[type=number]{
+	margin-bottom: 0;
+	border: none;
+}
+
+ .mui-content input[type=text]{
+	margin-bottom: 0;
+	border: none;
+}
+
+ .mui-content  .mui-table-view:after, .mui-content  .mui-table-view:before{
+	height: 0;
+}
+
+.rechargeContent .mui-content .mui-table-view:nth-of-type(2){
+	margin-top: 10px;
+}
+
+
+.rechargeContent .mui-radio label {
+	width: 35%;
+	display: inline-block;
+	padding:0 15px 0 0;
+	font-size: 18px;
+	vertical-align: top;
+	margin-top: 4px;
+}
+
+.rechargeContent .mui-radio span{
+	font-size: 25px;
+}
+
+
+.rechargeContent .mui-radio input[type=radio] {
+	top: 0;
+}
+
+.rechargeContent #subPay,.cashContent #subCash{
+	width: 80%;
+	margin: 30px 10%;
+	background: #FF679A;
+	border: #FF679A solid 1px;
+	padding: 10px 0;
+	font-size: 16px;
+}
+
+
+
+/*提现页面*/
+
+.cashContent .mui-content>.mui-table-view:first-child {
+     margin-top:0; 
+     /*padding-top: 15px;*/
+}
+
+.cashContent .mui-table-view:nth-of-type(2){
+	margin-top: 10px;
+}
+
+
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before {
+    color: #FF6797;
+}
+
+
+/*法律条款-页面*/
+.clause-content{
+	padding: 65px 15px 0 15px;
+}
+
+.clause-content h3{
+	font-size: 18px;
+	color: black;
+	font-weight: 300;
+	line-height: 50px;
+	text-align: center;
+}
+
+.clause-content p{
+	text-indent: 28px;
+	line-height: 150%;
+	color: #5d5d5d;
+	font-size: 14px;
+	    margin-bottom: 10px;
+}
+
+
+

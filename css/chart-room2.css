@@ -1,0 +1,287 @@
+header {
+	background-color: #ff6699 !important;
+}
+
+.mui-title {
+	color: #FFFFFF;
+}
+
+a {
+	color: #FFFFFF;
+}
+.mui-bar {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+
+
+
+body {
+	background-size: 100%;
+}
+
+@media all and (min-width: 640px) {
+	body,
+	html,
+	.wenwen-footer,
+	.speak_window {
+		width: 640px!important;
+		margin: 0 auto
+	}
+	.speak_window,
+	.wenwen-footer {
+		left: 50%!important;
+		margin-left: -320px
+	}
+}
+
+input,
+button {
+	outline: none;
+}
+
+.wenwen-footer {
+	width: 100%;
+	position: fixed;
+	bottom: -5px;
+	left: 0;
+	background: #fff;
+	padding: 4px 12px;
+	border-top: solid 1px #ddd;
+	box-sizing: border-box;
+	height: 49px;
+}
+
+.wenwen_btn {
+	width: 10%;
+	text-align: center;
+}
+
+
+.wenwen_help {
+	width: 20%;
+	text-align: center;
+}
+
+.wenwen_btn img,
+.wenwen_help img {
+	width: 100%;
+	height: 100%;
+}
+
+.wenwen_text {
+	height:35px;
+	border-radius: 5px;
+	border: solid 1px #ecd5dd;
+	box-sizing: border-box;
+	width: 66%;
+	text-align: center;
+	overflow: hidden;
+	margin-left: 2%;
+}
+
+.circle-button {
+	padding: 0 5px;
+}
+
+.wenwen_text .circle-button {
+	font-size: 14px;
+	color: #666;
+	line-height: 38px;
+}
+/*公告*/
+marquee {
+    background: #CCCCCC; 
+    height: 33px; 
+}
+marquee p{
+	line-height: 33px;
+	color: white;
+	font-size: 14px;
+}
+
+/*进入退出房间提示*/
+.getinWarn{
+	margin-left: 60px;
+	color: #FF6797;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.write_box {
+	background: #fff6f9;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	display: none;
+}
+
+.write_box input {
+	height: 36px;
+	padding: 0 5px;
+	line-height: 36px;
+	width: 100%;
+	box-sizing: border-box;
+	border: 0;
+	background-color: #FFF6F9;
+	font-size: 14px;
+}
+
+.wenwen_help button {
+	width: 95%;
+	background: #ff6699;
+	color: #fff;
+	border-radius: 5px;
+	border: 0;
+	height: 36px;
+	display: none;
+}
+
+#wenwen {
+	height: 100%;
+}
+
+.speak_window {
+	overflow-y: scroll;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin-top: 64px;
+	padding-bottom: 50px;
+}
+
+.speak_box {
+	/*margin-bottom: 70px;*/
+	margin: 50px 0 70px 0;
+	padding: 10px;
+}
+
+.question,
+.answer {
+	margin-bottom: 1rem;
+}
+
+.question {
+	text-align: right;
+}
+
+.question>div {
+	display: inline-block;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.heard_img {
+	height: 36px;
+	width: 36px;
+	border-radius: 50%;
+	overflow: hidden;
+	background: #ddd;
+	margin-top: 15px;
+}
+
+.heard_img img {
+	width: 100%;
+	height: 100%
+}
+
+.question_text,
+.answer_text {
+	box-sizing: border-box;
+	position: relative;
+	display: table-cell;
+	min-height: 60px;
+}
+
+.question_text {
+	padding-right: 20px;
+}
+
+.answer_text {
+	padding-left: 20px;
+}
+
+.question_text p,
+.answer_text p {
+	border-radius: 10px;
+	padding: .4rem .5rem;
+	margin: 0;
+	font-size: 14px;
+	line-height: 28px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	display: table-cell;
+	height: 36px;
+	word-wrap: break-word;
+}
+.answer_text p {
+	color: #333 !important;
+}
+.question_text div,
+.answer_text div {
+	font-size: 12px;
+	color: #AAAAAA;
+}
+
+.answer_text p {
+	background: #fff;
+}
+
+.question_text p {
+	background: #FF6699;
+	color: #fff;
+	text-align: left;
+	float: right;
+}
+
+.question_text i,
+.answer_text i {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	position: absolute;
+	top: 30px;
+}
+
+.answer_text i {
+	border-right: 10px solid #fff;
+	left: 12px;
+}
+
+.question_text i {
+	border-left: 10px solid #ff6699;
+	right: 12px;
+}
+
+.answer_text p a {
+	color: #42929d;
+	display: inline-block;
+}
+
+
+
+
+/*表情框*/
+#emotionBox{
+	position: fixed;
+	left: 0;
+	bottom: 45px;
+	width: 100%;
+	background: white;
+	z-index: 100;
+}

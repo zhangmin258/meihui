@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link href="../../css/order.css" rel="stylesheet" />
+	</head>
+
+	<body id="orderListBody">
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">订单列表</p>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#orderItem0">全部</a>
+						<a class="mui-control-item" href="#orderItem1">待付款</a>
+						<a class="mui-control-item" href="#orderItem2">待发货</a>
+						<a class="mui-control-item" href="#orderItem3">待收货</a>
+						<a class="mui-control-item" href="#orderItem4">待评价</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<!--全部-->
+					<div id="orderItem0" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in allList.content" v-cloak track-by="$index" :class="item.order_id">
+										<div class="order-type mui-clearfix"><span class="mui-pull-left">{{item.text}}</span><span class="mui-pull-right">{{item.create_timestamp}}</span></div>
+										<div class="order-content">
+											<a href="order-detail.html" @tap="goOrderDetail(item.order_id)">
+												<div class="order-content-img-box">
+													<div class="order-content-img">
+														<img :src="item.img"/>
+													</div>
+												</div>
+												<div class="order-content-product">
+													<p class="order-product-name mui-ellipsis">{{item.name}}</p>								
+													<p class="order-product-attribute"><span>{{item.str_name}}</span></p>
+													<p class="mui-clearfix order-product-price"><span class="mui-pull-left">￥{{item.price}}</span><span class="mui-pull-right">×{{item.number}}</span></p>
+												</div>
+											</a>
+										</div>
+										<div class="order-operation mui-clearfix">
+											<div class="total-price mui-pull-left">
+												<span>合计:</span><span>{{item.price*item.number}}</span>
+											</div>
+											<div class="op-btn mui-pull-right" v-if="allList.content">
+												<!--待付款-->
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==0&&item.order_status==0&&item.consign_status==0" @tap="cancelOrder($event,item.order_id)">取消订单</button>
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==0&&item.order_status==0&&item.consign_status==0" @tap="nowPay($event,item.order_id)">立即付款</button>												
+												<!--代发货-->
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==1&&item.order_status==1&&item.consign_status==0" @tap="callDeli()">提醒卖家发货</button>												
+												<!--待收货-->
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==1&&item.order_status==1&&item.consign_status==1" @tap="checkLog(item.order_id)">查看物流</button>
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==1&&item.order_status==1&&item.consign_status==1" @tap="confirmRecieve($event,item.order_id)">确认收货</button>								
+												<!--待评价-->
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==1&&item.order_status==2&&item.consign_status==2" @tap="nowEvalute(item.order_id)">立即评价</button>
+												<!--交易成功删除-->
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==1&&item.order_status==3&&item.consign_status==2" @tap="delOrder($event,item.order_id,$index)">删除</button>
+												<!--交易失败删除-->
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==0&&item.order_status==4&&item.consign_status==0" @tap="delOrder($event,item.order_id,$index)">删除</button>												
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="allList.content==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>								
+							</div>
+						</div>
+					</div>
+					<!--代付款-->
+					<div id="orderItem1" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in waitPayList.content" v-cloak track-by="$index" :class="item.order_id">
+										<div class="order-type mui-clearfix"><span class="mui-pull-left">{{item.text}}</span><span class="mui-pull-right">{{item.create_timestamp}}</span></div>
+										<div class="order-content">
+											<a href="order-detail.html"  @tap="goOrderDetail(item.order_id)">
+												<div class="order-content-img-box">
+													<div class="order-content-img">
+														<img :src="item.img"/>
+													</div>
+												</div>
+												<div class="order-content-product">
+													<p class="order-product-name mui-ellipsis">{{item.name}}</p>								
+													<p class="order-product-attribute"><span>{{item.str_name}}</span></p>
+													<p class="mui-clearfix order-product-price"><span class="mui-pull-left">￥{{item.price}}</span><span class="mui-pull-right">×{{item.number}}</span></p>
+												</div>
+											</a>
+										</div>
+										<div class="order-operation mui-clearfix">
+											<div class="total-price mui-pull-left">
+												<span>合计:</span><span>{{item.price*item.number}}</span>
+											</div>
+											<div class="op-btn mui-pull-right" v-if="waitPayList.content">
+												<!--待付款-->
+												<button type="button" class="mui-btn mui-btn-default" @tap="cancelOrder($event,item.order_id)">取消订单</button>
+												<button type="button" class="mui-btn mui-btn-default" @tap="nowPay($event,item.order_id)">立即付款</button>												
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="waitPayList.content==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>								
+							</div>
+						</div>
+					</div>
+					<!--代发货-->
+					<div id="orderItem2" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in waitDelList.content" v-cloak track-by="$index" :class="item.order_id">
+										<div class="order-type mui-clearfix"><span class="mui-pull-left">{{item.text}}</span><span class="mui-pull-right">{{item.create_timestamp}}</span></div>
+										<div class="order-content">
+											<a href="order-detail.html"  @tap="goOrderDetail(item.order_id)">
+												<div class="order-content-img-box">
+													<div class="order-content-img">
+														<img :src="item.img"/>
+													</div>
+												</div>
+												<div class="order-content-product">
+													<p class="order-product-name mui-ellipsis">{{item.name}}</p>								
+													<p class="order-product-attribute"><span>{{item.str_name}}</span></p>
+													<p class="mui-clearfix order-product-price"><span class="mui-pull-left">￥{{item.price}}</span><span class="mui-pull-right">×{{item.number}}</span></p>
+												</div>
+											</a>
+										</div>
+										<div class="order-operation mui-clearfix">
+											<div class="total-price mui-pull-left">
+												<span>合计:</span><span>{{item.price*item.number}}</span>
+											</div>
+											<div class="op-btn mui-pull-right" v-if="waitDelList.content">
+												<!--代发货-->
+												<button type="button" class="mui-btn mui-btn-default" @tap="callDeli()">提醒卖家发货</button>												
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="waitDelList.content==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>								
+							</div>
+						</div>
+					</div>
+					<!--待收货-->
+					<div id="orderItem3" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in waitCollList.content" v-cloak track-by="$index" :class="item.order_id">
+										<div class="order-type mui-clearfix"><span class="mui-pull-left">{{item.text}}</span><span class="mui-pull-right">{{item.create_timestamp}}</span></div>
+										<div class="order-content">
+											<a href="order-detail.html"  @tap="goOrderDetail(item.order_id)">
+												<div class="order-content-img-box">
+													<div class="order-content-img">
+														<img :src="item.img"/>
+													</div>
+												</div>
+												<div class="order-content-product">
+													<p class="order-product-name mui-ellipsis">{{item.name}}</p>								
+													<p class="order-product-attribute"><span>{{item.str_name}}</span></p>
+													<p class="mui-clearfix order-product-price"><span class="mui-pull-left">￥{{item.price}}</span><span class="mui-pull-right">×{{item.number}}</span></p>
+												</div>
+											</a>
+										</div>
+										<div class="order-operation mui-clearfix">
+											<div class="total-price mui-pull-left">
+												<span>合计:</span><span>{{item.price*item.number}}</span>
+											</div>
+											<div class="op-btn mui-pull-right" v-if="waitCollList.content">
+												<!--待收货-->
+												<button type="button" class="mui-btn mui-btn-default" @tap="checkLog(item.order_id)">查看物流</button>
+												<button type="button" class="mui-btn mui-btn-default" @tap="confirmRecieve($event,item.order_id)">确认收货</button>													
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="waitCollList.content==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>								
+							</div>
+						</div>
+					</div>
+					<!--待评价-->
+					<div id="orderItem4" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in waitCommList.content" v-cloak track-by="$index" :class="item.order_id">
+										<div class="order-type mui-clearfix"><span class="mui-pull-left">{{item.text}}</span><span class="mui-pull-right">{{item.create_timestamp}}</span></div>
+										<div class="order-content">
+											<a href="order-detail.html"  @tap="goOrderDetail(item.order_id)">
+												<div class="order-content-img-box">
+													<div class="order-content-img">
+														<img :src="item.img"/>
+													</div>
+												</div>
+												<div class="order-content-product">
+													<p class="order-product-name mui-ellipsis">{{item.name}}</p>								
+													<p class="order-product-attribute"><span>{{item.str_name}}</span></p>
+													<p class="mui-clearfix order-product-price"><span class="mui-pull-left">￥{{item.price}}</span><span class="mui-pull-right">×{{item.number}}</span></p>
+												</div>
+											</a>
+										</div>
+										<div class="order-operation mui-clearfix">
+											<div class="total-price mui-pull-left">
+												<span>合计:</span><span>{{item.price*item.number}}</span>
+											</div>
+											<div class="op-btn mui-pull-right" v-if="waitCommList.content">
+												<!--待评价-->
+												<button type="button" class="mui-btn mui-btn-default" v-show="item.pay_status==1&&item.order_status==2&&item.consign_status==2" @tap="nowEvalute(item.order_id)">立即评价</button>													
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="waitCommList.content==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/mui.pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript" src="../../js/jnop.js"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>		
+		<script type="text/javascript" src="../../js/order.js"></script>
+	</body>
+</html>
+
+
+
+
+

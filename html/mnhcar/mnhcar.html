@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>购物车</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhheadercolor/headercolor.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhcar.css"/>
+	</head>
+
+	<body id="carBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">购物车</h1>
+			<a class=" mui-btn mui-btn-link mui-pull-right" @tap="emptyPro()">清空</a>
+		</header>
+		<div class="mui-scroll-wrapper">						
+			<div class="mui-scroll">			
+				<ul id="OA_task_1" class="mui-table-view">
+					<li class="mui-table-view-cell" v-for="item in carList" v-cloak track-by="$index">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mnhcolorhong" @click="delPro($event,$index,item.status,item.id,item.price,item.num)">删除</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-table">
+								<div class="mnhimg"><img :src="item.img" /></div>
+								
+								<div class="mui-table-cell mui-col-xs-10 car-right">
+									<h4 class="mui-ellipsis mnhtit">{{item.name}}</h4>
+									<h5 style="color:#888888;font-size: 12px;">{{item.str_name}}</h5> <!--商品属性-->
+									<!--商品加减-->
+									<p class="carRight-price">￥ {{item.price}}</p>
+									<p class="cardRight-control">
+										<span class="mui-icon mui-icon-minus" @tap="decCount(item)"></span>
+										<span class="carRight-count">{{item.num}}</span> 
+										<span class="mui-icon mui-icon-plus" @tap="inceCount(item)"></span>
+									</p>
+								</div>
+								<!--选中当前商品  -->
+								<div class="mui-table-cell mui-col-xs-2 mui-text-right mnhdd">
+									<div class="mui-input-row mui-checkbox mui-left">
+										<input class="mnhddInput" name="checkbox"  type="checkbox" v-model="item.status" @click="getcarContent(item.status,item.id,item.price,item.num)">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="nothingImg" v-show="!carList">
+					<img src="../../images/nothing.png"/>
+					<p>快去逛逛吧！</p>
+				</div>				
+			</div>
+		</div>
+		<footer  v-if="carList" v-show="carList.length>0">
+			<div class="mnhlife">
+				<!--<div class="mui-input-row mui-checkbox mui-left mnh_quanxuan">
+					<label>总价： <span></span></label>
+					<input name="checkbox" value="Item 1" type="checkbox"> v-show="totalNum>0" 
+				</div>-->
+				<p>总价：￥<span>{{totalPrice}}</span></p>
+				<p>数量: <span>{{totalNum}}</span></p>
+			</div>
+			<button class="mnhright" @tap="subOrder()">提交订单</button>
+		</footer>		
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>		
+		
+		<script type="text/javascript" src="../../js/mnhcar.js"></script>
+	</body>
+
+</html>

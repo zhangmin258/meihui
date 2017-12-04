@@ -1,0 +1,221 @@
+.mui-content {
+	background-color: inherit;
+	width: 100%;
+	float: left;
+}
+
+html,
+body {
+	background-color: #F7F7F7;
+	width: 100%;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.mui-bar-nav {
+	background-color: #FF6699;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.mui-icon-arrowleft {
+	color: #FFFFFF;
+}
+
+.mui-title {
+	color: #FFFFFF;
+}
+
+.mui-table-view .mui-media-object {
+	max-width: 80px;
+	height: 80px;
+}
+
+.mnhnavname {
+	color: #333333;
+	font-size: 14px;
+}
+
+.mnhnavmud {
+	color: #FF6699;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.mnhnavmoney {
+	color: #CCCCCC;
+	font-size: 12px;
+	text-decoration: line-through
+}
+
+.mnhcontentname {
+	line-height: 30px;
+	font-size: 14px;
+	margin-left: 12px;
+	color: #888888;
+}
+
+.mnhcontentname span {
+	color: #FF6699;
+}
+
+.mnhcontentname i {
+	font-style: normal;
+	float: right;
+	margin-right: 12px;
+	color: #CCCCCC;
+}
+
+.mnhcontentimglogo {
+	width: 100%;
+	float: left;
+	padding: 38px 12px;
+}
+
+.mnhcontentimglogo img {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	margin: 6px;
+	float: left;
+}
+
+.mui-card {
+	box-shadow: none;
+}
+
+.mnhcontentimglogoone {
+	position: relative;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	margin: 6px;
+	float: left;
+	overflow: hidden;
+}
+
+.mnhcontentimglogoone img {
+	margin: 0;
+}
+
+.mnhcontentimglogoonez {
+	position: absolute;
+	width: 38px;
+	height: 19px;
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	font-weight: 700;
+	bottom: 0;
+	left: 0;
+	color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+}
+
+/*我要参团按钮*/
+.mnhcontentbutton {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	border: none;
+	background: #FF6797;
+	padding:12px;
+}
+
+
+.mnhOthertgTGshop {
+	width: 100%;
+	float: left;
+}
+
+.mnhOthertgTGshoptit {
+	width: 100%;
+	line-height: 44px;
+	background-color: #FFFFFF;
+	margin-top: 30px;
+	font-size: 14px;
+	padding-left: 12px;
+	color: #333333;
+}
+
+.mui-table-view:before {
+	background-color: inherit;
+}
+
+.mui-table-view {
+	background-color: inherit;
+}
+
+.mui-table-view-cell {
+	position: relative;
+}
+
+.mnhOthertgTGshopmoney {
+	position: absolute;
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0.5);
+	right: 0;
+	bottom: 20px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 0 10px;
+}
+
+.mui-table-view-cell img {
+	display: block;
+}
+
+.mnhshoptitnameimg {
+	width: 100%;
+	height: 22px;
+	position: absolute;
+	top: 8px;
+	left:8px;
+}
+
+.mnhshoptitnameimg img {
+	float: left;
+	width: 22px !important;
+	height: 22px;
+	border-radius: 50%;
+}
+
+.mnhshoptitnameimg span {
+	float: left;
+	font-size: 12px;
+	padding-left: 12px;
+	color: #FFFFFF;
+}
+
+.mnhOthertgTGshopcontent {
+	width: 100%;
+	float: left;
+}
+
+.mnhOthertgTGshopcontentnav {
+	position: relative;
+	width: 49%;
+	height: 0;
+	padding-bottom: 49%;
+	background: blue;
+	float: left;
+	margin: 0.5%;
+	overflow: hidden;
+}
+.mnhbackbanner{
+	width: 100%;
+}
+
+
+.goscontent{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}

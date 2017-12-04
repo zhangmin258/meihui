@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>地址列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/personal.css"/>
+		<link rel="stylesheet" href="../../css/address-list.css" />
+		
+	</head>
+
+	<body id="addListBOdy">
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">地址列表</p>
+		</header>
+		<div class="mui-scroll-wrapper address-list">						
+			<div class="mui-scroll">
+				<ul class="mui-table-view" v-if="addressList" v-for="item in addressList" v-cloak track-by="$index">
+					<li class="mui-table-view-cell mui-clearfix">
+						<p class="mui-clearfix address-list-men"><span class="mui-pill-left">{{item.name}}</span><span class="mui-pull-right">{{item.phone}}</span></p>
+						<p class="address-list-address">{{item.province+item.city+item.area+item.address}}</p>
+						<p class="mui-pull-left default" v-show="item.is_default==1">[{{item.is_default | default}}]</p>							
+						<p class="mui-radio">
+							<input name="addChoice" value="{{item.id}}" type="radio" :checked="item.id==addressId" v-model="addId" @click="choicAdd()">
+						</p>						
+					</li>
+				</ul>
+			</div>			
+		</div>		
+		<div class="address-list-bottom">
+			<button type="button" class="mui-btn mui-btn-default addNewaddress-btn" @tap="addAdd()">添加新地址</button>
+		</div>		
+		
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/jnop.js"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>		
+		
+		<script type="text/javascript" src="../../js/address-list.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<style>
+			#close {
+				position: absolute;
+				width: 160px;
+				left: 50%;
+				margin-left: -80px;
+				bottom: 15%;
+				padding: 10px;
+				color: #333;
+				border-color: #333;
+			}
+			
+			.item-logo {
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			
+			.item-logo a {
+				width: 60%;
+				height: 200px;
+				display: block;
+				border-color: rgba(255, 255, 255, 0.5);
+				text-align: center;
+				line-height: 200px;
+				border-radius: 50%;
+				font-size: 40px;
+				color: #fff;
+				position: absolute;
+				top: 15%;
+				left: 40%;
+				margin-left: -100px;
+			}
+			
+			@media only screen and (max-width: 360px) {
+				.item-logo a {
+					left: 48%;
+				}
+			}
+			
+			.animate {
+				position: absolute;
+				left: 0;
+				bottom: 10%;
+				width: 100%;
+				color: #fff;
+				display: -moz-box;
+			}
+			
+			.animate h2 {
+				text-align: center;
+				margin-bottom: 20px;
+				font-size: 400;
+			}
+			
+			.animate li {
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				list-style: none;
+				font-size: 16px;
+				text-align: center;
+			}
+			
+			.animate li:nth-child(3) {
+				text-align: left;
+				float: right;
+			}
+			
+			.animated {
+				-webkit-animation-duration: 1s;
+				-webkit-animation-play-state: paused;
+				-webkit-animation-fill-mode: both;
+			}
+			
+			.guide-show .bounceInDown {
+				-webkit-animation-name: bounceInDown;
+				-webkit-animation-play-state: running;
+				-webkit-animation-delay: 1s;
+				display: block;
+				color: #333333;
+			}
+			
+			.guide-show .bounceInLeft {
+				-webkit-animation-name: bounceInLeft;
+				display: block;
+				-webkit-animation-play-state: running;
+				color: #666666;
+			}
+			
+			.guide-show .bounceInRight {
+				-webkit-animation-name: bounceInRight;
+				display: block;
+				-webkit-animation-play-state: running;
+				-webkit-animation-delay: 0.5s;
+			}
+			
+			@-webkit-keyframes bounceInDown {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -3000px, 0);
+					transform: translate3d(0, -3000px, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 25px, 0);
+					transform: translate3d(0, 25px, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(0, -5px, 0);
+					transform: translate3d(0, -5px, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(0, 3px, 0);
+					transform: translate3d(0, 3px, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@-webkit-keyframes bounceInLeft {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(-3000px, 0, 0);
+					transform: translate3d(-3000px, 0, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(25px, 0, 0);
+					transform: translate3d(25px, 0, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(-10px, 0, 0);
+					transform: translate3d(-10px, 0, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(5px, 0, 0);
+					transform: translate3d(5px, 0, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			@-webkit-keyframes bounceInRight {
+				0%,
+				60%,
+				75%,
+				90%,
+				100% {
+					-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+					animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				}
+				0% {
+					opacity: 0;
+					-webkit-transform: translate3d(3000px, 0, 0);
+					transform: translate3d(3000px, 0, 0);
+				}
+				60% {
+					opacity: 1;
+					-webkit-transform: translate3d(-25px, 0, 0);
+					transform: translate3d(-25px, 0, 0);
+				}
+				75% {
+					-webkit-transform: translate3d(10px, 0, 0);
+					transform: translate3d(10px, 0, 0);
+				}
+				90% {
+					-webkit-transform: translate3d(-5px, 0, 0);
+					transform: translate3d(-5px, 0, 0);
+				}
+				100% {
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			
+			.back01 {
+				background: -moz-linear-gradient(top, #fb75b2, #d7b7fa);
+				background: -o-linear-gradient(top, #fb75b2, #d7b7fa);
+				background: -webkit-gradient(linear, 0 -30%, 0 bottom, from(#fb75b2), to(#d7b7fa));
+			}
+			
+			.back02 {
+				background: -moz-linear-gradient(top, #4eaafd, #a3ece5);
+				background: -o-linear-gradient(top, #4eaafd, #a3ece5);
+				background: -webkit-gradient(linear, 0 -30%, 0 bottom, from(#4eaafd), to(#a3ece5));
+			}
+			
+			.langimg {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+			}
+			
+			.mui-slider-indicator .mui-active.mui-indicator {
+				background: #999;
+			}
+			
+			.mui-slider-indicator .mui-indicator {
+				background: #FFFFFF;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			
+			.mui-btn-warning.mui-active:enabled,
+			.mui-btn-warning:enabled:active,
+			#close:enabled:active {
+				color: #fff;
+				border: 1px solid #6cbef5;
+				background-color: #6cbef5
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="slider" class="mui-slider mui-fullscreen" style="background-color: black;">
+			<div class="mui-slider-group">
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<div class="item-logo back01">
+						<a href="#"><img src="../../images/land0.png" /></a>
+						<img class="langimg" src="../../images/langimg02.png" />
+						<div class="animate guide-show">
+							<h2 class="animated bounceInDown">随时随地</h2>
+							<li class="animated bounceInLeft">万能女人圈，美会app</li>
+						</div>
+					</div>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<div class="item-logo back02">
+						<a href="#"><img src="../../images/land1.png" /></a>
+						<img class="langimg" src="../../images/langimg02.png" />
+						<div class="animate">
+							<button id='close' class="mui-btn mui-btn-warning mui-btn-outlined">立即体验</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script>
+			mui.back = function() {};
+			mui.plusReady(function() {
+				if(mui.os.ios) {
+					plus.navigator.setFullscreen(true);
+				}
+				plus.navigator.closeSplashscreen();
+			});
+			//立即体验按钮点击事件
+			document.getElementById("close").addEventListener('tap', function(event) {
+				plus.storage.setItem("lauchFlag", "true");
+				plus.navigator.setFullscreen(false);
+				plus.webview.currentWebview().close();
+			}, false);
+		</script>
+	</body>
+
+</html>

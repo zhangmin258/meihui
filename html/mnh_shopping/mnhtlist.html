@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>参团列表</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+	</head>
+	<style type="text/css">
+		html,
+		body {
+			background-color: #F7F7F7;
+		}
+		ul,li{
+			list-style: none;
+		}
+		.mui-bar-nav {
+			background-color: #FF6699;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+		
+		.mui-icon-arrowleft {
+			color: #FFFFFF;
+		}
+		
+		.mui-title {
+			color: #FFFFFF;
+		}
+		/*参团选择*/
+		
+		.mnhContnet_tit {
+			width: 100%;
+			line-height: 38px;
+			border-left: 3px solid #FF6699;
+			padding-left: 12px;
+		}
+		
+		.mui-table-view:before {
+			background-color: inherit;
+		}
+		
+		.mui-table-view:after {
+			background-color: inherit;
+		}
+		.mui-media-object{
+			border-radius: 50%;
+		}
+		.mnhshopgroupslogo{
+			line-height: 42px;
+			font-size: 16px;
+			width: 60px;
+			display: block;
+			float: left;
+		}
+		.mnhshopgroupscontent{
+			float: right;
+		}
+		.mnhshopgroupscontent_button{
+			float: right;			
+		}
+		.mnhshopgroupscontent_text{
+			float: right;
+			line-height: 42px;
+		}
+		.mnhshopgroupscontent_textmud{
+			text-align: right;
+			color: #FF6699;
+			font-size: 12px;
+		}
+		.mnhshopgroupscontent_textmoeny{
+			text-align: right;
+			font-size: 12px;
+			color:#CCCCCC;
+		}
+		.mnhshopgroupscontent_button{
+			background-color: #FF6699;
+			color: #fff;
+			border-radius: 4px;
+			padding: 2px 4px;
+			margin: 11px 0 0 20px;
+			font-size: 14px;
+		}
+		.mnhContnet_tit span{
+			float: right;
+			margin-right: 12px;
+			}
+	</style>
+
+	<body id="zuBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">拼团列表</h1>
+		</header>
+		<div id="zu-refresh" class="mui-content">
+			<div class="mnhContnet">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media" v-for="item in zuList" v-cloak track-by="$index">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" :src="item.app_logo">
+							<div class="mui-media-body">
+								<span class="mnhshopgroupslogo mui-ellipsis">{{item.nick_name}}</span>
+								<div class="mnhshopgroupscontent">
+									<div class="mnhshopgroupscontent_button" @tap="joinGroup(item.group_sn)">去参团</div>
+									<ul class="mnhshopgroupscontent_text">
+										<span class="mnhshopgroupscontent_textmud">还有{{item.num}}人成团</span>
+									</ul>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>	
+		<script type="text/javascript" src="../../js/mnhlist.js"></script>
+	</body>
+
+</html>

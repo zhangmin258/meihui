@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>活动报名</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css"/>
+		<link rel="stylesheet" href="../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhtit.css" />		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">报名</h1>
+		</header>
+		<div class="mui-content" style="padding-bottom: 60px;">
+			<!--内容-->
+			<div class="mnhcontentheader">
+				<div class="mnhcontentheadercolor">
+					<div class="mnhcontentheaderMoeny">单人通票 ￥<span class="ticketPrice">0</span>&nbsp;&nbsp;1份</div>
+					<div class="mnhcontentheadertime">活动开始时间：<span class="ticketTime"></span></div>
+					<div class="mnhcontentheaderfs">取票方式：电子票</div>
+				</div>
+			</div>
+			<form class="mui-input-group buy-contentForm">
+				<div class="mnhinput">购买信息</div>
+				<div class="mui-input-row">
+					<label>手机</label>
+					<input type="number" id="ticket-phone" placeholder="预定人的手机号">
+				</div>
+				<div class="mui-input-row">
+					<label>姓名</label>
+					<input type="text" id="ticket-owner" placeholder="预定人的姓名">
+				</div>
+			</form>
+			<form class="mui-input-group pay_form">
+				<div class="mnhinput">支付方式：</div>
+				<div class="mui-input-row mui-radio">
+					<label class="icomoon icon-Alipay"><span>支付宝</span></label>
+					<input name="payType" type="radio" value="1" checked>
+				</div>
+				<div class="mui-input-row mui-radio mnhradio">
+					<label class="icomoon icon-WeChat"><span>微信</span></label>
+					<input name="payType" type="radio" value="2">
+				</div>
+				<!--测试按钮-->
+				<!--<div class="mui-input-row">  
+					<button class="mui-btn mui-btn-danger" onclick="animateWindow('slide-in-bottom','mnhticket.html')">跳转电子票</button>
+				</div>-->
+			</form>
+		</div>
+		<footer>
+			<div class="mnhfooter mnhxx">合计：￥<span class="ticketPrice">300.00</span></div>
+			<!--<div class="mui-btn-danger mnhfooterbutton">确认</div>-->
+			<button type="button" class="mui-btn mui-btn-danger mnhfooterbutton">确认</button>
+			
+		</footer>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		
+		<!--页面跳转-->
+		<script src="../js/page.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../js/store.min.js"></script>
+		<script type="text/javascript" src="../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../js/mnhtit.js"></script>
+		
+	</body>
+
+</html>
+
+
+
+
+

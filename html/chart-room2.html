@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>美聊</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/chart-room2.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/upload/redb1.css" />
+		<style type="text/css">
+			i {
+				font-style: initial;
+			}
+			
+			.loading_ren {
+				float: right;
+				margin-right: 6px;
+				color: #333;
+				font-size: 12px;
+				margin-top: 11px;
+				margin-right: 10px;
+				display: none;
+			}
+			.loading_ren span {
+				line-height: 24px;
+				float: left;
+			}
+			
+			
+			.chartHoster {
+				position: fixed;
+				width: 100%;
+				float: left;
+				z-index: 10;
+				height: 100px;
+				overflow: hidden;
+				top: 64px;
+			}
+			
+			.chartHoster img {
+				width: 100%;
+				height: 50px;
+				display: none;
+				border: none;
+				outline: none;
+			}
+			
+			.iconlogo {
+				float: left;
+				padding: 10px 14px;
+			}
+			
+			@media only screen and (min-width: 414px) {
+				.iconlogo {
+					padding: 10px 13px
+				}
+			}
+			
+			.qqImg {
+				width: 24px;
+			}
+			
+			.question_text p img,
+			.answer_text p img {
+				width: 24px;
+			}
+			/*箭头内容*/
+			
+			.mui-popover {
+				height: 140px;
+			}
+			
+			.mui-popover {
+				width: 150px;
+			}
+			
+			.mui-content {
+				padding: 10px;
+			}
+			
+			.mui-icon-left-nav span {
+				font-size: 12px;
+				float: right;
+				line-height: 26px;
+			}
+			
+			.mui-table-view-cell a {
+				text-align: center;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--红包开始启动图片-->
+		<img class="redok" src="../images/i_th.svg" />
+		<!--红包结束图片成功-->
+		<div class="redokimg" style="display: none;">
+			<img src="../images/redokimg.png" />
+			<div class="redokimgtext">恭喜你获得<span></span></div>
+		</div>
+		<!--红包结束图片成功-->
+		<div class="redokimgno" style="display: none;">
+			<img src="../images/redokimg.png" />
+			<div class="redokimgtextno">很遗憾！没有抢到红包</div>
+		</div>
+		<!--红包1-->
+		<div class="grab-main" style="display: none;"></div>
+		<!--弹出内容-->
+		<div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell xujump">
+							<a href="mnhpaihang.html">人气排行</a>
+						</li>
+						<li class="mui-table-view-cell xujump">
+							<a href="mnhtjilu.html">历史纪录</a>
+						</li>
+						<li class="mui-table-view-cell xujump">
+							<a href="mnhhz.html">美聊须知</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--内容-->
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-icon mui-icon-left-nav" id="xuroomback" style="color: white;"><span>在线人数 : <i class="member"></i></span></a>
+			<p class="mui-title">美 聊</p>			
+			<a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right" href="#topPopover"></a>
+			<div class="loading_ren">倒计时:<i>60</i>秒</div>
+		</header>
+		<!--聊天话题图片-->
+		<div class="chartHoster"><img src="" /></div>
+		<div class="speak_window">
+			<div class="speak_box">
+				<!--右-->
+				<!--<div class="question">
+					<div class="heard_img right"><img src="../images/icon_header.png"></div>
+					<div class="question_text clear" style="max-width: 295px;">
+						<div>徐斌</div>
+						<p>d</p>
+						<i></i>
+					</div>
+				</div>-->
+				<!--左-->
+				<!--<div class="answer">
+					<div class="heard_img left"><img src="../images/icon_header.png"></div>
+					<div class="answer_text">
+						<div>loading</div>
+						<p>1</p>
+						<i></i>
+					</div>
+				</div>-->
+				<!--<div class="getinWarn">徐斌进入房间</div>-->
+			</div>
+		</div>
+		<!--表情框-->
+		<div id="emotionBox"></div>
+		<div class="wenwen-footer">
+			<div class="wenwen_btn left emotion"><img src="../images/iconchart.png"></div>
+			<div class="wenwen_text left">
+				<div class="write_box" style="display: block;">
+					<input type="text" class="left" id="saytext" name="saytext">
+				</div>
+			</div>
+			<div class="wenwen_help right">
+				<button onclick="up_say()" class="right" style="display: inline-block;">发送</button>
+			</div>
+			<div style="opacity:0;" class="clear"></div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.qqFace.js"></script>
+	<script type="text/javascript" src="../js/ajax/url.js"></script>
+	<script type="text/javascript" src="../js/jnop.js"></script>
+	<script type="text/javascript" src="../js/vconsole.min.js"></script>
+	<script type="text/javascript" src="../js/chart-room.js"></script>
+	<script src="../js/upload/redb1.js" type="text/javascript" charset="utf-8"></script>
+</html>
+
+
+

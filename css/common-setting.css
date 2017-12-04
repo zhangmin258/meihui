@@ -1,0 +1,74 @@
+
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	border: none;
+}
+
+
+p{
+	margin-bottom: 0;
+}
+
+
+.haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+
+.mui-bar{
+	width: 100%;
+	height: 64px;
+	background: #ff6797;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.mui-content{
+	padding-top: 65px;
+}
+
+
+/*通用设置*/
+.comset-content .mui-table-view:after,.mui-table-view:before{
+	height: 0;
+}
+
+.comset-content .mui-table-view{
+	margin-bottom: 10px;
+} 
+
+
+/*修改密码*/
+.mui-input-row .mui-input-clear~.mui-icon-clear.mui-active, .mui-input-row .mui-input-password~.mui-icon-eye.mui-active, .mui-input-row .mui-input-speech~.mui-icon-speech.mui-active {
+    color: #FF6797;
+}
+
+.changepass-content form{
+	margin-top: 10px;
+}
+
+/*确认按钮*/
+.changepass-content #changepass-subBtn{
+	background: #FF6797;
+	border: none;
+}
+
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>充值</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/icostyle.css" />
+		<link rel="stylesheet" href="../../css/wallet-detail.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">充值</p>
+		</header>
+		<div class="rechargeContent">
+			<div class="mui-content">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<input type="number" id="rechargeMoney" placeholder="请输入充值金额"/>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<p>充值方式</p>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">							
+						<div class="mui-input-row mui-radio">
+							<span class="icon-Alipay"></span>
+							<label for="">支付宝</label>
+							<input name="pay" id="alipay" type="radio" value="1">
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row mui-radio">
+							<span class="icon-WeChat"></span>
+							<label for="">微信</label>
+							<input name="pay" id="wxpay" type="radio" value="2">
+						</div>						
+					</li>
+				</ul>
+				<button type="button" class="mui-btn mui-btn-danger" id="subPay">充值</button>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/recharge.js"></script>
+	</body>
+
+</html>

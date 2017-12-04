@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>美购搜索</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/icostyle.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/search.css"/>
+	</head>
+
+	<body id="shopsearchBody">
+		<header id="header">
+			<div class="haeder_titnav"></div>
+			<div class="nvbt iback" onclick="back();"></div>
+			<div class="nvtt">美购搜索</div>
+		</header>
+		<div class="mui-content" style="background-color: #fff;">
+			<div class="mui-content-padded" style="margin: 10px 5px 0 5px">
+				<div class="mui-input-row mui-clearfix">
+					<input type="search" id="searchcontent" placeholder="搜索您需要的商品名称" class="mui-pull-left" v-model="shopsearchcontent">
+					<div class="mnhsearch icomoon icon-sousuo mui-pull-right" @tap="shopsubSearch()"></div>
+				</div>
+			</div>
+		</div>
+		<div class="tn_content">
+			<div class="tn_content_nav" v-if="nearSearchList" v-show="nearSearchList.length>0">
+				<div class="tn_content_tit">最近访问：</div>
+				<p class="tn_content_text" v-for="item in nearSearchList" v-cloak track-by="$index" @tap="shopotherSearch(item)">{{item}}</p>
+			</div>
+		</div>
+		<div class="tn_content02">
+			<div class="tn_content_nav" v-if="hotSearchList" v-show="hotSearchList.length>0">
+				<div class="tn_content_tit">热门访问：</div>
+				<p class="tn_content_text" v-for="item in hotSearchList" v-cloak track-by="$index" @tap="shopotherSearch(item.name)">{{item.name}}</p>
+			</div>
+		</div>
+	</body>	
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../../js/ajax/url.js"></script>
+	<script type="text/javascript" src="../../js/store.min.js"></script>
+	<script type="text/javascript" src="../../js/jnop.js"></script>
+	
+	<script type="text/javascript" src="../../js/vue.js"></script>
+	<script type="text/javascript" src="../../js/vue-resource.js"></script>
+	<script type="text/javascript" src="../../js/shopsearch.js"></script>
+</html>
+
+
+
+
+
+

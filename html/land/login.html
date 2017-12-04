@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登陆</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhland.css" />
+	</head>
+
+	<body>
+		<div class="landcontent">
+			<div class="landnav">
+				<div class="landnavcontent">
+					<div class="landnavcontent_yn">
+						<img src="../../images/logo-@2x.png" />
+					</div>
+					<div class="landnavcontent_text">
+						<span class="landnavcontent_textcolor" dataid="1">登录</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span dataid="2">注册</span>
+					</div>
+					<!-- 登录 -->
+					<ul class="landnavcontent_input landone">
+						<li class="landnavcontent_input_tel">
+							<p>手机号</p>
+							<input class="tel" type="tel" maxlength="11" placeholder="请输入手机号" />
+						</li>
+						<li class="landnavcontent_input_pass">
+							<p>验证码</p>
+							<button type="button" class="mui-btn landpass_button">发送验证码</button>
+							<input class="landpass" type="tel" maxlength="6" placeholder="请输入验证码" />
+						</li>
+						<button type="button" class="mui-btn mui-btn-block mui-btn-primary landbutton">确认</button>
+					</ul>
+					
+					
+					<!-- 注册 -->
+					<ul class="landnavcontent_input landtwo" style="display:none;">
+						<li class="landnavcontent_input_tel">
+							<p>手机号</p>
+							<input class="tel" type="tel" maxlength="11" placeholder="请输入手机号" />
+						</li>
+						<li class="landnavcontent_input_pass">
+							<p>验证码</p>
+							<button type="button" class="mui-btn landpass_button">发送验证码</button>
+							<input class="landpass" type="tel" maxlength="6" placeholder="请输入验证码" />
+						</li>
+						<div class="landcheckbox">
+							<input id="checked" name="checkbox" type="checkbox" checked="checked">
+							<span>我已阅读并同意《美女会会员注册协议》</span>
+						</div>
+						<button type="button" class="mui-btn mui-btn-block mui-btn-primary landbutton">确认</button>
+					</ul>
+				</div>
+				<div class="landtit">其他登陆方式</div>
+				<div class="mui-icon mui-icon-weixin" onclick="login('weixin')"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.js"></script>
+	<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../../js/ajax/url.js"></script>
+	<script src="../../js/ajax/login.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script type="text/javascript" src="../../js/vconsole.min.js"></script>-->
+	
+	<script src="../../js/upload/landweixin.js" type="text/javascript" charset="utf-8"></script>
+</html>
+

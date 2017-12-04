@@ -1,0 +1,118 @@
+html,
+body {
+	background-color: #FFFFFF;
+	width: 100%;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.mui-bar-nav {
+	background-color: #FF6699;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.mui-icon-arrowleft {
+	color: #FFFFFF;
+}
+
+.mui-title {
+	color: #FFFFFF;
+}
+
+.mui-placeholder span {
+	font-size: 14px;
+}
+
+.mui-content {
+	background-color: #FFFFFF;
+}
+
+input[type=search] {
+	margin-bottom: 5px;
+}
+
+.mui-search.mui-active:before {
+	top: 24px;
+}
+
+.mui-row.mui-fullscreen>[class*="mui-col-"] {
+	height: 100%;
+}
+
+.mui-col-xs-3,
+.mui-control-content {
+	overflow-y: auto;
+	height: 100%;
+}
+
+.mui-segmented-control .mui-control-item {
+	line-height: 50px;
+	width: 100%;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	background-color: #fff;
+}
+
+.mui-fullscreen {
+	/*padding-top: 108px !important;*/
+	top: 108px;
+	overflow: hidden;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item,
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item.mui-active {
+	border-bottom: none;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #FF6699;
+	border-left: 2px solid #FF6699;
+	background: #F7F7F7;
+}
+
+.mui-table-view {
+	float: left;
+	background-color: #F7F7F7;
+}
+
+.mnhnavtextnav {
+	width: 100%;
+	float: left;
+}
+
+.mnhnavtextnav_tit {
+	line-height: 36px;
+	margin-left: 4px;
+	font-size: 13px;
+	color: #888888;
+}
+
+.mnhnavtextnav_content {
+	width: 32%;
+	float: left;
+	margin: 0 0.66% 1.32% 0.66%;
+	background-color: #FFFFFF;
+}
+
+.mnhnavtextnav_contentimg {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	overflow: hidden;
+}
+
+.mnhnavtextnav_contentimg img {
+	width: 100%;
+	display: block;
+}
+.mnhnavtextnav_contenttext{
+	text-align: center;
+	line-height: 30px;
+	color: #888888;
+	font-size: 12px;
+}

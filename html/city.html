@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>选择城市</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/search.css" />
+		<link href="../css/mui.indexedlist.css" rel="stylesheet" />
+	</head>
+	<style>
+		html,
+		body {
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.mui-bar {
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+		
+		.mnh_content {
+			width: 100%;
+			padding: 0px 12px;
+			float: left;
+			position: relative;
+			z-index: 9;
+		}
+		
+		.mnh_content_content {
+			width: 100%;
+			float: left;
+		}
+		
+		.mnh_tit {
+			width: 100%;
+			font-size: 12px;
+			color: #999999;
+			padding: 10px 0;
+		}
+		
+		.mnh_content_text {
+			float: left;
+			color: #808080;
+			background-color: #fff;
+			border-radius: 4px;
+			font-size: 15px;
+			padding: 10px 40px;
+			margin: 5px 10px 5px 0;
+		}
+		
+		.mnh_content_text_color {
+			color: #FF6699;
+		}
+		
+		.mui-bar .mui-icon {
+		    font-size: 35px;
+		    color: black;
+		    position: relative;
+		    z-index: 20;
+		    padding-top: 3px;
+		    padding-bottom: 0;
+		}
+		
+		.warning{
+			width: 100%;
+			text-align: center;
+			line-height: 40px;
+			display: none;
+		}		
+	</style>
+
+	<body>
+		<header id="header" class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<!--<div class="nvbt iback" onclick="back();"></div>-->
+			
+			<!--<div class="nvbt iback">-->
+				<a class="mui-action-back mui-icon mui-icon-closeempty mui-pull-left"></a>
+			<!--</div>-->
+			
+			<div class="nvtt">选择城市</div>
+		</header>
+		<div class="mui-content">
+			<div id='list' class="mui-indexed-list">
+				<div class="mui-indexed-list-search mui-input-row" style="display: none;">
+					<div class="mnhsearch icomoon icon-sousuo"></div>
+					<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索城市">
+				</div>
+				<div class="mui-indexed-list-bar">
+					<a>A</a>
+					<a>B</a>
+					<a>C</a>
+					<a>D</a>
+					<a>E</a>
+					<a>F</a>
+					<a>G</a>
+					<a>H</a>
+					<!--<a>I</a>-->
+					<a>J</a>
+					<a>K</a>
+					<a>L</a>
+					<a>M</a>
+					<a>N</a>
+					<!--<a>O</a>-->
+					<a>P</a>
+					<a>Q</a>
+					<a>R</a>
+					<a>S</a>
+					<a>T</a>
+					<!--<a>U</a>-->
+					<!--<a>V</a>-->
+					<a>W</a>
+					<a>X</a>
+					<a>Y</a>
+					<a>Z</a>
+				</div>
+				<div class="mui-indexed-list-alert"></div>
+				<div class="mui-indexed-list-inner">
+					<div class="mnh_content">
+						<div class="mnh_content_content">
+							<div class="mnh_tit">默认地区</div>
+							<div class="mnh_content_text mnh_content_text_color location_city">全国</div>
+						</div>
+						<div class="mnh_content_content mnh_content_content1" style="margin-bottom: 10px;">
+							<div class="mnh_tit">历史定位城市</div>
+							<p class="warning">暂无数据！</p>
+						</div>
+					</div>
+					<div class="mui-indexed-list-empty-alert">没有数据</div>
+					<ul class="mui-table-view mhnContent">
+						<!--地址内容-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mui.indexedlist.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/store.min.js"></script>
+	<script type="text/javascript" src="../js/ajax/url.js"></script>
+	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		mui.init();
+		mui.ready(function() {
+			var header = document.querySelector('header.mui-bar');
+			var list = document.getElementById('list');
+			//calc hieght
+			list.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+			//create
+			window.indexedList = new mui.IndexedList(list);
+		});
+
+		var mnhShi = [{
+			"0": 'A,鞍山,安顺,阿坝,阿拉,善阿里,安康,阿克苏,安庆,阿勒泰,安阳,澳门'
+		}, {
+			'1': 'B,北京,包头,保定,巴中,蚌埠,白银,白城,白山,北海,巴彦淖尔,宝鸡,百色,本溪,保山,毕节,博尔塔拉,滨州,亳州,巴州'
+		}, {
+			'2': 'C,成都,重庆,常州,长沙,长春,赤峰,楚雄,长治,巢湖,崇左,潮州,昌吉,沧州,郴州,常德,滁州,朝阳,昌都,池州,承德'
+		}, {
+			'3': 'D,东莞,大连,东营,大庆,大同,大理,德阳,迪庆,达州,德州,丹东,大兴安岭,德宏,定西'
+		}, {
+			'4': 'E,恩施,鄂州,鄂尔多斯'
+		}, {
+			'5': 'F,福州,佛山,抚顺,阜阳,抚州,防城港,阜新'
+		}, {
+			'6': 'G,广州,贵阳,桂林,赣州,广元,果洛,固原,甘南,甘孜,广安,贵港'
+		}, {
+			'7': 'H,杭州,哈尔滨,合肥,邯郸,惠州,海口,呼和浩特,衡阳,湖州,淮北,鹤岗,海北,海东,黄南,菏泽,海南州,黑河,和田,哈密,淮安,淮南,黄山,海西,贺州,怀化,河池,呼伦贝尔,衡水,河源,红河,汉中,黄冈,黄石,鹤壁,葫芦岛'
+		}, {
+			'8': 'J,济南,济宁,嘉兴,金华,焦作,荆州,吉林,锦州,江门,景德镇,吉安,佳木斯,酒泉,金昌,鸡西,济源,晋城,揭阳,晋中,荆门,九江'
+		}
+		, {
+			'9': 'J,济南,济宁,嘉兴,金华,焦作,荆州,吉林,锦州,江门,景德镇,吉安,佳木斯,酒泉,金昌,鸡西,济源,晋城,揭阳,晋中,荆门,九江'
+		}
+		, {
+			'10': 'K,昆明,昆山,喀什,克拉玛依,开封,克州'
+		}
+		, {
+			'11': 'L,兰州,临沂,连云港,聊城,临汾,柳州,洛阳,廊坊,龙岩,六盘水,凉山,六安,丽江,临沧,陇南,拉萨,辽源,辽阳,莱芜,漯河,吕梁,丽水,临夏,林芝,娄底,来宾,泸州,乐山'
+		}
+		, {
+			'12': 'M,马鞍山,绵阳,茂名,牡丹江,梅州,眉山'
+		}, {
+			'13': 'N,南京,宁波,南通,南宁,南昌,南充,宁德,内江,怒江,南平,南阳,那曲'
+		}, {
+			'14': 'P,萍乡,平顶山,莆田,濮阳,攀枝花,平凉,普洱,盘锦'
+		}, {
+			'15': 'Q,青岛,泉州,秦皇岛,齐齐哈尔,庆阳,衢州,黔西南,钦州,黔南,曲靖,黔东南,七台河,清远'
+		}, {
+			'16': 'R,日照,日喀则'
+		}, {
+			'17': 'S,上海,深圳,沈阳,苏州,石家庄,绍兴,顺德,三亚,韶关,绥化,松原,上饶,十堰,三门峡,山南,邵阳,遂宁,商丘,朔州,随州,汕尾,四平,三峡,宿迁,三明,石嘴山,双鸭山,汕头,宿州,商洛'
+		}, {
+			'18': 'T,天津,太原,泰安,台州,唐山,泰州,塔城,铜陵,铜川,台北,铜仁,吐鲁番,天水,通辽,铁岭,通化'
+		}, {
+			'19': 'W,武汉,无锡,温州,芜湖,威海,潍坊,乌鲁木齐,梧州,吴忠,武威,渭南,乌兰察布,文山,乌海'
+		}, {
+			'20': 'X,西安,厦门,徐州,襄阳,西宁,孝感,西双版纳,新余,湘潭,锡林郭勒,兴安,邢台,新乡,湘西,忻州,咸阳,宣城,香港,信阳,咸宁,许昌'
+		}, {
+			'21': 'Y,扬州,烟台,盐城,运城,义乌,岳阳,宜昌,玉林,银川,鹰潭,雅安,伊犁,玉树,宜春,营口,永州,宜宾,益阳,玉溪,阳泉,延安,榆林,云浮,延边,阳江,伊春'
+		}, {
+			'22': 'Z,郑州,镇江,中山,淄博,珠海,遵义,株洲,自贡,舟山,湛江,肇庆,漳州,张掖,昭通,张家界,周口,驻马店,张家口,资阳,中卫,枣庄'
+		}];
+		var mnhhtml ='';
+		for (var i=0;i<mnhShi.length;i++) {
+			var ss = mnhShi[i][i];
+			ss = ss.split(",");
+			mnhhtml += '<li data-group='+ ss[0]+' class="mui-table-view-divider mui-indexed-list-group">'+ ss[0]+'</li>';			
+		    for (var k=1; k<ss.length;k++) {
+		    	mnhhtml += '<li class="mui-table-view-cell mui-indexed-list-item">'+ss[k]+'</li>';
+		    };
+		};
+		$('.mhnContent').append(mnhhtml);
+		var getCity='全部';	
+//		历史定位城市列表
+		$.ajax({
+			type:"POST",
+			url:URL+"/party/Position/recent_city",
+			async:true,
+			dataType:'json',
+			data:{
+				uid:localStorage.uid,
+			},
+			success:function(data){				
+				if(data.success==true){
+					var html='';
+					for(var i=0;i<data.data.length;i++){
+						html='<div class="mnh_content_text">'+data.data[i]+'</div>';
+						$('.mnh_content_content1').append(html);
+					};	
+				}else{
+					$('.warning').show();
+				}
+			},
+			error:function(error){
+				mui.toast('请连接网络！');
+			}
+		});
+		
+		//点击/当前定位城市/历史定位城市
+		mui('.mnh_content_content').on('tap','.mnh_content_text',function(){
+			var historyCity=$(this).html();
+			goIndex(historyCity);
+		});
+		
+		//点击城市列表
+		mui('.mhnContent').on('tap','.mui-indexed-list-item',function(){
+			var city1=$(this).html();
+			goIndex(city1);
+		});		
+
+		function goIndex(city){
+			if(city=='全国'){city=''};
+			mui.plusReady(function(){plus.nativeUI.showWaiting()});
+			$.ajax({
+				type:"POST",
+				url:URL+"/party/Position/save_city",
+				async:false,
+				dataType:'json',
+				data:{
+					uid:localStorage.uid,
+					city:city
+				},
+				success:function(data){
+					if(data.success==true){
+						mui.plusReady(function(){plus.nativeUI.closeWaiting()});
+						getCity=city;					
+						mui.plusReady(function(){
+							var page=plus.webview.currentWebview().opener();
+							mui.fire(page,'getCity',{city:getCity});
+							plus.webview.currentWebview().close();	
+						});
+					}else{
+						mui.toast('该城市目前还没有美女会！');
+						mui.plusReady(function(){plus.nativeUI.closeWaiting()});
+					}
+				},
+				error:function(error){
+					mui.toast('定位失败,请检查网络！');
+				}
+			});
+		};	
+	</script>
+
+</html>

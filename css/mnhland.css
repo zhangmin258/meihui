@@ -1,0 +1,199 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #F9F9F9;
+	font-family: "microsoft yahei";
+}
+
+ul,
+li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.landcontent {
+	width: 100%;
+	height: 100%;
+	background: url(../images/landbackimg@2x.png) no-repeat;
+	background-size: 100%;
+}
+
+.landnav {
+	width: 80%;
+	height: 100%;
+	margin-left: 10%;
+}
+
+.landnavcontent {
+	background-color: #fff;
+	width: 100%;
+	float: left;
+	border-radius: 12px;
+	margin-top: 40%;
+	box-shadow: #DDDDDD 0px 8px 16px;
+}
+
+.landnavcontent_yn {
+	background-color: #FFFFFF;
+	width: 30%;
+	padding-top: 30%;
+	border-radius: 50%;
+	margin: -20% auto 0 auto;
+	position: relative;
+}
+
+.landnavcontent_yn img {
+	position: absolute;
+	width: 50%;
+	top: 20%;
+	left: 25%;
+}
+
+.landnavcontent_text {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+.landnavcontent_text span {
+	line-height: 50px;
+	font-size: 18px;
+	padding-bottom: 3px;
+	color: #333333;
+}
+
+.landnavcontent_textcolor {
+	border-bottom: #ff6699 2px solid;
+}
+
+.landnavcontent_input {
+	float: left;
+	width: 86%;
+	margin: 20px 0 0 7%;
+	padding-bottom: 40px;
+}
+
+.landnavcontent_input_tel,
+.landnavcontent_input_pass {
+	width: 100%;
+	border: 1px #999999 solid;
+	border-radius: 44px;
+	position: relative;
+}
+
+.landnavcontent_input_tel input,
+.landnavcontent_input_pass input {
+	width: 80%;
+	height: 44px;
+	border: none;
+	padding: 0 10%;
+	outline: none;
+	border-radius: 44px;
+	font-size: 14px;
+	color: #666666;
+	margin-bottom: 0;
+}
+
+.landnavcontent_input_tel p,
+.landnavcontent_input_pass p {
+	margin: 0;
+	position: absolute;
+	background-color: #FFFFFF;
+	padding: 0 6px;
+	top: -12px;
+	left: 18px;
+	font-size: 14px;
+	color: #666666;
+}
+
+.landnavcontent_input_pass {
+	margin-top: 30px;
+}
+
+.landbutton {
+	width: 100%;
+	border: 1px #999999 solid;
+	border-radius: 44px;
+	height: 44px;
+	margin-top: 60px;
+	border: none;
+	background-color: #ff6699;
+	color: #FFFFFF;
+	font-size: 16px;
+	box-shadow: rgba(255, 103, 154, 0.5) 0px 8px 10px;
+	outline: none;
+	padding: 0;
+}
+
+.mui-btn-blue.mui-active:enabled,
+.mui-btn-blue:enabled:active,
+.mui-btn-primary.mui-active:enabled,
+.mui-btn-primary:enabled:active,
+input[type=submit].mui-active:enabled,
+input[type=submit]:enabled:active,
+.landpass_button:enabled:active {
+	color: #fff;
+	background-color: #ff3e7f;
+	box-shadow: none;
+	border: none;
+}
+
+.landpass_button {
+	position: absolute;
+	line-height: 36px;
+	border: none;
+	padding: 0 8px;
+	top: 4px;
+	right: 4px;
+	border-radius: 30px;
+	background-color: #ff6699;
+	color: #FFFFFF;
+	outline: none;
+	font-size: 10px;
+}
+
+.landtit {
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-top: 16%;
+	font-size: 14px;
+	letter-spacing: 2px;
+	color: #666666;
+}
+
+.mui-icon-weixin {
+	width: 100%;
+	text-align: center;
+	line-height: 70px;
+	font-size: 40px;
+	color: #15bf07;
+}
+
+.landcheckbox{
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+	font-size: 10px;
+	color: #999999;
+	text-decoration:underline
+}
+.landcheckbox input{
+	width: 12px;
+	height: 12px;
+	float: left;
+	margin:4px 4px 0 0;
+}
+@media only screen  and (max-width: 374px) {
+	.landtit {
+		margin-top: 8%;
+	}
+	.mui-icon-weixin {
+	line-height: 36px;
+	font-size: 30px;
+    }
+}

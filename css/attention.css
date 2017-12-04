@@ -1,0 +1,134 @@
+.mui-bar{
+	background-color: #ff6699;
+	padding: 0;
+}
+.mui-bar a {
+    margin-left: 10px;
+    color: #fff;
+}
+.mui-bar p.mui-title {
+    color: #fff;
+    font-weight: 100;
+}
+
+.w-detail {
+    height: 42px;
+}
+/*我的关注*/
+.order{
+	background: #fff;
+}
+.order #segmentedControl{
+	border: none;
+	padding: 0 40px;
+	display: flex;
+	justify-content: space-between;
+}
+.order #segmentedControl a{
+	border: none;
+	background: none;
+	color: #333;
+	width: auto;
+	padding: 0 10px;
+}
+.order #segmentedControl a.mui-active{
+	color: #FF6699;
+	border-bottom: 2px solid #FF6699;
+}
+.order .con{	
+	padding: 0;
+	margin-top: -10px;
+}
+.order .con .mui-table-view-cell > div{
+	border-bottom: 1px solid #eee;
+}
+.order .con .mui-table-view{	
+	padding: 0;	
+}
+.order .con .mui-table-view li{
+	padding: 0;
+	margin-top: 10px;
+}
+.order .con .mui-table-view li div{
+	padding: 0 15px;
+}
+
+.order .con .mui-table-view li .center{
+	overflow: hidden;
+	padding: 12px 15px;
+}
+.mui-table-view-cell>a:not(.mui-btn){
+	margin: 0;
+}
+.order .con li .left{
+	width: 375px;
+	height: 125px;
+	padding: 0;
+}
+.order .con li .left img{
+	width: 100%;
+}
+.order .con li .bottom p.title{
+	font-size: 16px;
+	color: #333;
+	margin-top: 10px;
+	margin-bottom: 4px;
+}
+.order .con li .bottom p.time{
+	font-size: 14px;
+}
+.order .con li .bottom span span{
+	line-height: 25px;
+	font-size: 14px;
+	color: #81ec65;
+}
+.order .con li .bottom span.right{
+	float: right;
+}
+.order .con li .button a{
+	display: inline-block;
+	width: 50%;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	padding: 0;
+	font-size: 16px;
+	color: #808080;
+	border-radius: 2px;
+}
+
+.mui-table-view:after{
+	height: 0;
+}
+.order .con li .bottom span.line{
+	padding: 0 10px;
+}
+.order .con li .bottom .times{
+	color: #333;
+}
+
+#item3 ul li{
+	position: relative;
+	overflow: hidden;
+}
+div.position{
+	z-index: 100;
+	width: 70px;
+	height: 32px;
+	background: #ccc;
+	color: #fff;
+	position: absolute;
+	right: 30px;
+	top: 150px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+	transform: rotate(-30deg);
+}
+div.position.active{
+	background: #ff6666;
+}
+.order .con .mui-table-view li div.position{
+	padding: 0;
+}

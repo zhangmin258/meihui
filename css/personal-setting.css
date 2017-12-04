@@ -1,0 +1,129 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	border: none;
+}
+
+
+p{
+	margin-bottom: 0;
+}
+
+.mui-bar{
+	height: 64px;
+	background: #ff679a;
+	-webkit-box-shadow: none;
+	box-shadow:none;
+}
+
+.haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+.mui-bar a{
+	color: white;
+}
+
+.mui-bar p{
+	color: white;
+}
+
+.mui-content{
+	padding-top: 64px;
+}
+
+
+.mui-table-view-cell:after{
+	left: 0;
+}
+
+ .mui-table-view:before,.mui-table-view:after{
+	height: 0;
+	background: none;
+}
+
+ .mui-table-view:nth-of-type(2){
+ 	margin-top: 15px;
+ }
+
+ .mAvator a{
+ 	font-size: 25px;
+ }
+
+/*修改头像*/
+ .mAvator  .avator{
+ 	width: 60px;
+ 	height: 60px;
+ 	border-radius: 50%;
+ 	vertical-align: top;
+ }
+
+ .mAvator span{
+ 	display: inline-block;
+ 	vertical-align: top;
+ 	font-size: 16px;
+ 	margin-top: 20px;
+ }
+ 
+ 
+	/*昵称/性别/地址*/
+.personDetail  li{
+	clear: both;
+}	
+
+
+/*性别*/
+.personDetail .sexLabel{
+	display: inline-block;
+	vertical-align: top;
+	/*width: 35%;*/
+    padding: 11px 15px;	
+}
+
+.personDetail  .mui-radio{
+	width: 35%;
+	display: inline-block;
+}
+
+
+.personDetail .mui-radio label {
+	width: 10%;
+	padding-right: 0;
+}
+
+
+
+.mui-radio input[type=radio] {
+	top: 6px;
+	right: 30px;
+}
+
+.mui-radio input[type=radio]:checked:before {
+    color: #FF6797;
+}
+
+
+#subSetting {
+    width: 80%;
+    margin: 30px 10%;
+    background: #FF679A;
+    border: #FF679A solid 1px;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+ 

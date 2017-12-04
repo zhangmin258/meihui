@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>订单详情页</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/icostyle.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhheadercolor/headercolor.css" />
+		<style type="text/css">
+			html,
+			body {
+				background-color: #F7F7F7;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.mui-content{
+				padding-bottom: 50px;
+			}
+			.mnhname {
+				color: #333333;
+				font-size: 14px;
+			}
+			
+			.mnhname span {
+				margin-left: 24px;
+			}
+			
+			.mui-content>.mui-table-view:first-child {
+				margin-top: 0
+			}
+			
+			.mnhaddes {
+				font-size: 12px;
+				line-height: 30px;
+			}
+			
+			.mui-table-view:before {
+				background-color: initial;
+			}
+			
+			.mui-table-view:after {
+				background-color: initial;
+			}
+			
+			.mui-table-view-condensed {
+				margin-top: 6px;
+			}
+			
+			.mui-col-xs-10 {
+				float: left;
+				width: 80%;
+				padding-left: 12px;
+			}
+			
+			.mnhimg {
+				float: left;
+				width: 20%;
+				height: 0;
+				padding-bottom: 20%;
+				overflow: hidden;
+			}
+			
+			.mnhimg img {
+				width: 100%;
+			}
+			
+			.mnhcontenttext {
+				font-size: 16px;
+				color: #333333;
+				font-weight: 500;
+			}
+			
+			.mui-h6 {
+				color: #FF6699;
+				font-size: 16px;
+			}
+			
+			.mui-h6 span {
+				float: right;
+				font-size: 12px;
+				color: #888888;
+			}
+			
+			.mnhnav {
+				width: 100%;
+				float: left;
+				background-color: #FFFFFF;
+				margin-top: 1px;
+			}
+			
+			.mnhnav li {
+				line-height: 40px;
+				font-size: 14px;
+				padding-left: 12px;
+			}
+			
+			.mnhnav li span {
+				float: right;
+				margin-right: 12px;
+			}
+			
+			.mnhinput {
+				background-color: #F7F7F7;
+				line-height: 44px;
+				font-size: 12px;
+				padding-left: 12px;
+				color: #666666;
+			}
+			
+			input[type="text"],
+			input[type="tel"] {
+				text-align: right;
+				height: 44px;
+			}
+			
+			.mui-input-group .mui-input-row {
+				height: 44px
+			}
+			
+			.mui-input-row label {
+				padding: 13px 15px;
+			}
+			
+			.mui-input-group .mnhinputanme:after,
+			.mui-input-group .mnhradio:after {
+				background-color: inherit;
+			}
+			
+			.mui-card {
+				margin: 10px 0;
+			}
+			
+			.mui-card {
+				box-shadow: none
+			}
+			
+			.mui-checkbox input[type=checkbox]:checked:before,
+			.mui-radio input[type=radio]:checked:before {
+				color: #ff6699;
+			}
+			
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 8px;
+			}
+			
+			.icon-Alipay,
+			.icon-WeChat {
+				font-size: 20px;
+				position: relative;
+			}
+			
+			.icon-WeChat {
+				font-size: 21px;
+			}
+			
+			.icon-Alipay span,
+			.icon-WeChat span {
+				font-size: 14px;
+				padding-left: 12px;
+				position: absolute;
+				top: 16px;
+			}
+			.mui-radio{
+				background-color: #FFFFFF !important;
+			}
+			footer{
+				width: 100%;
+				height: 49px;
+				background-color: #FFFFFF;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				border-top: 1px #EEEEEE solid;
+			}
+			.mnhmud{
+				float: left;
+				width: 60%;
+				line-height: 49px;
+				font-size: 14px;
+				padding-left: 12px;
+			}
+			.mnhmud span{
+				color: #FF6699;
+			}
+			.mnhpay{
+				float: left;
+				width: 40%;
+				line-height: 49px;
+				background-color: #FF6699;
+				text-align: center;
+				font-size: 14px;
+				color: #FFFFFF;
+				border: none;
+				border-radius: 0;
+				padding: 0;
+			}
+			.mnhpaydisabled{
+				background: #C0C0C0;
+				color: white;
+			}
+			
+			.mnhpay span{
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body id="orderBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">订单支付</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" v-if="orderAddress!=''" v-show="orderAddress!=''">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" @tap="goAddressList(orderAddress.id)">
+						<p class="mnhname mui-ellipsis">{{orderAddress.name}}<span>{{orderAddress.phone}}</span></p>
+						<p class="mnhaddes mui-ellipsis">{{orderAddress.province+orderAddress.city+orderAddress.area+orderAddress.address}}</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li class="mui-table-view-cell" v-for="item in orderList" v-cloak track-by="$index"> 
+					<div class="mui-table">
+						<div class="mnhimg"><img :src="item.img" /></div>
+						<div class="mui-table-cell mui-col-xs-10">
+							<h4 class="mui-ellipsis mnhcontenttext">{{item.name}}</h4>
+							<h5 class="mui-ellipsis">{{item.str_name}}</h5>
+							<p class="mui-h6 mui-ellipsis">￥{{item.price}}<span>x{{item.number}}</span></p>
+						</div>
+					</div>
+				</li>				
+			</ul>
+			<ul class="mnhnav">
+				<li>商品总数：<span>{{orderContent.totalnum}}</span></li>
+				<li>商品总价：<span>￥{{orderContent.totalprice}}</span></li>
+				<li>派送费：<span>包邮</span></li>
+			</ul>
+			<div class="mnhinput">支付方式：</div>
+			<div class="mui-input-row mui-radio">
+				<label class="icomoon icon-Alipay"><span>支付宝{{payValue}}</span></label>
+				<input name="pay" id="alipay" type="radio"  value="0" v-model="payValue" checked="checked">
+			</div>
+			<div class="mui-input-row mui-radio mnhradio">
+				<label class="icomoon icon-WeChat"><span>微信</span></label>
+				<input name="pay" id="wxpay" type="radio" value="1" v-model="payValue">
+			</div>
+		</div>
+		<footer>
+			<div class="mnhmud">总价：<span>￥ {{orderContent.totalprice}}</span></div>
+			<button class="mnhpay" @tap="nowPay()">立即支付 <span>({{orderContent.totalnum}})</span></button>
+		</footer>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>	
+		<script type="text/javascript" src="../../js/mnhcarOrder.js"></script>
+	</body>
+</html>

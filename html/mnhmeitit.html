@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>参与竞赛投票</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<link rel="stylesheet" href="../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhactivities.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhmeitit.css"/>
+	</head>
+		
+	<body id="titBody">
+		<!--内容-->
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">{{compTitle}}</h1>
+		</header>
+		<div id="meitit-content" class="mui-content">
+			<div class="mhnmeititcontent">
+				<div class="mhnmeititcontentnav" v-for="item in compList" v-cloak track-by="$index">
+					<img :src="item.img_small"/>
+					<div class="mhnmeititcontentnavname">选手：{{item.name}} </div>
+					<div class="mhnmeititcontentnavmud">票数：<span>{{item.vote}}</span></div>
+					<div class="mhnmeititcontentnavtext mui-ellipsis-2">{{item.introduce}}</div>
+		            <button type="button" class="mui-btn mui-btn-danger mui-btn-block vote-btn" @tap="vote(item.id,item.vote)">投一票</button>					
+					<div class="mnhimg"><!--mnhgjcolor-->
+						<div class="icomoon icon-gj" :class="{mnhgjcolor:$index==0,mnhgjcolor1:$index==1,mnhgjcolor2:$index==2,mnhgjcolor3:$index>2}"></div>
+						<div class="mnhimgmud">{{$index+1}}</div>
+					</div>
+				</div>
+				<div class="nothingImg" v-if="compList==''" v-show="compList==''">
+					<img src="../images/nothing.png"/>
+					<p>暂无竞赛内容!</p>
+				</div>				
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/store.min.js"></script>
+		
+		<script type="text/javascript" src="../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script type="text/javascript" src="../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../js/mnhmeitit.js"></script>
+	</body>
+
+</html>

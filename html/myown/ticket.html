@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的门票</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/ticket.css"/>
+	</head>
+
+	<body id="ticketBody">
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">我的门票</p>
+		</header>
+		<div id="ticket-refresh" class="mui-content">
+			<ul class="mui-table-view" v-for="item in ticketList" v-cloak track-by="$index"> 
+				<li class="mui-table-view-cell">
+					<a href="javascript:void(0)" class="ticket-content" @tap="goMyTicket(item.status,item.activity_id)">
+						<div class="ticket-left">
+							<div class="left-img-box">
+								<img :src="item.img_small" alt="" />
+							</div>
+						</div>
+						<div class="ticket-center"></div>
+						<div class="circle-top"></div>
+						<div class="circle-bottom"></div>
+						<div class="ticket-right">
+							<p>{{item.subject}}</p>
+							<p><span>时间:</span>&nbsp;&nbsp;<span>{{item.time_start | tiemFormate}} - {{item.time_end | tiemFormate}}</span></p>
+							<p><span>地址：</span><span>{{item.province+item.city+item.area}}</span></p>
+							<p><span class="ticket-price">￥{{item.price}}</span><span class="ticket-date" :class="{'ticketDateAdd':item.status=='有效'}">{{item.status}}</span></p>
+						</div>
+					</a>
+				</li>
+			</ul>			
+		</div>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<script src="../../js/mui.min.js"></script>		
+		<script type="text/javascript" src="../../js/jnop.js"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../../js/ticket.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的关注</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link href="../../css/pulish1.css" rel="stylesheet" />
+	</head>
+
+	<body id="attentionBody">
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">我的关注</p>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#aitem1">
+							活动
+						</a>
+						<!--<a class="mui-control-item" href="#aitem2">
+							报道
+						</a>
+						<a class="mui-control-item" href="#aitem3">
+							竞赛
+						</a>-->
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<!--活动-->
+					<div id="aitem1" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in actList" v-cloak track-by="$index">
+										<div class="act-content">
+											<a href="../mnhcontentnav.html" dataid='1' data-title-type="transparent_native" @tap="actGoto($event,item.activity_id)">
+												<div class="act-img">
+													<img :src="item.img_small" alt="活动图片" />
+												</div>
+												<div class="act-text">
+													<p class="act-text-title mui-ellipsis mnhTites">{{item.subject}}</p>
+													<p class="mui-ellipsis"><span>时间:</span>&nbsp;&nbsp;<span>{{item.time_start | tiemFormate}} - {{item.time_end | tiemFormate}}</span></p>
+													<p class="mui-ellipsis"><span>地点:</span>&nbsp;&nbsp;<span>{{item.province+item.city+item.area+item.address}}</span></p>
+													<p class="mui-ellipsis"><span>主办方:</span>&nbsp;&nbsp;<span>{{item.owner}}</span></p>
+													<div class="act-type mui-clearfix">
+														<p class="mui-pull-left"><span>费用:</span>&nbsp;&nbsp;<span>{{item.price | priceFormate}}</span></p>
+														<p class="mui-pull-right"><span>人数:</span>&nbsp;&nbsp;<span>{{item.number | numberFormate}}</span></p>
+													</div>						
+												</div>
+											</a>
+											<div class="cat-operation mui-clearfix">
+												<p class="mui-pull-right"><button type="button" class="mui-btn mui-btn-default" @tap="actCancel($index,item.activity_id,$event)">取消关注</button></p>						
+											</div>					
+										</div>										
+									</li>									
+								</ul>
+								<div class="nothingImg" v-show="actList==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--报道-->
+					<!--<div id="aitem2" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in repList" v-cloak track-by="$index">
+										<div class="act-content">
+											<a href="../mnhReport.html" dataid='1' data-title-type="transparent_native" @tap="repGoto($event,item.report_id)">
+												<div class="act-img">
+													<img :src="item.img_small" alt="报道图片" />
+												</div>
+												<div class="act-text">
+													<p class="act-text-title mui-ellipsis mnhTites">{{item.subject}}</p>
+													<p class="mui-ellipsis"><span>{{item.time_start | tiemFormate}} - {{item.time_end | tiemFormate}}</span></p>
+												</div>
+											</a>
+											<div class="cat-operation mui-clearfix">
+												<p class="mui-pull-right"><button type="button" class="mui-btn mui-btn-default" @tap="repCancel($index,item.report_id,$event)">取消关注</button></p>						
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="repList==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>								
+							</div>
+						</div>
+					</div>-->
+					<!--竞赛-->
+					<!--<div id="aitem3" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell" v-for="item in maList" v-cloak track-by="$index">
+										<div class="act-content">
+											<a href="../mnhCompetition.html" dataid='1' data-title-type="transparent_native" @tap="compGoto($event,item.match_id)">
+												<div class="act-img">
+													<img :src="item.img_small" alt="竞赛图片" />
+												</div>
+												<div class="act-text jingsai">
+													<p class="act-text-title mui-ellipsis mnhTites">{{item.subject}}</p>
+													<p class="mui-ellipsis jingsai-host"><span>主办方:</span>&nbsp;&nbsp;<span>{{item.owner}}</span></p>
+													<p class="mui-ellipsis jingsai-time"><span>比赛时间:</span>&nbsp;&nbsp;<span>{{item.time_start | tiemFormate}} - {{item.time_end | tiemFormate}}</span></p>						
+													<p class=" jingsai-guanzhu">
+														<span class="jingsai-cg">{{item.join_num}}参与</span><span class="jingsai-xian">|</span><span class="jingsai-cg">{{item.focus}}关注</span><span class="jingsai-xian">|</span><span class="jingsai-fanwei">{{item.match_activity_form}}</span>
+													</p>
+													<p class="act-text-timeWarn" :class="{compDuring:item.status_info=='火热进行中',compFinish:item.status_info=='活动已结束'}">{{item.status_info}}</p>
+												</div>
+											</a>
+											<div class="cat-operation mui-clearfix">
+												<p class="mui-pull-right"><button type="button" class="mui-btn mui-btn-default"  @tap="compCancel($index,item.match_id,$event)">取消关注</button></p>						
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="maList==''">
+									<img src="../../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>								
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		
+		<script type="text/javascript" src="../../js/mui.pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/mui.pullToRefresh.material.js"></script>
+		
+		<script type="text/javascript" src="../../js/jnop.js"></script>
+		<script src="../../js/ajax/mnhHuodongcontent.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>			
+		
+		<script type="text/javascript" src="../../js/attention.js"></script>
+	</body>
+
+</html>

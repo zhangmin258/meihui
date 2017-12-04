@@ -1,0 +1,286 @@
+html,
+body {
+	background-color: #fff;
+	/*position: relative;
+	top: 0;
+	bottom: 50px;*/
+}
+
+ul,li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.mui-bar .mui-pull-left .mui-icon {
+	padding-right: 5px;
+	font-size: 28px;
+}
+
+.mui-content{
+	background-color: #fff;
+	float: left;
+	margin-bottom: 49px;
+}
+.mui-bar .mui-btn {
+	font-weight: normal;
+	font-size: 17px;
+}
+
+.mui-bar .mui-btn-link {
+	top: 1px;
+}
+
+.mui-content img {
+	width: 100%;	
+}
+
+.hm-description {
+	margin: 15px;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+.img1{
+	display: block;
+}
+.mnh_nav_content{
+	width: 100%;
+	float: left;
+	padding-bottom: 8px;
+	border-bottom: 8px #F7F7F7 solid;	
+}
+.mnh_nav_content_tit{
+	padding: 4px 12px;
+	font-size: 16px;
+	color: #000;
+}
+.fengxiang{
+	color: #666666;
+	width: 10%;
+	float: right;
+}
+.fengxiang:before{
+	float: right;
+}
+.fengxiang span{
+	font-size: 12px;
+	float: right;
+}
+.mnh_nav_content_liu{
+	padding: 0 12px;
+	font-size: 10px;
+	color: #808080;
+}
+.mnh_nav_content_time,
+.mnh_nav_content_addes,
+.mnh_nav_content_Sponsor,
+.mnh_nav_content_Cost,
+.mnh_nav_content_number{
+	padding: 0 12px;
+	font-size: 14px;
+	color: #666666;
+}
+.mnhContnet{
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding: 10px 12px 0 12px;
+	border-bottom: 8px #F7F7F7 solid;	
+}
+.mnhpeople{
+	width: 100%;
+	float: left;
+}
+.mnhpeople_tit{
+	font-size: 16px;
+	padding: 12px 12px 0 12px;
+	color:#ff6699;
+}
+.mnh_mud_po{
+	width: 100%;
+	float: left;
+	padding: 0 12px;
+}
+.mnh_mud_po_img{
+	float: left;
+	width: 30px;
+	height: 30px;
+	background: #FFFFFF;
+	margin: 10px 5px;
+}
+
+.mnh_mud_po_img img{
+	width: 100%;
+	border-radius: 50%;
+}
+
+.mnh_mud_po_more{
+	float: left;
+	line-height: 50px;
+}
+.mnhcomment{
+	width: 100%;
+	float: left;
+	/*margin-bottom: 49px;*/
+}
+.mnhcommentText{
+	width: 100%;
+	line-height: 44px;
+	background-color: #f7f7f7;
+	font-size: 16px;
+	padding-left: 12px;
+	margin-bottom: 12px;
+}
+.mnhcommentcontent{
+	width: 100%;
+	float: left;
+	padding: 0;		
+}
+
+.mnhcommentcontent p{
+	margin-bottom: 0;
+}
+
+.mnhcommentcontent_name{
+	width: 100%;
+	float: left;
+	padding: 0 0 0 12px;
+}
+
+.mnhcommentcontent_name p{
+	margin-right: 12px;
+}
+
+.mnhcommentcontent_nameimg{
+	width: 30px !important;
+	height: 30px;
+	border-radius: 50%;
+	float: left;
+}
+.mnhcommentcontent_nametext{
+	float: left;
+	line-height: 30px;
+	padding-left: 12px;
+	font-size: 14px;
+}
+.mnhcommentcontent_text{
+	width: 100%;
+	float: left;
+	padding: 12px;
+}
+.mnhcommentcontent_text p{
+	font-size: 14px;
+	color: #666666;
+	border-bottom: 1px #CCCCCC solid;
+	margin: 0 !important;
+	/*padding-bottom: 8px;*/
+	padding: 0 0 8px 30px;
+}
+.mui-btn-block {
+	 padding:10px 0; 
+	 border:none;
+	 font-size: 14px;
+}
+.mui-btn-block .mui-spinner {
+	width: 16px;
+	height: 15px;
+}
+footer{
+	width: 100%;
+	height: 49px;	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #FFFFFF;
+	z-index: 199;
+}
+footer .mnhshoppng_car{
+	border-top: 1px #F7F7F7 solid;
+}
+.mnhfooter{
+	float: left;
+	line-height: 49px;
+	padding-left: 10px;
+	font-size: 0;
+	width: 22%;
+	text-align: center;
+}
+
+.mnhfooter span:nth-of-type(2){
+	font-size: 14px;
+}
+
+.mnhxx{
+	color: #4CD964;
+	/*letter-spacing:12px;*/
+	text-align: left;
+}
+.mnhfooter_s{
+	float: left;
+	width:30px;
+	height: 30px;
+	border: 1px #FF6797 solid;
+	margin-top: 9px;
+	border-radius: 50%;
+	line-height: 28px !important;
+	text-align: center;
+	color: #FF6797;
+	margin-right: 4px;
+}
+
+@media only screen  and (min-width: 375px) {
+	.mnhfooter_s{
+	margin-right:12px;
+}
+}
+@media only screen  and (min-width: 414px) {
+	.mnhfooter_s{
+	margin-right:20px;
+}
+}
+/*未关注按钮动态样式*/
+.ygz{
+	color: #CCCCCC;
+	border: 1px #E3E3E3 solid;
+}
+
+.icon-comment{
+	line-height: 32px;
+	font-size: 14px;
+	color: #FF6797;
+}
+
+.mnhfooterbutton{
+	margin-top: 4px;
+	border-radius: 50px;
+	padding: 9px 10%;
+	position: absolute;
+	right: 12px;
+	top: 4;
+}
+.mui-btn-danger,
+.mui-btn-negative,
+.mui-btn-red {
+	color: #fff;
+	border: 1px solid #ff6699;
+	background-color: #ff6699
+}
+
+
+/*未报名按钮动态样式*/
+.yjbm{
+	background: #CCCCCC;
+	border: #CCCCCC solid 1px;
+}
+
+
+
+#normalQuestion p{
+	padding: 0 12px;
+}
+
+
+

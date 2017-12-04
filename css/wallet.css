@@ -1,0 +1,111 @@
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	border: none;
+}
+
+
+p{
+	margin-bottom: 0;
+}
+
+.mui-table-view:after,.mui-table-view:before{
+	height: 0;
+}
+
+.haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+/*为了让红色背景高度随宽度动态变化*/
+.mui-bar{
+	background: #e7658c;
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 60%;
+	transform-origin: top;
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+}
+
+
+.mui-bar .header-zw{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.mui-bar .photo{
+	width: 100%;
+	text-align: center;
+	margin: 15px 0;
+}
+
+
+.mui-bar .photo img{
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.mui-bar .photo p{
+	font-size: 18px;
+	color: white;
+	line-height: 40px;
+}
+
+/*iphone5*/
+@media only screen and (max-width: 320px) {
+	.mui-bar .photo{
+		margin: 5px 0;
+	}
+	.mui-bar .photo img{
+		width: 70px;
+		height: 70px;
+	}
+	.mui-bar .photo p{
+		font-size: 16px;
+	}		
+}
+
+
+/*钱包明细/充值/提现*/
+.mui-table-view{
+	margin: 10px 0;
+	color: #3e3e3e;
+}
+
+.mui-icon-left-nav{
+	margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

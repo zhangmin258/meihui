@@ -1,0 +1,302 @@
+header{
+	background-color: #ff6699 !important;
+}
+.mui-title{
+	color: #FFFFFF;
+}
+a{
+	color: #FFFFFF;
+}
+ul,li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.mui-bar-nav {
+	top: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.mnhcontentheader{
+	float: left;
+	width: 100%;
+	background-color:#FFFFFF;
+}
+.mnhcontentheadercolor{
+	padding: 0 12px;
+}
+.mnhcontentheaderMoeny{
+	width: 100%;
+	padding: 012px 0 0;
+	font-size: 14px;
+	color: #666666;
+}
+.mnhcontentheaderMoeny span{
+	color: #ff6699;
+}
+.mnhcontentheadertime{
+	width: 100%;
+	font-size: 14px;
+	line-height: 30px;
+	color: #666666;
+	border-bottom: 1px #c8c7cc solid;
+}
+.mnhcontentheadertime span{
+	color:#999999;
+}
+.mnhcontentheaderfs{
+	width: 100%;
+	font-size: 14px;
+	line-height: 36px;
+	color: #666666;
+}
+.mui-input-group {
+	position: inherit;
+}
+.mnhinput{
+	background-color: #F7F7F7;
+	line-height: 44px;
+	font-size: 14px;
+	padding-left: 12px;
+	color: #666666;
+}
+input[type="text"],
+input[type="number"]{
+	/*text-align: right;*/
+	height: 44px;
+}
+.mui-input-group .mui-input-row {
+	height: 44px
+}
+.mui-input-row label {
+	padding: 13px 15px;
+}
+.mui-input-group .mnhinputanme:after,
+.mui-input-group .mnhradio:after{
+	background-color: inherit;
+}
+.mui-card {
+	margin: 10px 0;
+}
+.mui-card {
+	box-shadow: none
+}
+.mui-checkbox input[type=checkbox]:checked:before,
+.mui-radio input[type=radio]:checked:before {
+	color: #ff6699;
+}
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+	top: 8px;
+}
+.icon-Alipay,
+.icon-WeChat{
+	font-size: 20px;
+	position: relative;
+}
+.icon-WeChat{
+	font-size: 21px;
+}
+.icon-Alipay span,
+.icon-WeChat span{
+	font-size: 14px;
+	padding-left: 12px;
+	position: absolute;
+	top: 16px;
+}
+
+.mnhfooter{
+	float: left;
+	line-height: 49px;
+	padding-left: 12px;
+	font-size: 16px;
+	width: 40%;
+}
+.mnhxx{
+	color: #FF6699;
+}
+footer{
+	width: 100%;
+	height: 49px;
+	border-top: 1px #F7F7F7 solid;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #FFFFFF;
+	z-index: 99;
+}
+.icon-comment{
+	line-height: 32px;
+	font-size: 14px;
+	color: #CCCCCC;
+}
+.mnhfooterbutton{
+	margin-top: 4px;
+	border-radius: 50px;
+	padding: 9px 12%;
+	float: right;
+	margin-right: 12px;
+	font-size: 16px;
+}
+
+
+.mui-btn-danger,
+.mui-btn-negative,
+.mui-btn-red {
+	color: #fff;
+	border: 1px solid #ff6699;
+	background-color: #ff6699
+}
+
+/*不能点击时候的样子*/
+.adddis{
+	color: white;
+	background: #999999;
+	border: 1px solid #999999;
+}
+
+.mui-pull-right{
+	font-size: 14px !important;
+	padding-top: 15px !important;
+	padding-bottom: 15px !important;
+}
+
+.mnhticketcontent{
+	width: 100%;
+	float: left;
+	padding: 30px 12px 0 12px;
+}
+
+.mnhticketcontenttit{
+	width: 100%;
+	background-color: #FFFFFF;
+	border-radius: 6px;
+	float: left;
+}
+.mnhticketcontentnav{
+	width: 100%;
+	padding: 24px;
+}
+.mnhticketcontentnavmoeny{
+	width: 100%;
+	font-size: 14px;
+}
+.mnhticketcontentnavmoeny span{
+	color: #FF6699;
+}
+.mnhticketcontentnavtime{
+	width: 100%;
+	font-size: 14px;
+	line-height: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px #CCCCCC solid;
+}
+.mnhticketcontentnavtime span{
+	color: #999999;
+}
+.mnhticketcontentnavtites{
+	width: 100%;
+	text-align: center;
+	line-height: 60px;
+}
+.mnhticketcontentnaverweima{
+	width: 180px;
+	height: 180px;
+	border: 1px #DDDDDD solid;
+	margin: 0 auto;
+}
+.mnhticketcontentnaverweima img{
+	width: 100%;
+	padding: 6px;
+}
+.mnhticketcontentnavma{
+	width: 100%;
+	text-align: center;
+	line-height: 60px;
+	font-size: 14px;
+}
+.mnhticketcontentnavX{
+	width: 100%;
+	height: 20px;
+	position: relative;
+}
+.mnhticketcontentnavXY{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background-color: #efeff4;
+	border-radius: 50%;
+	margin-left: -34px;
+}
+.mnhticketcontentnavXZ{
+	width: 20px;
+	height: 20px;
+	background-color: #efeff4;
+	border-radius: 50%;
+	margin-right: -34px;
+	float: right;
+}
+.mnhticketcontentnavXXX{
+	width: 100%;
+	position: absolute;
+	border:0.5px #CCCCCC dashed;
+	top: 8.5px;
+}
+.mnhticketcontenttitname,
+.mnhticketcontenttittime{
+	font-size: 14px;
+	line-height: 40px;
+	border-bottom: 1px #CCCCCC solid;
+	color: #555555;
+}
+.mnhticketcontenttitaddes{
+	width: 100%;
+	font-size: 14px;
+	margin-top: 10px;
+	color: #555555;
+}
+
+.mnhticketcontenttitaddes span:nth-of-type(1){
+	display: inline-block;
+	width: 24%;
+	float: left;
+}
+
+.mnhticketcontenttitaddes span:nth-of-type(2){
+	display: inline-block;
+	padding: 0;
+	width: 76%;
+	float: right;
+}
+
+/*报名设置*/
+
+.mnhregistrationsettingsinput input{
+	width: 100%;
+	height: 100%;
+	padding: 0 12px;
+	text-align: left;
+}
+.mui-switch.mui-active {
+	border-color: #FF6699;
+	background-color: #FF6699
+}
+.mnhregistrationsettingsadd{
+	width: 100%;
+	background-color:#fff;
+	padding: 8px 12px;
+	font-size: 14px;
+	color:#ff6699;
+	margin-bottom: 30px;
+}
+
+
+.mui-input-group:after {
+	background-color: initial;
+}
+
+
+/*购买信息最后一个input框去掉border-bottom*/
+.mui-input-row:last-child:after{
+	height: 0;
+}

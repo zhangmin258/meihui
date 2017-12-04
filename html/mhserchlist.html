@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美会搜索列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<link rel="stylesheet" href="../css/jiazai.css" />
+		<link rel="stylesheet" href="../css/mhsearchlist.css" />
+	</head>
+
+	<body id="searchListBody">
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">搜索列表</p>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active" href="#act-item">
+							活动
+						</a>
+						<!--<a class="mui-control-item" href="#rep-item">
+							报道
+						</a>
+						<a class="mui-control-item" href="#comp-item">
+							竞赛
+						</a>-->
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<!--活动-->
+					<div id="act-item" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll act">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media" v-for="item in actList" v-cloak track-by="$index">
+										<a dataid='1' data-title-type="transparent_native"  href="mnhcontentnav.html"  @tap="actsearchGoto($event,item.id)">
+											<div class="mnhcontentimg">
+												<img class="mui-media-object mui-pull-left" :src="item.img_small">
+											</div>
+											<div class="mui-media-body mnh_home_nav">
+												<p class="mnhTites">{{item.subject}}</p>
+												<p class='mui-ellipsis'><span class="icomoon icon-time"></span>{{item.time_start | tiemFormate}} - {{item.time_end | tiemFormate}}</p>
+												<p class='mui-ellipsis'><span class="icomoon icon-place"></span>{{item.province}}&nbsp;{{item.city}}&nbsp;{{item.address}}</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<div class="nothingImg" v-show="actList==''">
+									<img src="../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--报道-->
+					<!--<div id="rep-item" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll rep">
+								<ul class="mui-table-view">
+									<div class="mui-card" style="margin-top: 0;" v-for="item in repList" v-cloak track-by="$index">
+										<a dataid='2' data-title-type="transparent_native" href="mnhReport.html" @tap="repsearchGoto($event,item.id)">
+											<div class="mui-card-header mui-card-media">
+												<img :src="item.img_small" alt="" />
+											</div>
+											<div class="mui-card-content">
+												<div class="mui-card-content-inner">
+													<p>Posted on {{item.time_end | tiemFormate}}</p>
+													<p class="mnhtwocontentname" style="color: #333;margin-bottom: 0;">{{item.subject}}</p>
+												</div>
+											</div>
+										</a>
+									</div>					
+								</ul>
+								<div class="nothingImg" v-show="repList==''">
+									<img src="../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>
+							</div>
+						</div>
+					</div>-->
+					<!--竞赛-->
+					<!--<div id="comp-item" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll comp">
+								<ul class="mui-table-view">
+									<div class="mui-card" v-for="item in compList" v-cloak track-by="$index">
+										<a dataid='3' data-title-type="transparent_native" href="mnhCompetition.html" @tap="compsearchGoto($event,item.id)">
+											<div class="mui-card-header mui-card-media">
+												<img :src="item.img_small" />
+											</div>
+											<div class="mui-card-content">
+												<div class="mui-card-content-inner">
+													<p class="mnhthreecontentname" style="font-size: 16px; color: #333333;">{{item.subject}}</p>
+													<p style="font-size: 12px;">主办方：{{item.owner}}</p>
+													<p style="font-size: 12px; color: #333333;">比赛时间：{{item.time_start | tiemFormate}} - {{item.time_end | tiemFormate}}</p>
+													<p style="font-size: 12px;">{{item.join_num}} 参与 | {{item.focus}} 关注 | {{{item.match_activity_form}}} </p>
+												</div>
+											</div>
+											<div class="mnh_banner_nav_state" :class="{compDuring:item.status_info=='火热进行中',compFinish:item.status_info=='活动已结束'}">{{item.status_info}}</div>
+										</a>
+									</div>					
+								</ul>
+								<div class="nothingImg" v-show="compList==''">
+									<img src="../images/nothing.png"/>
+									<p>暂无数据!</p>
+								</div>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/mui.pullToRefresh.js"></script>
+		<script type="text/javascript" src="../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/jnop.js"></script>
+		<!--页面跳转2-->
+		<script src="../js/ajax/mnhHuodongcontent.js" type="text/javascript" charset="utf-8"></script>
+	
+		<script type="text/javascript" src="../js/store.min.js"></script>
+		<script type="text/javascript" src="../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script type="text/javascript" src="../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../js/mhsearchlist.js"></script>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

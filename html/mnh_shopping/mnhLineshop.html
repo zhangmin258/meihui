@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>线下实体</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+	</head>
+	<style type="text/css">
+		html,
+		body {
+			background-color: #F7F7F7;
+		}
+		.mui-content{
+			background: none;
+		}
+		.mui-bar {
+			background-color: #FF6699;
+		}
+		
+		.mui-bar-nav {
+			-webkit-box-shadow: none;
+			box-shadow: none
+		}
+		
+		a {
+			color: #FFFFFF;
+		}
+		
+		.mui-title {
+			color: #FFFFFF;
+		}
+		.mui-content>.mui-table-view:first-child {
+			margin-top: 0;
+		}
+		
+		.mui-table-view .mui-media-object {
+			line-height: 80px;
+			max-width: 80px;
+			height: 80px
+		}
+		
+		.mui-media-body {
+			margin-top: 10px;
+		}
+		/*清楚边线*/
+		
+		.mui-table-view-cell:after {
+			background-color: initial
+		}
+		
+		.mui-table-view:before {
+			background-color: initial;
+		}
+		
+		.mui-table-view:after {
+			background-color: inherit
+		}
+		
+		.mui-table-view-cell {
+			margin-bottom: 5px;
+			background-color: #FFFFFF;
+		}
+		
+		.mui-table-view {
+			background-color: initial
+		}
+		.mui-pull-bottom-tips{
+			background-color: none;
+		}
+	</style>
+
+	<body id="lineShopBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">线下实体</h1>
+		</header>
+		
+		<div id="lineShop-contet" class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media" v-for="item in shopList" v-cloak track-by="$index" @tap="goShopDetail(item.id)">
+					<img class="mui-media-object mui-pull-left" :src="item.img_small">
+					<div class="mui-media-body">{{item.name}}
+						<p class="mui-ellipsis-2">{{item.detail}}</p>
+					</div>
+				</li>			
+			</ul>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../../js/mnhLineshop.js"></script>		
+	</body>
+</html>

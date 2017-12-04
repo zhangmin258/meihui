@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>活动详情页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<link rel="stylesheet" href="../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhcontentnav.css" />	
+	</head>
+
+	<body id="navBody">
+		<!--数据列表-->
+		<div class="mui-content">
+			<!--静态图片-->
+			<img id="img1" :src="navData.img_small" />
+			<!--简单详情内容-->
+			<div class="mnh_nav_content">
+				<div class="mnh_nav_content_tit">{{navData.subject}}</div>
+				<div class="mnh_nav_content_liu">浏览：{{navData.see}}  &nbsp;&nbsp;关注：{{navData.focus}}</div>
+				<div class="mnh_nav_content_time">时间： {{navData.time_start | tiemFormate}}- {{navData.time_end | tiemFormate}}</div>
+				<div class="mnh_nav_content_addes">地点： {{navData.province+navData.city+navData.area+navData.address}}</div>
+				<div class="mnh_nav_content_Sponsor">主办方： {{navData.owner}}</div>
+				<div class="mnh_nav_content_Cost">费用：<span style="color: #acfb6b;">{{navData.price}}</span></div>
+				<div class="mnh_nav_content_number">人数：{{navData.number}}</div>
+			</div>
+			<div class="mnhContnet">
+				{{navData.detail}}
+			</div>
+			<div class="mnhpeople" v-if="navData.activity_join" v-show="navData.activity_join.length>0">
+				<div class="mnhpeople_tit">参与者:</div>
+				<div class="mnh_mud_po" v-if="navData.activity_join"> 
+					<div class="mnh_mud_po_img" v-for="item in navData.activity_join" v-cloak track-by="$index" v-show="$index<8">
+						<img :src="item.app_logo" />
+					</div>
+					<div class="mnh_mud_po_more" v-show="navData.activity_join.length>8">...</div>
+				</div>
+			</div>
+			<!-- -->
+			<div class="mnhcomment" v-if="navComList" v-show="navComList.length>0">
+				<div class="mnhcommentText">全部讨论：</div>
+				<ul class="mnhcommentcontent" v-for="item in navComList" v-cloak track-by="$index">
+					<li class="mnhcommentcontent_name">
+						<img class="mnhcommentcontent_nameimg" :src="item.app_logo" />
+						<div class="mnhcommentcontent_nametext">{{item.name}}</div>
+						<p class="mui-pull-right">{{item.timestamp}}</p>
+					</li>
+					<li class="mnhcommentcontent_text">
+						<p>{{item.content}}</p>
+					</li>
+				</ul>
+				<button type="button" class="mui-btn mui-btn-block" @tap="loadMore()" v-show="pageNumber<totalPage">点击加载更多</button>				
+			</div>
+		</div>
+		<footer> 
+			<!--<div class="mnhfooter mnhxx">￥{{navData.price}}</div>  -->
+			<div class="mnhfooter mnhxx"><span class="mui-icon mui-icon-person"></span> <span>{{navData.join_number}}</span></div>
+			<!--关注-->
+			<div class="mnhfooter_s icomoon icon-followes" address="subTaolun.html" @tap="actFocus()" :class="{ygz:isFocus=='未关注'}"></div>
+			<!--发表讨论-->
+			<div class="mnhfooter_s icomoon icon-comment"></div>
+			<!--分享-->
+			<div class="mnhfooter_s mui-icon mui-icon mui-icon-redo" onclick="shareHref()"></div>
+			<button class="mui-btn-danger mnhfooterbutton" @tap="actSingup()" :class="{yjbm:isEnroll=='已经报名'}">{{isEnroll}}</button>
+		</footer>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	
+	<script src="../js/page.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/jnop.js"></script>
+	
+	<script type="text/javascript" src="../js/store.min.js"></script>
+	
+	<!--加载框-->
+	<script type="text/javascript" src="../js/jiazai.js"></script>
+	<script type="text/javascript" src="../js/ajax/url.js"></script>
+	
+	
+	<script type="text/javascript" src="../js/vue.js"></script>
+	<script type="text/javascript" src="../js/vue-resource.js"></script>
+	<script type="text/javascript" src="../js/mnhcontentnav.js"></script>
+	<!--分享-->
+	<script src="../js/upload/tn_share.js" type="text/javascript" charset="utf-8"></script>
+</html>
+
+
+
+
+
+
+
+
+
+

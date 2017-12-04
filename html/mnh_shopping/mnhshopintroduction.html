@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>实体店-详情</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css"/>
+	</head>
+	<style type="text/css">
+		html,
+		body {
+			background-color: #fff;
+		}
+		.mui-title{
+			font-size: 16px;
+		}
+		.mui-bar {
+			background-color: #FFFFFF;
+		}
+		
+		.mui-bar-nav {
+			-webkit-box-shadow: none;
+			box-shadow: none
+		}
+		
+		a {
+			color: #000;
+		}
+		
+		.mui-title {
+			color: #000;
+		}
+		.mnh_content{
+			-webkit-box-shadow: 0 1px 6px #ccc;
+	        box-shadow: 0 1px 6px #ccc;
+			width: 100%;
+			float: left;
+			background-color: #fff;
+		}
+		.mnh_content_logo{
+			display: block;
+			width: 80px;
+			height: 80px;
+			border-radius: 6px;
+			margin: -40px auto 0 auto;
+		}
+		h4{
+			font-weight: 500;
+			text-align: center;
+			line-height:36px;
+		}
+		.mnh_content p{
+			padding: 0 12px;
+			text-indent:2em;
+		}
+		.mnh_banner_img{
+			width: 100%;
+			display: block;
+		}
+		.mnh_content_tit{
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 40px;
+			margin-left: 12px;
+		}
+		.mnh_content_text{
+			margin-left: 40px;
+			font-size: 14px;
+			color: #888888;
+			line-height: 22px;
+		}
+		.mnh_bottom{
+			width: 100%;
+			height: 44px;
+			background-color: #FFFFFF;
+			float: left;
+			margin-top: -1px;
+		}
+	</style>
+	<body id="shopBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">{{shopContent.name}}</h1>
+		</header>
+		<div style="width: 100%;height: 129px; background-color:#F7F7F7;"></div>
+		<div class="mnh_content">
+			<img class="mnh_content_logo" :src="shopContent.img_small"/>
+			<h4>{{shopContent.name}}</h4>
+			<p>{{shopContent.detail}}</p>
+			<img class="mnh_banner_img" :src="shopContent.img_big"/>
+			<span class="mnh_content_tit">门店信息：</span>
+			<!--<div class="mnh_content_text">地址：{{shopContent.province+shopContent.city+shopContent.area+shopContent.address}}</div>-->
+			<div class="mnh_content_text">地址：{{shopContent.address}}</div>
+			<div class="mnh_content_text">联系方式：{{shopContent.phone}}</div>
+			<div class="mnh_content_text">邮箱：{{shopContent.email}}</div>
+		</div>
+		<div class="mnh_bottom"></div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>			
+		<script type="text/javascript" src="../../js/mnhshopintroduction.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+
+
+
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	border: none;
+}
+
+
+p{
+	margin-bottom: 0;
+}
+
+
+.haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+
+.mui-bar{
+	width: 100%;
+	height: 64px;
+	background: #ff6797;
+		-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.mui-content{
+	padding:80px 15px 15px 15px;
+	background: white;
+}
+
+
+
+textarea::-webkit-input-placeholder{
+	font-size: 14px;
+}
+
+
+ .advise-content textarea{
+	width: 100%;
+	height: 250px;	
+}
+
+
+#advise-btn{
+	background: #FF6797;
+	color: white;
+	border: none;
+	padding: 6px 25px;
+}
+
+
+

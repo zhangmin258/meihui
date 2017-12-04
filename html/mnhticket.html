@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>电子票</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhtit.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css"/>
+	</head>
+
+	<body id="ticketBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">电子票</h1>
+			<!--<a class="mui-action-menu mui-icon mui-pull-right" href="">查看活动</a> ../images/1504575192.png-->
+		</header>
+		<div class="mui-content">
+			<div class="mnhticketcontent">
+				<div class="mnhticketcontenttit">
+					<div class="mnhticketcontentnav">
+						<div class="mnhticketcontentnavmoeny">单人通票<span>￥{{ticketContent.price}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>1份</span></div>
+						<div class="mnhticketcontentnavtime">购票时间：<span>{{ticketContent.time}}</span></div>
+						<div class="mnhticketcontentnavtites">电子票</div>
+						<div class="mnhticketcontentnaverweima"><img :src="ticketContent.qrcode"/></div>
+						<div class="mnhticketcontentnavma">{{ticketContent.rcode_number}}</div>
+						<div class="mnhticketcontentnavX">
+							<div class="mnhticketcontentnavXY"></div>
+							<div class="mnhticketcontentnavXXX"></div>
+							<div class="mnhticketcontentnavXZ"></div>
+						</div>
+						<div class="mnhticketcontenttitname">活动名称：{{ticketContent.subject}}</div>
+						<div class="mnhticketcontenttittime">活动时间： {{ticketContent.time_start | timeFormate}} - {{ticketContent.time_end | timeFormate}} </div>
+						<div class="mui-clearfix mnhticketcontenttitaddes"><span>活动地点： </span><span>{{ticketContent.province}}{{ticketContent.city}}{{ticketContent.area}}&nbsp;{{ticketContent.address}}</span></div>						
+					</div>
+				</div>
+			</div>
+		</div>		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/store.min.js"></script>
+		<script type="text/javascript" src="../js/ajax/url.js"></script>
+		
+		<script src="../js/page.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script type="text/javascript" src="../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../js/mnhticket.js"></script>
+	</body>
+</html>
+
+

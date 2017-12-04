@@ -1,0 +1,494 @@
+{
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "html/tab-webview-subpage-about.html",
+      "fonts/mui.ttf",
+      "fonts/iconfont.ttf",
+      "js/util.js",
+      "html/tab-webview-subpage-chat.html",
+      "js/homejs.js",
+      "images/logo_img01@3x.png",
+      "images/logo_img05@3x.png",
+      "js/mui.pullToRefresh.material.js",
+      "images/banner_img02@3x.png",
+      "images/logo_img08@3x.png",
+      "images/logo_img07@3x.png",
+      "images/banner01@3x.png",
+      "css/header.css",
+      "css/home.css",
+      "images/banner@3x.png",
+      "images/logo_img03@3x.png",
+      "images/banner_img01@3x.png",
+      "js/common.js",
+      "js/jquery-3.1.1.min.js",
+      "css/icostyle.css",
+      "js/page.js",
+      "images/logo_img02@3x.png",
+      "images/logo_img04@3x.png",
+      "images/logo_img06@3x.png",
+      "html/mnhshophome.html",
+      "images/banner_img03@3x.png",
+      "js/ajax/mnhHuodongcontent.js",
+      "fonts/icomoon.ttf",
+      "images/banner03@3x.png",
+      "js/mui.pullToRefresh.js",
+      "images/banner_img07@3x.png",
+      "images/banner02@3x.png",
+      "images/banner_img06@3x.png",
+      "images/banner_img05@3x.png",
+      "images/banner04@3x.png",
+      "js/vue-resource.js",
+      "js/vue.js",
+      "js/ajax/url.js",
+      "js/index.js",
+      "js/jnop.js",
+      "js/store.min.js"
+    ],
+    "refer": [
+      "html/tab-webview-subpage-setting.html",
+      "html/tab-webview-subpage-chat.html",
+      "html/tab-webview-subpage-contact.html",
+      "html/tab-webview-subpage-about.html",
+      "html/new-webview.html",
+      "html/mnhshophome.html",
+      "html/mnhCompetition.html",
+      "html/city.html",
+      "html/search.html",
+      "html/chart-room.html",
+      "html/mnhcontentnav.html",
+      "html/land/login.html",
+      "html/mnhcode.html",
+      "html/mnhactivities.html",
+      "html/chart-room1.html",
+      "html/land/guide.html",
+      "html/chart-room2.html"
+    ]
+  },
+  "launch.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "html/tab-webview-subpage-about.html"
+    ],
+    "refer": [
+      "html/tab-webview-subpage-setting.html",
+      "html/tab-webview-subpage-chat.html",
+      "html/tab-webview-subpage-contact.html",
+      "html/tab-webview-subpage-about.html"
+    ]
+  },
+  "html/tab-webview-subpage-setting.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": []
+  },
+  "html/tab-webview-subpage-about.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "js/util.js"
+    ],
+    "refer": []
+  },
+  "html/tab-webview-subpage-chat.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "html/tab-webview-subpage-contact.html": {
+    "resources": [
+      "images/60x60.gif",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/personal.js",
+      "css/personal.css",
+      "images/head.png",
+      "js/jnop.js",
+      "js/jquery-3.1.1.min.js",
+      "css/icostyle.css",
+      "css/header.css"
+    ],
+    "refer": [
+      "html/myown/wallet.html",
+      "html/myown/order.html",
+      "html/myown/function.html",
+      "html/myown/common-setting.html",
+      "html/myown/personal-setting.html",
+      "html/myown/attestation.html"
+    ]
+  },
+  "html/new-webview.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/mnhshophome.html": {
+    "resources": [
+      "js/jnop.js",
+      "images/5.jpg",
+      "images/qianggou@3x.png",
+      "images/shop01@3x.png",
+      "css/mnhshophome.css",
+      "images/7.jpg",
+      "js/ajax/mnhgroups.js",
+      "images/shop02@3x.png",
+      "images/4.jpg",
+      "images/0.jpg",
+      "images/8.jpg",
+      "images/shop03@3x.png",
+      "images/shopbanner.png",
+      "images/shopbanner@3x.png",
+      "images/6.jpg",
+      "images/shop04@3x.png",
+      "images/shop06@3x.png",
+      "images/2.jpg",
+      "images/1.jpg",
+      "images/3.jpg",
+      "css/header.css",
+      "js/jquery-3.1.1.min.js",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "js/page.js",
+      "css/mui.min.css",
+      "images/logo_img04@3x.png",
+      "fonts/mui.ttf",
+      "fonts/icomoon.ttf",
+      "js/jquery.roundabout.min.js",
+      "js/mnhshophome.js",
+      "images/banner.png",
+      "css/animate-tool.css",
+      "js/jquery.fancybox.pack.js",
+      "js/mnhshophome1.js"
+    ],
+    "refer": [
+      "html/mnh_shopping/mnhthishot.html",
+      "html/mnh_shopping/mnhgroups.html",
+      "html/mnhcar/mnhcar.html",
+      "html/mnh_shopping/mnhshoppingcontent.html",
+      "html/mnh_shopping/mnhshoppingcontentmx.html",
+      "html/mnh_shopping/mnhclassification.html",
+      "html/mnh_shopping/mnhLineshop.html"
+    ]
+  },
+  "html/myown/wallet.html": {
+    "resources": [
+      "js/wallet.js",
+      "css/wallet.css",
+      "js/jnop.js",
+      "js/jquery-3.1.1.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "images/head.png"
+    ],
+    "refer": [
+      "html/myown/wallet-detail.html"
+    ]
+  },
+  "html/myown/wallet-detail.html": {
+    "resources": [
+      "css/wallet-detail.css",
+      "js/wallet-detail.js",
+      "js/jquery-3.1.1.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "html/myown/wallet-detail-refresh.html"
+    ],
+    "refer": [
+      "html/myown/wallet-detail-refresh.html"
+    ]
+  },
+  "html/mnh_shopping/mnhthishot.html": {
+    "resources": [
+      "js/mui.pullToRefresh.js",
+      "images/2.jpg",
+      "js/jnop.js",
+      "images/5.jpg",
+      "js/mui.pullToRefresh.material.js",
+      "fonts/mui.ttf",
+      "images/7.jpg",
+      "images/3.jpg",
+      "css/header.css",
+      "images/4.jpg",
+      "images/0.jpg",
+      "images/8.jpg",
+      "js/jquery-3.1.1.min.js",
+      "images/1.jpg",
+      "css/mui.min.css",
+      "images/logo_img04@3x.png",
+      "images/6.jpg",
+      "css/mnhthishot.css",
+      "css/mnhshophome.css",
+      "js/mui.min.js"
+    ],
+    "refer": []
+  },
+  "html/mnh_shopping/mnhgroups.html": {
+    "resources": [
+      "js/jnop.js",
+      "fonts/mui.ttf",
+      "images/shop01@3x.png",
+      "css/mnhshophome.css",
+      "js/ajax/mnhgroups.js",
+      "images/shop02@3x.png",
+      "css/header.css",
+      "images/shop03@3x.png",
+      "js/jquery-3.1.1.min.js",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/shopbanner@3x.png",
+      "images/shop04@3x.png",
+      "css/mnhgroups.css"
+    ],
+    "refer": [
+      "html/mnh_shopping/mnhshopgroupscontent.html"
+    ]
+  },
+  "html/mnh_shopping/mnhshopgroupscontent.html": {
+    "resources": [
+      "images/shoppingimges@3x.png",
+      "css/mnhcontentnav.css",
+      "images/shopping01@3x.png",
+      "images/logo_img01@3x.png",
+      "js/jnop.js",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "fonts/icomoon.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "html/mnhcar/mnhcar.html": {
+    "resources": [
+      "css/mnhheadercolor/headercolor.css",
+      "js/jnop.js",
+      "js/jquery-3.1.1.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "images/1.jpg",
+      "css/mui.min.css",
+      "css/mnhcar.css",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/mnh_shopping/mnhshoppingcontent.html": {
+    "resources": [
+      "js/jnop.js",
+      "js/jquery-3.1.1.min.js",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "css/mnhshoppingcontent.css",
+      "fonts/icomoon.ttf",
+      "css/mui.min.css",
+      "css/mnhcontentnav.css",
+      "images/shopping01@3x.png"
+    ],
+    "refer": []
+  },
+  "html/mnh_shopping/mnhshoppingcontentmx.html": {
+    "resources": [
+      "js/jnop.js",
+      "js/jquery-3.1.1.min.js",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "css/mnhshoppingcontent.css",
+      "fonts/icomoon.ttf",
+      "css/mui.min.css",
+      "images/shoppingimges@3x.png",
+      "images/shopping01@3x.png",
+      "css/mnhcontentnav.css"
+    ],
+    "refer": []
+  },
+  "html/myown/wallet-detail-refresh.html": {
+    "resources": [
+      "js/wallet-detail-refresh.js",
+      "js/jquery-3.1.1.min.js",
+      "css/wallet-detail.css",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "html/mnh_shopping/mnhclassification.html": {
+    "resources": [
+      "images/2.jpg",
+      "js/jnop.js",
+      "css/mnhclassification.css",
+      "images/5.jpg",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "images/1.jpg",
+      "css/mui.min.css",
+      "images/3.jpg",
+      "images/4.jpg",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/mnh_shopping/mnhLineshop.html": {
+    "resources": [
+      "js/jnop.js",
+      "js/jquery-3.1.1.min.js",
+      "images/shopimg2@3x.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "images/shopimg1@3x.png",
+      "images/shopimg0@3x.png",
+      "images/shopimg3@3x.png",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/mnhCompetition.html": {
+    "resources": [
+      "images/logo_img01@3x.png",
+      "images/logo_img05@3x.png",
+      "fonts/icomoon.ttf",
+      "css/mnhcontentnav.css",
+      "images/logo_img08@3x.png",
+      "images/logo_img07@3x.png",
+      "images/logo_img03@3x.png",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "js/page.js",
+      "images/logo_img02@3x.png",
+      "css/mui.min.css",
+      "images/logo_img04@3x.png",
+      "images/logo_img06@3x.png",
+      "images/bannermei@3x.png"
+    ],
+    "refer": []
+  },
+  "html/city.html": {
+    "resources": [
+      "js/common.js",
+      "js/jquery-3.1.1.min.js",
+      "css/search.css",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "css/common.css",
+      "css/mui.min.css",
+      "css/mui.indexedlist.css",
+      "images/stoprem.svg",
+      "js/mui.indexedlist.js",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/search.html": {
+    "resources": [
+      "fonts/icomoon.ttf",
+      "js/common.js",
+      "css/search.css",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "css/common.css",
+      "css/mui.min.css",
+      "images/stoprem.svg",
+      "css/header.css",
+      "js/search.js"
+    ],
+    "refer": []
+  },
+  "html/chart-room.html": {
+    "resources": [
+      "html/arclist/1.gif",
+      "js/chart-room.js",
+      "js/jquery-3.1.1.min.js",
+      "js/jquery.qqFace.js",
+      "images/chat-men1.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/chart-room.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "html/mnhcontentnav.html": {
+    "resources": [
+      "images/logo_img01@3x.png",
+      "images/logo_img05@3x.png",
+      "images/bannerimng.jpg",
+      "fonts/icomoon.ttf",
+      "css/mnhcontentnav.css",
+      "images/logo_img08@3x.png",
+      "images/logo_img07@3x.png",
+      "images/logo_img03@3x.png",
+      "css/icostyle.css",
+      "js/mui.min.js",
+      "js/page.js",
+      "images/logo_img02@3x.png",
+      "css/mui.min.css",
+      "images/logo_img04@3x.png",
+      "images/logo_img06@3x.png"
+    ],
+    "refer": [
+      "html/land/login.html"
+    ]
+  },
+  "html/myown/order.html": {
+    "resources": [
+      "js/mui.pullToRefresh.js",
+      "js/order.js",
+      "js/jnop.js",
+      "js/jquery-3.1.1.min.js",
+      "images/order1.png",
+      "js/mui.min.js",
+      "js/mui.pullToRefresh.material.js",
+      "fonts/mui.ttf",
+      "css/order.css",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "html/myown/function.html": {
+    "resources": [
+      "images/function4.png",
+      "js/jnop.js",
+      "images/function2.png",
+      "fonts/mui.ttf",
+      "css/evaluate.css",
+      "images/function1.png",
+      "js/jquery-3.1.1.min.js",
+      "images/function5.png",
+      "images/function6.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/function3.png",
+      "js/function.js"
+    ],
+    "refer": [
+      "html/myown/ticket.html"
+    ]
+  },
+  "html/myown/ticket.html": {
+    "resources": [
+      "images/ticket1.png",
+      "css/ticket.css",
+      "js/ticket.js"
+    ],
+    "refer": []
+  },
+  "html/myown/common-setting.html": {
+    "refer": [
+      "html/land/login.html"
+    ]
+  }
+}

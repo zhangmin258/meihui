@@ -1,0 +1,123 @@
+html,
+body {
+	background-color: #F7F7F7;
+}
+
+
+.haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+
+.mui-bar{
+	width: 100%;
+	height: 64px;
+	background: #ff6797;
+	z-index: 100;
+}
+
+.mui-bar-nav~.mui-content{
+	padding-top: 64px;
+}
+
+
+.mui-title {
+	color: #fff;
+}
+
+.mui-action-back {
+	color: #fff;
+}
+
+.mnhname {
+	font-size: 14px;
+	color: #333333;
+}
+
+.mnhxianmoney span {
+	font-size: 11px;
+}
+
+.mnhyuanmoney {
+	color: #CCCCCC;
+}
+
+.mui-bar-nav~.mui-content .mui-pull-top-pocket {
+	top: 64px
+}
+
+.mui-table-view .mui-media-object {
+	line-height: 80px;
+	max-width: 80px;
+	height: 80px
+}
+
+.mui-media-body {
+	margin-top: 10px;
+}
+
+
+/*清楚边线*/
+
+.mui-table-view-cell:after {
+	background-color: initial
+}
+
+.mui-table-view:before {
+	background-color: initial;
+}
+
+.mui-table-view:after {
+	background-color: inherit
+}
+
+.mui-table-view-cell {
+	margin-bottom: 5px;
+	background-color: #FFFFFF;
+}
+
+.mui-table-view {
+	background-color: initial
+}
+
+.mnh_content_tit {
+	background-color: #F7F7F7;
+}
+
+.mnh_titcolor {
+	color: #333333;
+}
+
+.mnh_titcolor1 {
+	color: #FF6699;
+}
+
+.mnh_titcolor2 {
+	color: #CCCCCC;
+	text-decoration: line-through;
+	font-size: 12px;
+}
+
+.mui-media {
+	position: relative;
+}
+
+.mhnbuttom {
+	position: absolute;
+	background-color: #FF6699;
+	color: #FFFFFF;
+	padding: 6px 20px;
+	border-radius: 50px;
+	right: 12px;
+	top: 60px;
+	font-size: 14px;
+}
+
+a {
+	color: #FFFFFF;
+	
+}
+a:hover{
+	color: #FFFFFF;
+}

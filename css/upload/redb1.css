@@ -1,0 +1,61 @@
+.grab-main {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+}
+
+.gold-juns {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 120px;
+	height: 120px;
+	background-color: none;
+	z-index: 200;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/*启动*/
+
+.redok {
+	position: fixed;
+	z-index: 99;
+	top: 40%;
+	left: 50%;
+	width: 30%;
+	margin-left: -15%;
+	opacity: 0;
+	display: none;
+}
+
+
+/*结束*/
+
+.redokimg,
+.redokimgno{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	/*background-color: rgba(0,0,0,0.8);*/
+	z-index: 21;
+}
+
+.redokimg img,
+.redokimgno img{
+	width: 80%;
+	margin: 40% 0 0 10%;
+}
+
+.redokimgtext,
+.redokimgtextno{
+	font-size: 14px;
+	text-align: center;
+	margin-top: -14%;
+}
+.redokimgtext span,
+.redokimgtextno span{
+	color: #FF6699;
+}

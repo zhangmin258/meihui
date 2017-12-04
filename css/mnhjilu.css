@@ -1,0 +1,31 @@
+header{
+	background-color: #ff6699 !important;
+}
+.mui-title{
+	color: #FFFFFF;
+}
+a{
+	color: #FFFFFF;
+}
+
+.mui-bar-nav {
+	top: 0;
+	 -webkit-box-shadow: none; 
+	 box-shadow: none; 
+}
+
+.mnhcontent{
+	width: 100%;
+	float: left;
+	margin-top: 64px;
+}
+.mnhcontenttext{
+	width: 100%;
+	line-height: 40px;
+	padding-left: 12px;
+	color: #666666;
+	font-size: 14px;
+}
+.mui-media-object{
+	border-radius: 50%;
+}

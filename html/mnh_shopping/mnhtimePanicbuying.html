@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>限时抢购</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhheadercolor/headercolor.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhtimePanicbuying.css" />
+	</head>
+
+	<body id="rushbuyBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">限时抢购</h1>
+			<span class="mui-icon mui-icon-reload mui-pull-right" @tap="rushRefresh()"></sapn>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active"  v-cloak track-by="$index" href="#rushItem0" v-text="firstbuyTitle.hours"></a>
+						<a class="mui-control-item"  v-for="item in rushbuyTitle" v-cloak track-by="$index" href="#rushItem{{$index+1}}" v-text="item.hours"></a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<!--第一个标题内容-->
+					<div id="rushItem0" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media" v-for="item in firstRushbuy" v-cloak track-by="$index">
+										<a href="javascript:void(0)">
+											<div class="mnhimgbanner"><img class="mui-media-object mui-pull-left" :src="item.img"></div>
+											<div class="mui-media-body">
+												<p class="mui-ellipsis mnhtext">{{item.goods_name}}</p>
+												<p class='mui-ellipsis mnhmoney'><span>秒杀价</span> ￥{{item.time_price}}</p>
+												<p class="mui-ellipsis mnhyuanmoeny">原价：￥{{item.price}}</p>
+												<p class="mnhmud"><span class="mnhmudtext">已售 {{item.percent | quzheng}}%</span><span class="mnhmudlen"><i></i></span></p>
+												<button class="mui-btn mui-btn-danger mnhbutton" dataname ="{{item.goods_name}}" dataId = "{{item.goods_id}}" limitId="{{item.id}}" data-title-type="transparent_native" href="mnhrushbuycontent.html" :class="{mnhbuttoncy:item.status=='立即参与'}" disabled="{{item.status=='活动结束' || item.status=='敬请期待'}}" @tap="goRushDetail($event,item.id)">{{item.status}}</button>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--其余标题内容-->
+					<div id="rushItem{{$index+1}}" class="mui-slider-item mui-control-content" v-for="item in otherRushbuy" v-cloak track-by="$index">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-media" v-for="item2 in item.goods" v-cloak track-by="$index">
+										<a href="javascript:void(0)">
+											<div class="mnhimgbanner"><img class="mui-media-object mui-pull-left" :src="item2.img"></div>
+											<div class="mui-media-body">
+												<p class="mui-ellipsis mnhtext">{{item2.goods_name}}</p>
+												<p class='mui-ellipsis mnhmoney'><span>秒杀价</span> ￥{{item2.time_price}}</p>
+												<p class="mui-ellipsis mnhyuanmoeny">原价：￥{{item2.price}}</p>
+												<p class="mnhmud"><span class="mnhmudtext">已售 {{item2.percent | quzheng}}%</span><span class="mnhmudlen"><i></i></span></p>
+												<button class="mui-btn mui-btn-danger mnhbutton" dataname ="{{item2.goods_name}}" dataId ="{{item2.goods_id}}" limitId="{{item2.id}}" data-title-type="transparent_native" href="mnhrushbuycontent.html" :class="{mnhbuttoncy:item2.status=='立即参与'}" disabled="{{item2.status=='活动结束' || item2.status=='敬请期待'}}" @tap="goRushDetail($event,item2.id)">{{item2.status}}</button>
+											</div>
+										</a>
+									</li>									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="../../js/mui.pullToRefresh.js"></script>
+		<script src="../../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		
+		<!--限时抢购页面跳转专用-->
+		<script type="text/javascript" src="../../js/ajax/mnhgroupsqianggou.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../../js/mnhtimePanicbuying.js"></script>
+	</body>
+
+</html>

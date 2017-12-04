@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>地址管理</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/personal.css"/>
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" href="../../css/address-list.css" />
+	</head>
+
+	<body id="addManageBOdy">
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">地址管理</p>
+		</header>
+		<div class="mui-scroll-wrapper address-list">						
+			<div class="mui-scroll">
+				<ul class="mui-table-view" v-if="addManageList" v-for="item in addManageList" v-cloak track-by="$index">
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn mui-btn-yellow" @tap="editAdd(item.id,$event)">编辑</a>
+							<a class="mui-btn mui-btn-red" @tap="delAdd($event,item.id)">删除</a>
+						</div>
+						<div class="mui-slider-handle">
+							<p class="mui-clearfix address-list-men" style="width: 100%;"><span class="mui-pill-left">{{item.name}}({{item.id}})</span><span class="mui-pull-right">{{item.phone}}</span></p>
+							<p class="address-list-address" style="width: 100%;">{{item.province+item.city+item.area+item.address}}</p>
+							<p class="mui-pull-left default" v-show="item.is_default==1">[{{item.is_default | default}}]</p>
+						</div>
+					</li>
+				</ul>	
+			</div>			
+		</div>		
+		<div class="address-list-bottom">
+			<button type="button" class="mui-btn mui-btn-default addNewaddress-btn" @tap="addAdd()">添加新地址</button>
+		</div>		
+		
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>			
+
+		<script type="text/javascript" src="../../js/jnop.js"></script>
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>		
+		
+		<script type="text/javascript" src="../../js/address-manage.js"></script>
+	</body>
+
+</html>

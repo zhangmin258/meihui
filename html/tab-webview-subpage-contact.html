@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" href="../css/icostyle.css" />
+		<link href="../css/personal.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		.xu_headerback {
+			width: 100%;
+			height: 80px;
+			background-color: #FFFFFF;
+		}
+		
+		.xu_headerimg {
+			width: 60px;
+			height: 60px;
+			float: left;
+			margin: 10px 12px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		
+		.xu_headerimg img {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.xu_headercontent {
+			float: left;
+			padding-top: 8px;
+		}
+		
+		.xu_headercontent p {
+			color: #333333;
+		}
+		
+		.xu_headerback a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.mui-icon-arrowright {
+			float: right;
+			line-height: 80px;
+			margin-right: 7px;
+			color: #bbb;
+		}
+		
+		.mui-bar {
+			background-color: #FF6699;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+		
+		.xu_i_icon{
+			float: left;
+			margin-right: 12px;
+			margin-top: 4px;
+		}
+		.xu_i_icon img{
+			width: 24px;
+		}
+		
+		.xubackprivilege{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			z-index: 20;
+			background-color:rgba(0,0,0,0.5);
+			display: none;
+		}
+		
+		.xubackprivilegeco{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: -100%;
+		}
+		.xubackprivilegecontent{
+			width:80%;
+			float: left;
+			background-color: #fff;
+			margin: 30% 0 0 10%;
+			border-radius:9px;
+			padding: 20px 0 0 0;
+			overflow: hidden;
+		}
+		.xubackprivilegecontent p{
+			line-height: 22px;
+			padding: 5px 20px 0 20px;
+			font-size: 14px;
+			color: #333;
+		}
+		.xubackprivilege .mui-icon-close{
+			color: #fff;
+			font-size: 50px;
+			width: 100%;
+			text-align: center;
+			padding: 10% 0;
+		}
+		.xuprivilegebuttom{
+			display: block;
+			width: 100%;
+			background-color: #ff6699;
+			line-height: 44px;
+			text-align: center;
+			margin-top: 20px;
+			color: #fff;
+		}
+		.xuprivilegebuttom:hover{
+			color: #fff;
+		}
+		.mendjcode span{
+			color: #FF6699;
+		}
+	</style>
+
+	<body>
+		<!--协议-->
+		<div class="xubackprivilege">
+			<div class="xubackprivilegeco">
+			<div class="xubackprivilegecontent">
+				<p style="text-align: center; font-size:16px;line-height: 30px; font-weight: 600;">实名认证</p>
+				<p>1、享有会员尊贵身份标识 </p>
+				<p>2、享有线下全国各地姐妹实体店优惠折扣</p>
+				<p style="padding-bottom: 15px;">3、享有在线购买商城商品优惠折扣</p>
+				<a class="xuprivilegebuttom" href="myown/attestation.html">立即开通</a>
+			</div>
+			<div class="mui-icon mui-icon-close"></div>
+			</div>
+		</div>
+		<!--头部-->
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<p class="mui-title" style="color: white;">美人</p>
+		</header>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="infomation">
+					<ul class="xu_headerback">
+						<a href="myown/personal-setting.html">
+							<li class="xu_headerimg"><img src="../images/icon_header.png" /></li>
+							<li class="xu_headercontent">
+								<p class="nickname">loading</p>
+								<p class="mendj">普通用户</p>
+								<p class="mendjcode">美号：<span>123456</span></p>
+							</li>
+							<p class="mui-icon mui-icon-arrowright"></p>
+						</a>
+					</ul>
+					<ul class="mui-table-view privilege">
+						<li class="mui-table-view-cell Xuhprivilege" style="padding: 8px 15px;">
+							<div class="mui-navigate-right">
+								<p>
+									<span class="iconBig" style="width: 30%;"><img src="../images/i_th.svg"/></span>
+									<span style="text-align:right;">会员中心</span>
+									<!--<span style="color: #cc869e;">未登录</span>-->
+								</p>
+							</div>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" href="myown/wallet.html">
+								<p>
+									<span class="xu_i_icon"><img src="../images/i_q.svg"/></span>
+									<span>我的钱包</span>
+								</p>
+							</a>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" href="myown/order.html">
+								<p>
+									<span class="xu_i_icon"><img src="../images/i_d.svg"/></span>
+									<span>我的订单</span>
+								</p>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" href="myown/function.html">
+								<p>
+									<span class="xu_i_icon"><img src="../images/i_g.svg"/></span>
+									<span>功能中心</span>
+								</p>
+							</a>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<!--<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" href="myown/attestation.html">
+								<p>
+									<span class="xu_i_icon"><img src="../images/i_s.svg"/></span>
+									<span>实名认证</span>
+								</p>
+							</a>
+						</li>-->
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" href="myown/clause.html">
+								<p>
+									<span class="xu_i_icon"><img src="../images/i_f.svg"/></span>
+									<span>用户协议</span>
+								</p>
+							</a>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" href="myown/common-setting.html">
+								<p>
+									<span class="xu_i_icon"><img src="../images/i_t.svg"/></span>
+									<span>通用设置</span>
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/jnop.js"></script>
+		<script src="../js/personal.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>限时抢购产品-详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhcontentnav.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/icostyle.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhshoppingcontent.css"/>
+		<style type="text/css">
+			.mnhContnet{
+				padding: 0;
+			}
+			.mnhshoppng_T{
+				width: 86%;
+			}
+		</style>
+	</head>
+	<body id="rushbuyContentBody">
+		<!--数据列表-->
+		<div class="mui-content">
+			<!--静态图片-->
+			<div class="mui-scroll">
+				<!--轮播-->
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<img :src="lastProImg">
+						</div>
+						<!-- 第一张 -->
+						<div class="mui-slider-item" v-for="item in proImgList" v-cloak track-by="$index">
+							<img :src="item">
+						</div>
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<img :src="firstProImg">
+						</div>
+					</div>
+					<div class="mui-slider-indicator">
+						<div class="mui-indicator" v-for="item in proImgList" v-cloak track-by="$index" :class="{'mui-active':$index==0}"></div>
+					</div>
+				</div>
+				<!--简单详情内容-->
+				<div class="mnh_nav_content">
+					<div class="mnh_nav_content_tit mui-ellipsis-2">{{proData.name}}</div>
+					<div class="mnh_nav_content_liu">销量：{{proData.sell_num}} 点击率：{{proData.click}}</div>
+					<div class="mnh_nav_content_time"><span>抢购价：</span>￥{{proData.time_price}}</div>
+					<div class="mnh_nav_content_addes">原价：{{proData.price}}</div>
+				</div>
+				<!--属性选择-->
+				<div class="mnhContnet">
+					<div class="mnhContnet_tit">属性选择</div>
+					<ul class="mnhContnetattribute">
+						<li class="mnhContnetattribute_nav" v-for="item in attrList" v-cloak track-by="$index">
+							<div class="mnhContnetattribute_nav_tit mui-ellipsis">{{item.atr_name}}：</div>
+							<div class="mnhContnetattribute_nav_content">
+								<span v-for="item2 in item.ids" v-cloak track-by="$index"  @tap="getId($event,item2.id,item2.c_id)">{{item2.name}}</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<!---->
+				<div class="mnhContnet" id="proComment" v-if="commentList" v-show="commentList.length>0">
+					<div class="mnhContnet_tit" style="margin-bottom: 10px;">商品评价</div>
+					<div class="comment_list" v-if="commentList" v-for="item in commentList" v-cloak track-by="$index"  v-show="commentList.length>0">
+						<div class="mui-clearfix comment_type">
+							<p class="mui-pull-left comment_type_box"><img :src="item.app_logo"/><span>{{item.name}}</span></p>
+							<p class="mui-pull-right comment_type_time">{{item.timestamp}}</p>	
+						</div>
+						<p v-show="item.list.length>0" class="comment_img">
+							<img :src="item2.img" v-for="item2 in item.list"/>
+						</p>
+						<p class="comment-content">{{item.content}}</p>
+					</div>
+					<p class="loadMore" v-show="cpageNumber<ctotalPage" @tap="loadMore()">点击加载更多</p>
+				</div>	
+				<div class="mnhContnet" id="normalQuestion">
+					<div class="mnhContnet_tit">常见问题</div>
+					<!--后台富文本编辑器编辑-->
+				</div>
+				<div class="mnhContnet" id="introduction" style="border-bottom: none;margin-bottom: 49px;">
+					<div class="mnhContnet_tit">详情简介</div>  
+				</div>				
+			</div>
+			<footer>
+				<!--<div class="mnhshoppng_car mnhcarnum"  @tap="goCar()">
+					<p class="icomoon icon-ShoppingCart" style="font-size: 20px;margin: 4px 0;"></p>
+					<p style="font-size: 10px;">购物车</p>					
+				</div>-->
+				<!--<div class="mnhshoppng_car" @tap="collectPro()">
+					<p class="icomoon icon-Collection" style="font-size: 20px;margin: 4px 0;" :class="{collects:collect==true}"></p>
+					<p style="font-size: 10px;" :class="{collects:collect==true}">收藏</p>
+				</div>-->
+				<div class="mnhshoppng_car mnhcarnum" onclick="shareHref()">
+					<p class="mui-icon mui-icon-redo" style="font-size: 24px;margin: 4px 0;"></p>
+					<p style="font-size: 10px; margin-top:-4px;">分享</p>					
+				</div>
+				<!--<div class="mnhshoppng_T mnhcar" @tap="joinCar()">加入购物车</div>-->
+				<div class="mnhshoppng_T mnhshoppng_buy" @tap="buyPro()">立即购买</div>
+			</footer>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../../js/store.min.js"></script>
+	
+	<script type="text/javascript" src="../../js/jiazai.js"></script>
+	
+	<script type="text/javascript" src="../../js/ajax/url.js"></script>
+	<script type="text/javascript" src="../../js/store.min.js"></script>
+	
+	
+	<script type="text/javascript" src="../../js/vue.js"></script>
+	<script type="text/javascript" src="../../js/vue-resource.js"></script>	
+	
+	<script type="text/javascript" src="../../js/mnhrushbuycontent.js"></script>
+	<!--分享<-->	
+	<script src="../../js/upload/tn_share.js" type="text/javascript" charset="utf-8"></script>
+</html>
+
+
+
+
+

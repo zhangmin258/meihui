@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>团购-详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/icostyle.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhcontentnav.css" />
+		<link rel="stylesheet" href="../../css/mnhshopgroupscontent.css" />
+	</head>
+	<style type="text/css">
+		.mnhContnet{
+			padding: 0;
+		}		
+		.mnh_nav_content_time {
+			color: #FF6699;
+			font-size: 18px;
+			line-height: 30px;
+		}
+		
+		.mnh_nav_content_time span {
+			font-size: 14px;
+		}
+		
+		.mnh_nav_content_addes {
+			color: #CCCCCC;
+			text-decoration: line-through;
+		}
+		
+		.mui-slider-indicator .mui-indicator {
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			margin: 1px 2px;
+			cursor: pointer;
+			border-radius: 50%;
+			background: rgba(255, 102, 153, 0.2);
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+		
+		.mui-slider-indicator .mui-active.mui-indicator {
+			background: #ff6699
+		}
+		
+		.mui-bar {
+			background-color: #FF6699;
+		}
+		/*参团选择*/
+		
+		.mnhContnet_tit {
+			width: 100%;
+			line-height: 38px;
+			border-left: 3px solid #FF6699;
+			padding-left: 12px;
+		}
+		
+		.mui-table-view:before {
+			background-color: inherit;
+		}
+		
+		.mui-table-view:after {
+			background-color: inherit;
+		}
+		
+		.mui-media-object {
+			border-radius: 50%;
+		}
+		
+		.mnhshopgroupslogo {
+			line-height: 42px;
+			font-size: 16px;
+			width: 90px;
+			display: block;
+			float: left;
+		}
+		
+		.mnhshopgroupscontent {
+			float: right;
+		}
+		
+		.mnhshopgroupscontent_button {
+			float: right;
+		}
+		
+		.mnhshopgroupscontent_text {
+			float: right;
+		}
+		
+		.mnhshopgroupscontent_textmud {
+			text-align: right;
+			line-height: 42px;
+			color: #FF6699;
+			font-size: 12px;
+		}
+		
+		.mnhshopgroupscontent_textmoeny {
+			text-align: right;
+			font-size: 12px;
+			color: #CCCCCC;
+		}
+		
+		.mnhshopgroupscontent_button {
+			background-color: #FF6699;
+			color: #fff;
+			border-radius: 4px;
+			padding: 2px 4px;
+			margin: 8px 0 0 20px;
+			font-size: 14px;
+		}
+		
+		.mnhContnet_tit span {
+			float: right;
+			margin-right: 12px;
+		}
+		
+		.mnhContnetEnd{
+			font-size: 12px;
+			color: #C0C0C0;
+		}
+		
+		.mnhContnetname {
+			line-height: 40px;
+			margin-left: 12px;
+			font-size: 16px;
+		}
+		
+		.mnhContnetnavtext {
+			padding: 0 12px 10px 12px;
+			font-size: 14px;
+			color: #888888;
+		}
+		
+		.mnhshoppingimges {
+			width: 100%;
+			float: left;
+		}
+		
+		.mnhshoppng_car {
+			float: left;
+			width: 30%;
+			height: 100%;
+			background-color: #FFFFFF;
+		}
+		
+		.mnhshoppng_car {
+			text-align: center;
+		}
+		
+		.mnhshoppng_T {
+			width: 100%;
+			height: 49px;
+			display: block;
+			background-color: #FF6699;
+			border-radius: 0;
+			font-size: 14px;
+		}
+		.mnhshoppng_car {
+			width: 16%;
+		}
+		.mnhshoppng_T {
+			width: 84%;
+		}
+	</style>
+
+	<body id="groupscBody">
+		<!--数据列表-->
+		<div class="mui-content">
+			<!--静态图片-->
+			<div class="mui-scroll">
+				<!--轮播-->
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<img :src="lastGroupImg.img">
+						</div>
+						<!-- 第一张 -->
+						<div class="mui-slider-item" v-for="item in groupImgList"  v-cloak track-by="$index">
+							<img :src="item.img">
+						</div>
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<img :src="firstGroupImg.img">
+						</div>
+					</div>
+					<div class="mui-slider-indicator">
+						<div class="mui-indicator" v-for="item in groupImgList" v-cloak track-by="$index" :class="{'mui-active':$index==0}"></div>
+					</div>
+				</div>
+				<!--简单详情内容-->
+				<div class="mnh_nav_content">
+					<div class="mnh_nav_content_tit mui-ellipsis-2">{{groupContent.name}}</div>
+					<div class="mnh_nav_content_liu">销量：{{groupContent.sell_num}} 点击率：{{groupContent.click}}</div>
+					<div class="mnh_nav_content_time"><span>{{groupContent.group_people}}人拼团价：</span>￥{{groupContent.group_price}}</div>
+					<div class="mnh_nav_content_addes">原价：{{groupContent.price}}</div>
+				</div>
+				
+				<!--属性选择-->
+				<div class="mnhContnet">
+					<div class="mnhContnet_tit">商品属性</div>
+					<ul class="mnhContnetattribute">
+						<li class="mnhContnetattribute_nav" v-for="item in attrList" v-cloak track-by="$index">
+							<div class="mnhContnetattribute_nav_tit mui-ellipsis">{{item.atr_name}}</div>
+							<div class="mnhContnetattribute_nav_content">
+								<span v-for="item2 in item.ids" v-cloak track-by="$index">{{item2.name}}</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="mnhContnet" v-if="groupList" v-show="groupList.length>0">
+					<div class="mnhContnet_tit">
+						参团选择
+						<span class="mnhContnetlist" @tap="moreGroup()">更多&nbsp;></span>
+						<span class="mnhContnetEnd">结束：{{groupEndTime | timeFormate}}</span>
+					</div>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media" v-for="item in groupList" v-cloak track-by="$index">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" :src="item.info.app_logo">
+								<div class="mui-media-body">
+									<span class="mnhshopgroupslogo mui-ellipsis">{{item.info.nick_name}}</span>
+									<div class="mnhshopgroupscontent">
+										<div class="mnhshopgroupscontent_button" @tap="joinGroup(item.info.group_sn)">去参团</div>
+										<ul class="mnhshopgroupscontent_text">
+											<li class="mnhshopgroupscontent_textmud">还有{{item.num}}人成团</li>
+										</ul>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="mnhContnet" id="normalQuestion">
+					<div class="mnhContnet_tit">常见问题</div>
+					<!--后台富文本编辑器编辑-->
+				</div>
+				<div class="mnhContnet" id="introduction" style="border-bottom: none;margin-bottom: 49px;">
+					<div class="mnhContnet_tit">详情简介</div>  
+				</div>				
+				
+			</div>
+			<footer>
+				<div class="mnhshoppng_car mnhcarnum" onclick="shareHref()">
+					<p class="mui-icon mui-icon-redo" style="font-size: 24px;margin: 4px 0;"></p>
+					<p style="font-size: 10px; margin-top:-4px;">分享</p>					
+				</div>
+				<button type="button"  class="mui-btn mui-btn-danger mnhshoppng_T" @tap="creatGroup()">立即开团</button>
+			</footer>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+
+	
+	<script type="text/javascript" src="../../js/jiazai.js"></script>
+	
+	<script type="text/javascript" src="../../js/ajax/url.js"></script>
+	<script type="text/javascript" src="../../js/store.min.js"></script>
+	
+	
+	<script type="text/javascript" src="../../js/vue.js"></script>
+	<script type="text/javascript" src="../../js/vue-resource.js"></script>		
+	<script type="text/javascript" src="../../js/mnhshopgroupscontent.js"></script>
+	<!--分享<-->	
+	<script src="../../js/upload/tn_share.js" type="text/javascript" charset="utf-8"></script>
+</html>
+
+

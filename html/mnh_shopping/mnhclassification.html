@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>分类页面</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhclassification.css" />
+	</head>
+
+	<body id="classBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">分类</h1>
+		</header>
+		<!--输入框-->
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin: 5px;">
+				<div class="mui-input-row">
+					<input type="search" class="shop_search" placeholder="请输入你所需要的商品名称" readonly="readonly" >
+				</div>
+			</div>
+		</div>
+		<!--选择边-->
+		<div class="mui-row mui-fullscreen">
+			<div class="mui-col-xs-3">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<a class="mui-control-item" href="#content{{$index}}" v-for="item in categoryList" :class="{'mui-active':$index==0}" v-cloak track-by="$index">{{item.name}}</a>
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="mui-col-xs-9">
+				<!--3层循环-->
+				<!--1-->
+				<div id="content{{$index}}" class="mui-control-content mui-active" v-for="item2 in categoryList" :class="{'mui-active':$index==0}" v-cloak track-by="$index">
+					<ul class="mui-table-view">
+						<!--2-->
+						<div class="mnhnavtextnav" v-for="item3 in item2.child"  v-cloak track-by="$index">
+							<div class="mnhnavtextnav_tit">{{item3.name}}</div>
+							<!--3-->
+							<div class="mnhnavtextnav_content" v-for="item4 in item3.child"  v-cloak track-by="$index"  @click.stop="goClass(item4.id)">
+								<div class="mnhnavtextnav_contentimg"><img :src="item4.img" /></div>
+								<div class="mnhnavtextnav_contenttext">{{item4.name}}</div>
+							</div>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>	
+		<script type="text/javascript" src="../../js/mnhclassification.js"></script>
+		
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+
+</html>

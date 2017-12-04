@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>美购</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<!--div旋转css-->
+		<link rel="stylesheet" href="../css/animate-tool.css" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/mnhshophome.css" />
+	</head>
+
+	<body id="shophome">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<h1 class="mui-title">
+				<div class="mnh_header_input">
+					<span class="mnh_search icomoon icon-sousuo"></span>
+					<input class="mnh_header_input_text" type="text" readonly="readonly" address="mnh_shopping/mnhshopsearch.html" placeholder="请输入你想要的商品"/>					
+				</div>
+			</h1>
+			<!--切换-->
+			<!--<a class="mui-pull-right qiehuan" style="width: 50px; text-align: center;">
+				<span class="mnh_qie icomoon icon-qie"></span>
+				<p style="margin: 0;  color: #FFFFFF;">切换</p>
+			</a>-->
+		</header>
+		<!--购物车  onclick="animateWindow('zoom-fade-out','mnhcar/mnhcar.html')"-->
+		<div class="mnhcarcontent" id="mnhcarcontent" @tap="goCar()">
+			<div class="icomoon icon-ShoppingCart"></div>
+		</div>
+		<div class="mui-scroll-wrapper test1 flip" style="top: 64px;">
+			<div class="mui-scroll" id="shophomeScroll1">
+				<!--轮播-->
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a class="mnhContent" dataname="{{bannerLastImg.goods_name}}" dataId="{{bannerLastImg.goods_id}}" data-title-type="transparent_native" href="mnh_shopping/mnhshoppingcontent.html">
+								<img :src="bannerLastImg.name">
+							</a>
+						</div>
+						<!-- 中间几张循环 -->
+						<div class="mui-slider-item" v-for="item in bannerImg"  v-cloak track-by="$index">
+							<a class="mnhContent" dataname="{{item.goods_name}}" dataId="{{item.goods_id}}" data-title-type="transparent_native" href="mnh_shopping/mnhshoppingcontent.html">
+								<img :src="item.name">
+							</a>
+						</div>
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a class="mnhContent" dataname="{{bannerFirstImg.goods_name}}" dataId="{{bannerFirstImg.goods_id}}" data-title-type="transparent_native" href="mnh_shopping/mnhshoppingcontent.html">
+								<img :src="bannerFirstImg.name">
+							</a>
+						</div>
+					</div>
+					<div class="mui-slider-indicator">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator" v-for="item in last" v-cloak track-by="$index" ></div>
+					</div>
+				</div>
+				<!--导航-->
+				<div class="mnhshopnav">
+					<div class="mnhshopnavback">
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mnh_padding">
+								<a href="mnh_shopping/mnhthishot.html">
+									<span class="icomoon icon-ren mnhshopnavbackclor1"></span>
+									<div class="mui-media-body">今日热门</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mnh_padding">
+								<a href="mnh_shopping/mnhLineshop.html">
+									<span class="icomoon icon-wei mnhshopnavbackclor2"></span>
+									<div class="mui-media-body">线下实体</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mnh_padding">
+								<a href="mnh_shopping/mnhgroups.html">
+									<span class="icomoon icon-shou mnhshopnavbackclor3"></span>
+									<div class="mui-media-body">姐妹拼团</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mnh_padding">
+								<a href="mnh_shopping/mnhclassification.html">
+									<span class="icomoon icon-fen mnhshopnavbackclor4"></span>
+									<div class="mui-media-body">更多分类</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--广告-->
+				<div class="mnhshopbanner">
+					<span class="mnhshopbannerZ">{{adverData.name}}</span>
+					<img :src="adverData.img_small" />
+				</div>
+				<!--秒杀-->
+				<div class="mnhshopqg">
+					<img src="../images/qianggou@3x.png" />
+				</div>
+				<div class="mnhMiaoSa">
+					<div class="mnhMiaoSaheader">
+						<div class="mnhMiaoSaheadertime" v-show="show">
+							<span id="djsH">00</span>:<span id="djsM">00</span>:<span id="djsS">00</span>
+						</div>
+						<div class="mnhMiaoSaheadername" v-show="show">当场秒杀<span>{{rushbuyTime}}</span>点场</div>
+						<div class="moRushbuy" v-show="show==false">秒杀还没开始，敬请期待！</div>
+						<div class="mnhMiaoSaheadermore">更多<span class="mui-icon mui-icon-arrowright"></span></div>
+					</div>
+					<div class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一个图文表格) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<ul class="mui-table-view mui-grid-view">
+									<li class="mui-table-view-cell mui-media mui-col-xs-4" v-for="item in lastRushbuy" v-cloak track-by="$index">
+										<a class="mnhContent1" dataname="{{item.goods_name}}" dataId="{{item.goods_id}}" limitId="{{item.id}}" data-title-type="transparent_native" href="mnh_shopping/mnhrushbuycontent.html">
+											<img class="mui-media-object" :src="item.img">
+											<div class="mnhxianmoney">￥{{item.time_price}}</div>
+											<div class="mnhyuanmoney">￥{{item.price}}</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							
+							<!--首页固定死只显示6张图片-->
+							<div class="mui-slider-item">
+								<ul class="mui-table-view mui-grid-view">
+									<li class="mui-table-view-cell mui-media mui-col-xs-4" v-for="item in firstRushbuy" v-cloak track-by="$index"> 
+										<a  class="mnhContent1" dataname="{{item.goods_name}}" dataId="{{item.goods_id}}" limitId="{{item.id}}" data-title-type="transparent_native" href="mnh_shopping/mnhrushbuycontent.html">
+											<img class="mui-media-object" :src="item.img">
+											<div class="mnhxianmoney">￥{{item.time_price}}</div>
+											<div class="mnhyuanmoney">￥{{item.price}}</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="mui-slider-item">
+								<ul class="mui-table-view mui-grid-view">
+									<li class="mui-table-view-cell mui-media mui-col-xs-4" v-for="item in lastRushbuy" v-cloak track-by="$index">
+										<a  class="mnhContent1" dataname="{{item.goods_name}}" dataId="{{item.goods_id}}" limitId="{{item.id}}" data-title-type="transparent_native" href="mnh_shopping/mnhrushbuycontent.html">
+											<img class="mui-media-object" :src="item.img">
+											<div class="mnhxianmoney">￥{{item.time_price}}</div>
+											<div class="mnhyuanmoney">￥{{item.price}}</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一个图文表格) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<ul class="mui-table-view mui-grid-view">
+									<li class="mui-table-view-cell mui-media mui-col-xs-4" v-for="item in firstRushbuy" v-cloak track-by="$index"> 
+										<a  class="mnhContent1" dataname="{{item.goods_name}}" dataId="{{item.goods_id}}" limitId="{{item.id}}" data-title-type="transparent_native" href="mnh_shopping/mnhrushbuycontent.html">
+											<img class="mui-media-object" :src="item.img">
+											<div class="mnhxianmoney">￥{{item.time_price}}</div>
+											<div class="mnhyuanmoney">￥{{item.price}}</div>
+										</a>
+									</li>
+								</ul>
+							</div>	
+						</div>
+					</div>
+				</div>
+				<!--专题-->
+				<div class="mnhnewtit" v-if="specialList" v-show="specialList.length>0">— {{specailname}}—</div>
+				<div class="mnhnewcontent" v-if="specialList" v-show="specialList.length>0">
+					<div class="mnhnewcontentimg">
+						<a class="mnhContent" dataname="{{specialFirst.goods_name}}" dataId="{{specialFirst.goods_id}}" data-title-type="transparent_native" href="mnh_shopping/mnhshoppingcontent.html">
+							<img :src="specialFirst.img" />
+						</a>
+					</div>
+					<ul class="mui-table-view mui-grid-view">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4" v-for="item in specialOther" v-cloak track-by="$index">
+							<a class="mnhContent" dataname="{{item.goods_name}}" dataId="{{item.goods_id}}" data-title-type="transparent_native" href="mnh_shopping/mnhshoppingcontent.html">
+								<img class="mui-media-object" :src="item.img">
+								<div class="mnhnewcontentmoeny mui-ellipsis">{{item.goods_name}}</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--商品列表-->
+				<div class="mnhnewtit">— 随便逛逛 —</div>
+				<ul class="mui-table-view mui-table-view-chevron mnhshop">
+					<div id="container">
+						<ul class="col-one col" style="margin-right: 2%;">
+						</ul>
+						<ul class="col-two col"></ul>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<!--翻转后的图片列表-->
+		<div class="test2 flip  out">
+			<div class=" exhibition_hall">
+				<div id="" class="roundabout_box">
+					<ul id="roundabout_ul">
+						<li v-for="item in layerShopList">
+							<a href="#">
+								<img :src="item.img" alt="">
+								<div class="test2-content">
+									<p class="mui-ellipsis test2-title">美丽动人女士毛衣，范冰冰同款,源自法国时尚大师唐纳德之手</p>
+									<p class=" test2-price"><span>销售价:&nbsp;&nbsp;400￥</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>会员价:&nbsp;&nbsp;380￥</span></p>
+									<p class="test2-count"><span>销售量：&nbsp;&nbsp;999+</span></p>
+								</div>							
+							</a>							
+						</li>												
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--上拉加载/下拉刷新-->
+		<script src="../js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--页面跳转-->
+		<script src="../js/page.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ajax/mnhgroups.js" type="text/javascript" charset="utf-8"></script>
+		<!--美购首页秒杀6个商品跳转-->
+		<script type="text/javascript" src="../js/ajax/miaoshatiaozhuan.js"></script>
+
+		<!--移动端图片3d轮播效果-->
+		<script type="text/javascript" src="../js/jquery.fancybox.pack.js"></script>
+		<script type="text/javascript" src="../js/jquery.roundabout.min.js"></script>
+		
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../js/store.min.js"></script>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script type="text/javascript" src="../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../js/mnhshophome1.js"></script>
+	</body>
+
+</html>
+
+

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>钱包明细-刷新框</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link href="../../css/wallet-detail.css" rel="stylesheet" />
+	</head>
+
+	<body id="walletBody">
+		<!--下拉刷新容器-->
+		<div id="wallet-refreshContainer" class="mui-content mui-scroll-wrapper" style="padding-top: 0;">
+		  <div class="mui-scroll">
+			    <!--数据列表-->
+			    <ul class="mui-table-view mui-table-view-chevron">
+			      <li class="mui-table-view-cell" v-for="item in detailList" v-cloak track-by="$index">
+			      	<p><span>交易金额:</span><span>￥</span><span>{{item.money}}</span></p>
+			      	<p><span>交易时间:</span><span>{{item.timestamp | tiemFormate}}</span></p>
+			      </li>
+			    </ul>
+		  </div>
+		</div>		
+		
+
+		
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>			
+		<script type="text/javascript" src="../../js/wallet-detail-refresh.js"></script>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

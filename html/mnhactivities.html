@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>发布活动</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/upload/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mnhtit.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mnhactivities.css" />		
+	</head>
+		<style type="text/css">
+			.mui-input-row{
+				font-size: 14px;
+			}
+			.mui-input-row input{
+				font-size: 14px;
+			}
+			.mnhregistrationsettingstit input{
+				width: 100%;
+				height: 100%;
+				padding-left: 12px;
+				text-align: left;
+			}
+			.mnhregistrationsettingstit {
+				position: relative;
+			}
+			.mnhregistrationsettingsrem{
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				z-index: 99;
+				top: 6px;
+				right: 16px;
+				font-size: 30px;
+			}
+			.photo-clip-view{
+				background-color:rgba(255,102,153,0.3);
+			}
+		</style>
+	<body>
+		<!--上传-->
+		<article class="htmleaf-container">
+			<div id="clipArea"></div>
+			<div class="foot-use">
+				<div class="uploader1 blue">
+					<input type="button" name="file" class="button" value="选择图片">
+					<input id="file" type="file" accept="image/*" />
+				</div>
+				<button id="clipBtn">完成</button>
+				<button id="imgover">取消</button>
+			</div>
+			<div id="view"></div>
+		</article>
+		<!--内容-->
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发布活动</h1>
+			<a class="mui-action-menu mui-icon mui-pull-right act-fabu">发布</a>
+		</header>
+		<div class="mui-content">
+			<div class="back_img mnhbannerimg" id="head">
+				<span>
+				    <img id="background_img" src=""/> <!--图片上传后的预览图-->
+			    </span>
+			</div>
+			<div class="input-content">
+				<div class="mnhtheme">
+					<input type="text" name="" id="ma_subject" value="" placeholder="活动主题" />
+					<div id="logox1" class="mnhthemeimg icomoon icon-addimg"></div>
+				</div>
+				<div class="mnhactivitiestit">
+					<div id='result' class="mnhactivitiestittime btn">活动开始时间</div>
+				</div>
+				<div class="mnhactivitiestit">
+					<div id='resulte' class="mnhactivitiestittime btn">活动结束时间</div>
+				</div>
+				<div class="mnhactivitiestit">
+					<div id='resultee' class="mnhactivitiestittime btn">报名截止时间</div>
+				</div>
+				<div class="mnhactivitiestit">
+					<input type="text" name="" id="act-addressArange" value="" readonly="readonly" placeholder="活动所在地(省-市-区(县))" />
+				</div>
+				<div class="mnhactivitiestit">
+					<input type="text" name="" id="ma_address" value="" placeholder="活动详细地址" />
+				</div>
+				<div class="mnhactivitiestit">
+					<input type="text" name="" id="ma_owner" value="" placeholder="活动举办方" />
+				</div>
+				<div class="mnhactivitiestit">
+					<input type="text" name="" id="ma_phone" value="" placeholder="活动咨询电话" />
+				</div>			
+				<div class="mnhactivitiestit">
+					<input type="number" name="" id="ma_number" value="" placeholder="活动参与人数（不填写表示不限人数）" />
+				</div>
+				<div class="mnhactivitiestit">
+					<input type="number" name="" id="ma_price" value="" placeholder="活动总费用（不填写表示免费）" />
+				</div>
+				<div class="mnhactivitiestext">
+					<textarea name="" id="act-textarea" placeholder="活动详情描述："></textarea>
+				</div>
+				<div class="mnhactivitiestit">
+					<input type="text" name="" id="ma_form" value="" placeholder="活动形式（例如户外、培训、派对、会议）" />
+				</div>
+			</div>
+			
+			<div class="mui-input-group mnhcontent">
+				<div class="mnhinput">购买信息设置：</div>
+				<div class="mui-input-row">
+					<label>姓名:<span style="color: #FF0000;">*</span></label>
+				</div>
+				<div class="mui-input-row">
+					<label>手机号:<span style="color: #FF0000;">*</span></label>
+				</div>
+				<div class="mui-input-row mnhregistrationsettingstit">
+					<input type="text" name="" id="" value="" placeholder="请输入所需的自定义信息" />
+					<div class="mnhregistrationsettingsrem mui-icon mui-icon-closeempty"></div>
+				</div>
+			</div>
+			<div class="mnhregistrationsettingsadd">+添加自定义信息</div>		
+		</div>
+		<script src="../js/mui.min.js"></script>			
+		<script src="../js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../js/city.data-3.js"></script>
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--图片上传-->
+		<script src="../js/upload/iscroll-zoom.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="../js/upload/hammer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/upload/tn_i_back_img.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--页面跳转-->
+		<script src="../js/page.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../js/store.min.js"></script>
+		<script type="text/javascript" src="../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../js/mnhactivites.js"></script>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

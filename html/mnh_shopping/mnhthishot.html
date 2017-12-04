@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>今日热门</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhshophome.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhthishot.css" />
+		<style type="text/css">
+			.mui-bar .mui-title {
+    			right: 0; 
+    			left: 0; 
+			}
+		</style>
+	</head>
+
+	<body id="hotBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">今日热门</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll" style="background-color: #FFFFFF;">
+						<!--class名还是要打''-->
+						<a class="mui-control-item mui-active"  href="#hotItem0" v-text="firstTtile.name"></a>									
+						<a class="mui-control-item" v-for="item in otherhotTitle" v-cloak track-by="$index" href="#hotItem{{$index+1}}" v-text="item.name"></a>
+					</div>
+				</div>
+				<div class="mui-slider-group">  
+					<div  class="mui-slider-item mui-control-content mui-active" id="hotItem0">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-table-view">
+									<div id="container">
+										<ul class="col-one col" style="margin-right: 2%;"></ul>
+										<ul class="col-two col"></ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="hotItem{{$index+1}}" class="mui-slider-item mui-control-content" v-for="item in otherHotList" v-cloak track-by="$index">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-table-view">
+									<div id="container" v-if="otherHotList">
+										<ul class="col-one col" style="margin-right: 2%;">
+											<li class="mnhshoptit" v-for="item2 in item.goods" v-cloak track-by="$index" v-show="$index%2==0">
+												<a class="mnhContent" dataname ="{{item2.name}}" dataId = "{{item2.id}}" data-title-type="transparent_native" href="mnhshoppingcontent.html">
+													<div class="mnhshoptitimg">
+														<img :src="item2.img"/>
+														<div class="mnhshoptitliang">
+															<p class="mnhshoptitliangl">销量：{{item2.sell_num}}</p>
+															<p class="mnhshoptitliangr">点击率：{{item2.click}}</p>
+														</div>
+														<div class="mnhshoptitnameimg" style="display: none;"><img :src="item2.avatar"/><span>{{item2.admin_name}}</span></div>
+													</div>
+													<div class="mnhshoptitcontent">
+														<div class="mnhshoptitcontentname mui-ellipsis">{{item2.name}}</div>
+														<div class="mnhshoptitcontentmoney">零售价：<span>{{item2.price}}</span></div>
+														<div class="mnhshoptitcontentyuan">会员价：{{item2.member_price}}</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+										<ul class="col-two col">
+											<li class="mnhshoptit" v-for="item2 in item.goods" v-cloak track-by="$index" v-show="$index%2==1">
+												<a class="mnhContent" dataname ="{{item2.name}}" dataId = "{{item2.id}}" data-title-type="transparent_native" href="mnhshoppingcontent.html">
+													<div class="mnhshoptitimg">
+														<img :src="item2.img"/>
+														<div class="mnhshoptitliang">
+															<p class="mnhshoptitliangl">销量：{{item2.sell_num}}</p>
+															<p class="mnhshoptitliangr">点击率：{{item2.click}}</p>
+														</div>
+														<div class="mnhshoptitnameimg" style="display: none;"><img :src="item2.avatar"/><span>{{item2.admin_name}}</span></div>
+													</div>
+													<div class="mnhshoptitcontent">
+														<div class="mnhshoptitcontentname mui-ellipsis">{{item2.name}}</div>
+														<div class="mnhshoptitcontentmoney">零售价：<span>{{item2.price}}</span></div>
+														<div class="mnhshoptitcontentyuan">会员价：{{item2.member_price}}</div>
+													</div>
+												</a>
+											</li>											
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>		
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.pullToRefresh.js"></script>
+		<script src="../../js/mui.pullToRefresh.material.js"></script>
+		<!--页面跳转-->
+		<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/ajax/mnhgroups.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>
+		<script type="text/javascript" src="../../js/mnhthishot1.js"></script>
+	</body>
+
+</html>

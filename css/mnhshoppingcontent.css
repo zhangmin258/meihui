@@ -1,0 +1,269 @@
+
+.mui-scroll{
+	top: 0;
+	bottom: 49px;
+	/*overflow: auto;*/
+}
+
+.mnh_nav_content_time {
+	color: #FF6699;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+
+.mnh_nav_content_time span {
+	font-size: 14px;
+}
+
+.mnh_nav_content_addes {
+	color: #CCCCCC;
+	text-decoration: line-through;
+}
+
+.mui-slider-indicator .mui-indicator {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin: 1px 2px;
+	cursor: pointer;
+	border-radius: 50%;
+	background: rgba(255, 102, 153, 0.2);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.mui-slider-indicator .mui-active.mui-indicator {
+	background: #ff6699
+}
+
+.mui-bar {
+	background-color: #FF6699;
+}
+
+
+/*参团选择*/
+
+.mnhContnet_tit {
+	width: 100%;
+	line-height: 38px;
+	border-left: 3px solid #FF6699;
+	padding-left: 12px;
+}
+
+.mui-table-view:before {
+	background-color: inherit;
+}
+
+.mui-table-view:after {
+	background-color: inherit;
+}
+
+.mui-media-object {
+	border-radius: 50%;
+}
+
+.mnhshopgroupslogo {
+	line-height: 42px;
+	font-size: 16px;
+	width: 60px;
+	display: block;
+	float: left;
+}
+
+.mnhshopgroupscontent {
+	float: right;
+}
+
+.mnhshopgroupscontent_button {
+	float: right;
+}
+
+.mnhshopgroupscontent_text {
+	float: right;
+}
+
+.mnhshopgroupscontent_textmud {
+	text-align: right;
+	color: #FF6699;
+	font-size: 12px;
+}
+
+.mnhshopgroupscontent_textmoeny {
+	text-align: right;
+	font-size: 12px;
+	color: #CCCCCC;
+}
+
+.mnhshopgroupscontent_button {
+	background-color: #FF6699;
+	color: #fff;
+	border-radius: 4px;
+	padding: 2px 4px;
+	margin: 8px 0 0 20px;
+	font-size: 14px;
+}
+
+.mnhContnet_tit span {
+	float: right;
+	margin-right: 12px;
+}
+
+.mnhContnetname {
+	line-height: 40px;
+	margin-left: 12px;
+	font-size: 16px;
+}
+
+.mnhContnetnavtext {
+	padding: 0 12px 10px 12px;
+	font-size: 14px;
+	color: #888888;
+}
+
+.mnhshoppingimges {
+	width: 100%;
+	float: left;
+}
+
+.mnhshoppng_car {
+	float: left;
+	width: 14%;
+	height: 100%;
+	background-color: #FFFFFF;
+}
+
+.mnhshoppng_car {
+	text-align: center;
+}
+
+
+
+.mnhshoppng_T {
+	float: left;
+	width: 29%;
+	background-color: #FF6699;
+	height: 100%;
+	text-align: center;
+	line-height: 48px;
+	color: #FFFFFF;
+	font-size: 14px;
+}
+.mnhContnetattribute{
+	width: 100%;
+	float: left;
+}
+.mnhContnetattribute_nav{
+	width: 100%;
+	float: left;
+}
+.mnhContnetattribute_nav_tit{
+	float: left;
+	width: 20%;
+	line-height:44px;
+	padding-left: 12px;
+	font-size:14px;
+}
+.mnhContnetattribute_nav_content{
+	float: left;
+	padding-right: 12px;
+	width: 80%;
+}
+.mnhContnetattribute_nav_content span{
+	display: block;
+	float: left;
+	border:1px #888888 solid;
+	border-radius: 4px;
+	line-height:28px;
+	padding: 0 10px;
+	margin: 5px;
+	font-size: 12px;
+}
+.mnhcolor{
+	border: 1px #ff6699 solid !important;
+	background-color: #ff6699 !important;
+	color: #FFFFFF !important;
+}
+.mnhcar{
+	background-color: #ffcc99;
+}
+.mnhxian:after{
+	position: absolute;
+	top: 2px;
+    right: 0;
+    bottom: 0;
+    left: 15%;
+    height: 44px;
+    width: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+
+/*收藏按钮动态样式*/
+.collects{
+	color: #FF6797;
+}
+
+
+
+/*商品评价*/
+.comment_list{
+	width: 100%;
+	padding: 0 12px;
+	margin-bottom: 20px;
+}
+
+.comment_list  p{
+	margin-bottom: 0;
+}
+
+/*头像/人名*/
+.comment_list  .comment_type_box{
+	height: 30px;
+	line-height: 30px;
+}
+
+.comment_list  .comment_type_box img{
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+.comment_list  .comment_type_box span{
+	vertical-align: top;
+	color: black;
+}
+
+/*评论时间*/
+.comment_list .comment_type_time{
+	height: 30px;
+	line-height: 30px;
+}
+
+.comment_list .comment-content{
+	margin-left: 40px;
+}
+
+
+/*评论图片列表*/
+.comment_img{
+	font-size: 0;
+	margin-left: 40px;
+}
+.comment_img img{	
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+/*点击加载更多*/
+.loadMore{
+	line-height: 25px;
+	text-align: center;
+	color: black;
+}
+
+

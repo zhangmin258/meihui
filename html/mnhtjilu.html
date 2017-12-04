@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>中奖纪录</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" href="../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhjilu.css" />
+	</head>
+
+	<body id="jiluBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">中奖纪录</h1>
+		</header>
+		<div id="reward-refresh" class="mnhcontent">
+			<div class="mnhcontentList" v-for="item in rewardList" v-cloak track-by="$index">
+				<div class="mnhcontenttext">{{item.time}}</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media" v-for="item2 in item.list" v-cloak track-by="$index">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" :src="item2.app_logo">
+							<div class="mui-media-body">
+								{{item2.name}}
+								<p class='mui-ellipsis'>获得奖品：{{item2.reward}}</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>			
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	
+	<script type="text/javascript" src="../js/ajax/url.js"></script>
+	
+	<script type="text/javascript" src="../js/vue.js"></script>
+	<script type="text/javascript" src="../js/vue-resource.js"></script>
+	<script type="text/javascript" src="../js/jiazai.js"></script>
+	<script type="text/javascript" src="../js/vconsole.min.js"></script>
+	<script type="text/javascript" src="../js/mnhjilu.js"></script>
+</html>

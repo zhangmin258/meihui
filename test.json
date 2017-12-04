@@ -1,0 +1,54 @@
+{
+	"code": 1,
+	"msg": "数据获取成功",
+	"is_login": 0,
+	"data": {
+		"2017-11-30": [
+			{
+				"goods_name": "苹果",
+				"name": "好就改哈哈",
+				"app_logo": "http:\/\/app.meihuiapp.cn\/public\/static\/uploads\/party\/activity\/20171129\/1511940489587.jpeg",
+				"phone": "15968128743",
+				"today": 1511971200
+			}, {
+				"goods_name": "香蕉",
+				"name": "洛与霞",
+				"app_logo": "http:\/\/192.168.0.121\/static\/uploads\/party\/activity\/20171127\/1511781680737.jpeg",
+				"phone": "13588130014",
+				"today": 1511971200
+			}, {
+				"goods_name": "橘子",
+				"name": "好就改哈哈",
+				"app_logo": "http:\/\/app.meihuiapp.cn\/public\/static\/uploads\/party\/activity\/20171129\/1511940489587.jpeg",
+				"phone": "15968128743",
+				"today": 1511971200
+			}
+		],
+		"2017-11-29": [
+			{
+				"goods_name": "香蕉",
+				"name": "亿先生",
+				"app_logo": "http:\/\/wx.qlogo.cn\/mmopen\/vi_32\/dB4p6p1PJAwdFORMWXpDM1afczuVWjcjOXhbEVOzXX4YSlAGW1pjyZX8iclibsEficQxeBR8RJ0yb6fbicyqCn1Msw\/0",
+				"phone": "13311311413",
+				"yestoday": 1511884800
+			}, {
+				"goods_name": "橘子",
+				"name": "Demo",
+				"app_logo": "http:\/\/app.meihuiapp.cn\/public\/static\/uploads\/party\/activity\/20171127\/1511791086424.jpeg",
+				"phone": "17719031992",
+				"yestoday": 1511884800
+			}, {
+				"goods_name": "榴莲",
+				"name": "洛与霞",
+				"app_logo": "http:\/\/192.168.0.121\/static\/uploads\/party\/activity\/20171127\/1511781680737.jpeg",
+				"phone": "13588130014",
+				"yestoday": 1511884800
+			}
+		]
+	},
+	"success": true,
+	"page": {
+		"totalRow": 11,
+		"totalPage": 2
+	}
+}

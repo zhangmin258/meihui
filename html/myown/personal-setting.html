@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人资料</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/upload/style.css" />
+		<link href="../../css/personal-setting.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		.photo-clip-view{
+				background-color:rgba(255,102,153,0.3);
+			}
+	</style>
+	<body>
+		<!--上传-->
+		<article class="htmleaf-container">
+			<div id="clipArea"></div>
+			<div class="foot-use">
+				<div class="uploader1 blue">
+					<input type="button" name="file" class="button" value="选择图片">
+					<input id="file" type="file" accept="image/*" />
+				</div>
+				<button id="clipBtn">完成</button>
+				<button id="imgover">取消</button>
+			</div>
+			<div id="view"></div>
+		</article>
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav"></a>
+			<p class="mui-title">我的资料</p>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view mAvator">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right addAvator">
+						<img class="avator" id="my-avator" src="../../images/icon_header.png" alt="头像" />
+						<span>修改头像</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view personDetail">
+				<li class=" mui-table-view-cell">
+					<div class="mui-input-row">
+						<label>昵称:</label>
+						<input type="text" class="mui-input-clear" name="nickname" id="nickname" placeholder="6个字以内">
+					</div>
+				</li>
+				<li class=" mui-table-view-cell">
+					<div class="sexLabel">性别:</div>
+					<div class="mui-input-row mui-radio">
+						<label>男:</label>
+						<input name="sex" type="radio" value="1">
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>女:</label>
+						<input name="sex" type="radio" value="0" checked="checked">
+					</div>
+				</li>
+				<!--<li class=" mui-table-view-cell">
+				    <div class="mui-input-row">
+				        <label>地址:</label>
+				        <input type="text" class="mui-input-clear"  placeholder="请输入收货地址">
+				    </div>
+				</li>				-->
+			</ul>
+			<button type="button" class="mui-btn mui-btn-danger" id="subSetting">提交</button>
+		</div>
+
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+
+		<!--图片上传-->
+		<script src="../../js/upload/iscroll-zoom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload/hammer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload/tn_i_back_img.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/personal-seting.js"></script>
+	</body>
+
+</html>

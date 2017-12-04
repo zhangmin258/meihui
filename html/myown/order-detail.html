@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" href="../../css/order-detail.css" />
+	</head>
+
+	<body id="orderDetailBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">订单详情</h1>
+		</header>
+		
+		<div class="mui-content">
+			<ul class="mui-table-view order-man">
+				<li class="mui-table-view-cell">
+					<a  href="javascript:void(0)">
+						<p class="mui-clearfix info"><span class="mui-pull-left name">{{detailContent.user_name}}</span><span class="mui-pull-right tel">{{detailContent.phone}}</span></p>
+						<p class="address">{{detailContent.province+detailContent.city+detailContent.area+detailContent.address}}</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view order-goods">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" :src="detailContent.img">
+						<div class="mui-media-body">
+							<p class="d-title">{{detailContent.name}}</p>
+							<p class="mui-clearfix color"><span class="mui-pull-left">{{detailContent.str_name}}</span></p>
+							<p class="d-type mui-clearfix"><span class="d-money">￥{{detailContent.price}}</span> <span class="d-count">{{detailContent.number}}件</span></p>
+						</div>
+					</a>
+				</li>			
+			</ul>
+			<ul class="mui-table-view price">
+				<li class="mui-table-view-cell">
+					<span>订单总价:</span>
+					<span>￥{{detailContent.goods_price}}</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<span>运费:</span>
+					<span>￥0.00</span>
+				</li>
+			</ul>
+			<ul class="mui-table-view price">
+				<li class="mui-table-view-cell">
+					<span>支付方式</span>
+					<span>{{detailContent.trading_type | payTyepFormate}}</span>
+				</li>
+			</ul>
+			<ul class="mui-table-view code">
+				<li class="mui-table-view-cell">
+					<p class="price">订单编号：{{detailContent.order_id}}</p>
+					<p class="price" v-show="detailContent.create_timestamp!=0">创建时间：{{detailContent.create_timestamp | tiemFormate}}</p>
+					<p class="price" v-show="detailContent.pay_timestamp!=0">付款时间：{{detailContent.pay_timestamp | tiemFormate}}</p>
+					<p class="price" v-show="detailContent.send_timestamp!=0">发货时间：{{detailContent.send_timestamp | tiemFormate}}</p>
+				</li>
+			</ul>
+		</div>
+		
+		<nav class="mui-bar mui-bar-tab">
+			<!--待付款-->
+			<button type="button" class="mui-btn mui-btn-default" v-show="detailContent.pay_status==0&&detailContent.order_status==0&&detailContent.consign_status==0" @tap="cancelOrder($event)">取消订单</button>
+			<button type="button" class="mui-btn mui-btn-default" v-show="detailContent.pay_status==0&&detailContent.order_status==0&&detailContent.consign_status==0" @tap="nowPay()">立即付款</button>												
+			<!--代发货-->
+			<button type="button" class="mui-btn mui-btn-default" v-show="detailContent.pay_status==1&&detailContent.order_status==1&&detailContent.consign_status==0" @tap="callDeli()">提醒卖家发货</button>												
+			<!--待收货-->
+			<button type="button" class="mui-btn mui-btn-default" v-show="detailContent.pay_status==1&&detailContent.order_status==1&&detailContent.consign_status==1" @tap="checkLog()">查看物流</button>
+			<button type="button" class="mui-btn mui-btn-default" v-show="detailContent.pay_status==1&&detailContent.order_status==1&&detailContent.consign_status==1" @tap="confirmRecieve($event)">确认收货</button>								
+			<!--待评价-->
+			<button type="button" class="mui-btn mui-btn-default" v-show="detailContent.pay_status==1&&detailContent.order_status==2&&detailContent.consign_status==2" @tap="nowEvalute()">立即评价</button>
+		</nav>
+		
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/jnop.js"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>	
+		<script type="text/javascript" src="../../js/order-detail.js"></script>
+	</body>
+
+</html>
+
+
+
+
+
+

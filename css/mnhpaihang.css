@@ -1,0 +1,69 @@
+header{
+	background-color: #ff6699 !important;
+}
+.mui-title{
+	color: #FFFFFF;
+}
+a{
+	color: #FFFFFF;
+}
+
+.mui-bar-nav {
+	top: 0;
+	-webkit-box-shadow: none; 
+	box-shadow: none; 
+}
+.mui-bar{
+	height: 130px;
+}
+.mnhcontent{
+	width: 100%;
+	float: left;
+	margin-top: 130px;
+}
+.xuhaeder{
+	color: #fff;
+	width: 100%;
+	float: left;
+	line-height: 55px;
+	font-size: 20px;
+	padding-left: 12px;
+}
+.xuhaederimg{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right:40px;
+	top: 40px;
+}
+.mui-media-body{
+	line-height: 42px;
+	font-size: 14px;
+	color: #666666;
+	float: left;
+}
+.mui-media-object{
+	border-radius: 50%;
+}
+.xucontentmud{
+	float: right;	
+	margin-right: -15px;
+	line-height: 28px;
+	font-size: 14px;
+	margin-top: 7px;
+	padding: 0 10px 0 16px;
+	border-bottom-left-radius: 28px;
+	border-top-left-radius: 28px;		
+}
+.xucontentmudcolor1{
+	background-color: #FFE8A5;
+	color: #FFA61F;
+}
+.xucontentmudcolor2{
+	background-color: #E7E7E7;
+	color: #999999;
+}
+.xucontentmudcolor3{
+	background-color: #C88865;
+	color: #FFCDB2;
+}

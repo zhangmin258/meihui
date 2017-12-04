@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>收藏</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link href="../../css/collection.css" rel="stylesheet" />
+	</head>
+
+	<body id="collectBody">
+		<header class="mui-bar">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav" style="color: white;"></a>
+			<p class="mui-title" style="color: white;">我的收藏</p>
+		</header>
+		<div id="collect-refresh" class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media" v-for="item in collectList" v-cloak track-by="$index">
+					<a href="javascript:void(0)">
+						<img class="mui-media-object mui-pull-left" :src="item.img">
+						<div class="mui-media-body">
+							<p class="pro-title mui-ellipsis">{{item.name}}</p>
+							<p class='mui-ellipsis'>{{item.chajia}}</p>
+							<p class="mui-clearfix">
+								<span>￥{{item.price}}</span>
+								<button class="mnhContent" dataId="{{item.id}}" data-title-type="transparent_native" href="../mnh_shopping/mnhshoppingcontent.html">查看详情</button>
+							</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="nothingImg" v-show="collectList==''">
+				<img src="../../images/nothing.png"/>
+				<p>暂无数据!</p>
+			</div>			
+		</div>	
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../../js/jnop.js"></script>
+		<script type="text/javascript" src="../../js/ajax/mnhgroups.js"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>		
+		<script type="text/javascript" src="../../js/collection.js"></script>
+	</body>
+
+</html>

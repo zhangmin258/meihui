@@ -1,0 +1,126 @@
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	border: none;
+}
+
+
+p{
+	margin-bottom: 0;
+}
+.mui-bar{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.mui-bar-nav{
+	height: 64px;
+	background: #ff679a;
+}
+
+.mui-bar-nav .haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+.mui-bar-nav a{
+	color: white;
+}
+
+.mui-bar-nav h1{
+	color: white;
+}
+
+.mui-content{
+	padding-top: 64px;
+}
+
+.mui-table-view-cell:after {
+	left: 0;
+}
+
+/*人名地址*/
+.order-man .info{
+	width: 80%;
+	line-height: 35px;
+	color: black;
+	font-size: 16px;
+}
+
+
+
+/*商品*/
+.order-goods .d-title {
+	overflow: auto;
+	white-space: normal;
+	font-size: 15px;
+	color: black;
+}
+
+/*价格数量*/
+.d-type span{
+	float: left;	
+}
+
+.d-type .d-money{
+	color: #FF6797;
+	margin-right: 50px;
+}
+
+.d-type .d-count{
+	
+}
+
+/*商品图片*/
+.mui-table-view .mui-media-object {
+    line-height: 65px;
+    max-width: 65px;
+    height: 65px;
+}
+
+
+/*订单价格运费*/
+.price  li span{
+	font-size: 14px;
+	color: #878787;
+}
+.price  li{
+	clear: both;
+}
+
+.price  li span:nth-of-type(1) {
+	float: left;
+}
+
+.price  li span:nth-of-type(2) {
+	float: right;
+}
+
+
+/*按钮*/
+.mui-bar-tab{
+	text-align: right;
+}
+.mui-bar .mui-btn {
+    font-size: 10px;
+    line-height: 1.2;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: #FF679A;
+    border: #FF679A solid 1px;
+    margin-right: 15px;
+}

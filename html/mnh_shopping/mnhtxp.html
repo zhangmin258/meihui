@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>参团-详情</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhtxp.css" />
+	</head>
+
+	<body id="joinGroupBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">参团</h1>
+		</header>
+		<div id="joinGroup-refresh" class="mui-content">
+			<div class="cantuanContent" v-show="zuData!=''">
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media" v-if="proImg!='' || zuData!=''">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" :src="proImg">
+								<div class="mui-media-body" style="margin-top: 6px;">
+									<p class='mui-ellipsis mnhnavname'>{{zuData.goods_name}}</p>
+									<p class="mnhnavmud">{{zuData.group_people}}人团 ￥{{zuData.group_price}}</p>
+									<p class="mnhnavmoney">原价：{{zuData.price}}</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="mnhcontentname" v-if="zuData!=''">{{zuData.group_people}}人团，还差<span>{{zuData.num}}</span>人完成拼团<i>剩余时间：{{zuData.time_end | timeFormate}}</i></div>
+				<div class="mnhcontentimglogo" v-if="zuMemberList!=''">
+					<div class="mnhcontentimglogoone" v-for="item in zuMemberList" v-cloak track-by="$index"> 
+						<img :src="item.app_logo" style="border-radius: 50%;"/>
+						<div class="mnhcontentimglogoonez" v-show="item.sponsor_id==item.uid">团长</div>
+					</div>
+				</div>
+				<button class="mui-btn mui-btn-danger mnhcontentbutton" @tap="subGroup()">我要参团</button>
+			</div>
+			<!--其他团购商品-->
+			<div class="mnhOthertgTGshop">
+				<div class="mnhOthertgTGshoptit">其他团购商品</div>
+				<div class="mnhOthertgTGshopcontent">
+					<div class="mnhOthertgTGshopcontentnav" v-for="item in otherGroupProList" v-cloak track-by="$index">
+						<a class="mnhContent" dataname = "{{item.name}}" groupId="{{item.group_id}}" data-title-type="transparent_native" href="mnhshopgroupscontent.html">
+							<img class="mui-media-object mnhbackbanner" :src="item.img">
+							<div class="mnhshoptitnameimg">
+								<img :src="item.avatar" />
+								<span>{{item.admin_name}}</span>
+							</div>
+							<div class="mnhOthertgTGshopmoney">团购价：￥{{item.group_price}}</div>
+						</a>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jnop.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="../../js/jiazai.js"></script>
+		
+		<script src="../../js/ajax/mnhgroups.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/ajax/url.js"></script>
+		<script type="text/javascript" src="../../js/store.min.js"></script>
+		
+		<script type="text/javascript" src="../../js/vue.js"></script>
+		<script type="text/javascript" src="../../js/vue-resource.js"></script>	
+		<script type="text/javascript" src="../../js/mnhtxp.js"></script>
+	</body>
+</html>

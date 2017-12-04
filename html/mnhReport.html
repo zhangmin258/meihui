@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>报道详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icostyle.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mnhcontentnav.css" />
+	</head>
+		<style type="text/css">
+			.mnhfooter_s {
+			margin-left: 12px;
+			margin-right: 0px;
+		}
+		
+		input[type=text] {
+			position: absolute;
+			width: 70%;
+			height: 36px;
+			border-radius: 80px;
+			border: 1px #CCCCCC solid;
+			font-size: 14px;
+			top: 6px;
+			right: 12px;
+		}
+		
+		@media only screen and (max-width: 320px) {
+			input[type=text] {
+				width: 66%;
+			}
+		}
+
+		</style>
+		
+	<body id="repBody">
+
+		<!--数据列表-->
+		<div class="mui-content">
+			<!--静态图片-->
+			<img id="img1" :src="repData.img_small" />
+			<!--简单详情内容-->
+			<div class="mnh_nav_content">
+				<div class="mnh_nav_content_tit">{{repData.subject}}</div>
+				<div class="mnh_nav_content_liu">浏览：{{repData.see}} 关注：{{repData.focus}}</div>
+				<div class="mnh_nav_content_time">时间： {{repData.time_start | tiemFormate}}- {{repData.time_end | tiemFormate}}</div>
+				<div class="mnh_nav_content_addes">地点：  {{repData.province+repData.city+repData.area+repData.address}}</div>
+				<div class="mnh_nav_content_Sponsor">主办方：{{repData.owner}}</div>
+			</div>
+			<div class="mnhContnet">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{repData.detail}}
+			</div>
+			<div class="mnhpeople" v-if="repData.report_join" v-show="repData.report_join.length>0">
+				<div class="mnhpeople_tit">参与者:</div>
+				<div class="mnh_mud_po" v-if="repData.report_join"> 
+					<div class="mnh_mud_po_img" v-for="item in repData.report_join" v-cloak track-by="$index" v-show="$index<8">
+						<img :src="item.app_logo" />
+					</div>
+					<div class="mnh_mud_po_more" v-show="repData.report_join.length>8">...</div>
+				</div>
+			</div>
+
+			<div class="mnhcomment" v-if="repComList" v-show="repComList.length>0">
+				<div class="mnhcommentText">全部讨论：</div>
+				<ul class="mnhcommentcontent" v-for="item in repComList" v-cloak track-by="$index">
+					<li class="mnhcommentcontent_name">
+						<img class="mnhcommentcontent_nameimg" :src="item.app_logo" />
+						<div class="mnhcommentcontent_nametext">{{item.name}}</div>
+						<p class="mui-pull-right">{{item.timestamp}}</p>
+					</li>
+					<li class="mnhcommentcontent_text">
+						<p>{{item.content}}</p>
+					</li>
+				</ul>
+				<button type="button" class="mui-btn mui-btn-block" @tap="reploadMore()" v-if="repComList" v-show="pageNumber<totalPage">点击加载更多</button>
+			</div>
+			
+		</div>
+		<footer>
+			<div class="mnhfooter_s icomoon icon-followes" @tap="repFocus()" :class="{ygz:isFocus=='未关注'}"></div>
+			<!--分享-->
+			<div class="mnhfooter_s mui-icon mui-icon-redo" onclick="shareHref()"></div>
+			<input class="mnhfooterinput" type="text" placeholder="发表你想要的评论" readonly="readonly"/>
+		</footer>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	
+	<script src="../js/page.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/jnop.js"></script>
+	
+	<script type="text/javascript" src="../js/store.min.js"></script>
+	<script type="text/javascript" src="../js/ajax/url.js"></script>
+	<script type="text/javascript" src="../js/jiazai.js"></script>
+	
+	<script type="text/javascript" src="../js/vue.js"></script>
+	<script type="text/javascript" src="../js/vue-resource.js"></script>
+	
+	<script type="text/javascript" src="../js/mnhReport.js"></script>
+	<!--分享-->
+	<script src="../js/upload/tn_share.js" type="text/javascript" charset="utf-8"></script>
+</html>

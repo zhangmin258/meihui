@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>商品物流</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/jiazai.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/ViewLogistics.css" />
+	</head>
+	<style>		
+		.mui-bar {
+			height: 64px;
+		}
+		
+		.mui-bar-nav~.mui-content {
+			padding-top: 64px;
+		}
+		
+		.haeder_titnav {
+			width: 100%;
+			height: 20px;
+		}
+		
+		header {
+			background-color: #ff6699 !important;
+		}
+		
+		.mui-title {
+			color: #FFFFFF;
+		}
+		
+		a {
+			color: #FFFFFF;
+		}
+	</style>
+
+	<body id="logisBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">商品物流</h1>
+		</header>
+		<section style="margin-top:64px;">
+			<div class="logisticsTop" style="background: #fff;">  <!--:src='orderContent.pro_img'-->
+				<div class="imgbox"><img :src="orderImg" /></div>
+				<ul class="nav_text">
+					<li>物流状态:<span class="nav_color01">{{orderKuai.State | typeFormate}}</span></li>
+					<li>承运来源:<span class="nav_color02">{{orderKuai.ShipperCode}}</span></li>
+					<li>运单编号:<span class="nav_color03">{{orderKuai.LogisticCode}}</span></li>
+				</ul>
+			</div>
+		</section>
+		<div class="content">			
+			<div class="content_flow01" v-for="item in wuliuList" v-cloak track-by="$index">
+				<div class="content_flow_left01">
+					<ul class="content_con01">
+						<li class="content_xian01"></li>
+						<li class="content_yuand01" :class="{redyuan:$index==wuliuList.length-1}"></li>  <!--圆-->
+						<li class="content_xian01"></li>
+					</ul>
+				</div>
+				<div class="content_flow_right01">
+					<ul class="content_flow_text01" :class="{black:$index==wuliuList.length-1}">
+						<li>{{item.AcceptStation}}</li>
+						<li>{{item.AcceptTime}}</li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript" src="../../js/ajax/url.js"></script>
+	<script type="text/javascript" src="../../js/store.min.js"></script>
+	<script type="text/javascript" src="../../js/jiazai.js"></script>
+	
+	<script type="text/javascript" src="../../js/vue.js"></script>
+	<script type="text/javascript" src="../../js/vue-resource.js"></script>		
+	<script type="text/javascript" src="../../js/logstatus.js"></script>
+</html>
+
+
+

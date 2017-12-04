@@ -1,0 +1,317 @@
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	border: none;
+}
+
+
+p{
+	margin-bottom: 0;
+}
+
+
+.haeder_titnav{
+	width: 100%;
+	height: 20px;
+}
+
+
+.mui-bar{
+	width: 100%;
+	height: 64px;
+	background: #ff6797;
+	-webkit-box-shadow: none;
+	box-shadow:none;
+}
+
+.mui-table-view-cell:after {
+	height: 0;
+}
+
+.mui-table-view-cell {
+	padding: 0;
+}
+
+
+
+.mui-bar~.mui-content .mui-fullscreen {
+    top: 64px;
+    height: auto;
+}
+
+/*活动*/
+.act-content{
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.act-content a{
+	display: block;
+	width: 100%;
+}
+
+.act-content:last-child{
+	margin-bottom: 0;
+}
+
+.act-content{
+	background: white;
+}
+
+/*活动图片片*/
+.act-content .act-img{
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 50%;
+	overflow: hidden;
+}
+
+.act-content .act-img img{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+/*活动属性*/
+.act-content .act-text{
+	padding: 15px 15px 10px 15px;
+}
+
+.act-content .act-text  p{
+	line-height: 25px;
+}
+
+.act-content .act-text  .act-text-title{
+	font-size: 18px;
+	color: black;
+}
+
+
+.act-content .act-text .act-type p:nth-of-type(1) span:nth-of-type(2){
+	color: #81ec65;
+}
+
+
+/*活动-编辑/删除*/
+.act-content .cat-operation{
+	width: 100%;
+	border-top: #EEEEEE solid 1px;
+	height: 44px;
+}
+
+
+
+.act-content .cat-operation p button{
+	padding: 3px 12px;
+	font-size: 16px;
+	color: #9c9c9c;
+	margin-right: 30px;		
+}
+.cat-operation .mui-pull-right{
+	width: 100%;
+	height: 100%;
+}
+.cat-operation button{
+	width: 100%;
+	height: 100%;
+	border:none;
+	background-color:#CCCCCC;
+	color: #fff !important;
+}
+/*-----------------------------竞赛-------------*/
+
+.jingsai-guanzhu{
+	width: 100%;
+	overflow: hidden;
+}
+
+.jingsai-guanzhu span{
+	display: inline-block;
+	height: 15px;
+	line-height: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.jingsai-guanzhu .jingsai-cg{
+	width: 25%;
+}
+
+.jingsai-guanzhu .jingsai-xian{
+	width: 5%;
+	line-height: 13px;
+}
+
+.jingsai-guanzhu .jingsai-fanwei{
+	width: 40%;
+}
+
+
+
+/*火热进行中/活动已结束*/
+.jingsai{
+	position: relative;
+}
+
+
+.jingsai .act-text-timeWarn{
+	position: absolute;
+	top: 40px;
+	right: 10px;
+	padding: 3px 12px;
+	border-radius: 5px;
+	transform: rotate(-30deg);
+	font-size: 12px;
+}
+
+.compDuring{
+	background-color: #ff6699;
+	color: #fff;	
+}
+
+.compFinish{
+	background: #CCCCCC;
+	color: white;
+}
+
+
+/*下拉刷新/上拉加载框*/
+.mui-pull-top-tips {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -25px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	z-index: 1;
+	display: none;       /*隐藏下拉加载提示*/
+}
+
+
+
+.mui-bar~.mui-pull-top-tips {
+	top: 24px;
+}
+.mui-pull-top-wrapper {
+	width: 42px;
+	height: 42px;
+	display: block;
+	text-align: center;
+	background-color: #efeff4;
+	border: 1px solid #ddd;
+	border-radius: 25px;
+	background-clip: padding-box;
+	box-shadow: 0 4px 10px #bbb;
+	overflow: hidden;
+}
+.mui-pull-top-tips.mui-transitioning {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+.mui-pull-top-tips .mui-pull-loading {
+	/*-webkit-backface-visibility: hidden;
+	-webkit-transition-duration: 400ms;
+	transition-duration: 400ms;*/
+	
+	margin: 0;
+}
+.mui-pull-top-wrapper .mui-icon,
+.mui-pull-top-wrapper .mui-spinner {
+	margin-top: 7px;
+}
+.mui-pull-top-wrapper .mui-icon.mui-reverse {
+	/*-webkit-transform: rotate(180deg) translateZ(0);*/
+}
+.mui-pull-bottom-tips {
+	text-align: center;
+	background-color: #efeff4;
+	font-size: 15px;
+	line-height: 40px;
+	color: #777;
+	display: none;
+}
+.mui-pull-top-canvas {
+	overflow: hidden;
+	background-color: #fafafa;
+	border-radius: 40px;
+	box-shadow: 0 4px 10px #bbb;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+}
+.mui-pull-top-canvas canvas {
+	width: 40px;
+}
+.mui-slider-indicator.mui-segmented-control {
+	background-color: #efeff4;
+}
+
+
+
+
+/*改*/
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+	width:100%;
+	height: 40px;
+	background-color: #fff;
+}
+.mui-fullscreen .mui-segmented-control~.mui-slider-group {
+	top: 42px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #FF6699;
+	border-bottom: 2px solid #FF6699;
+	background: 0 0
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+	border-top: none;
+	border-bottom: none;
+}
+
+.mui-table-view {
+	 background-color:#efeff4; 
+}
+.mui-table-view-cell{
+	margin-bottom: 10px;
+}
+
+
+
+/*搜索结果为空时提示图片*/
+.nothingImg{
+	width: 50%;
+	margin: 80px auto;
+}
+
+
+.nothingImg img{
+	display: block;
+	width: 100%;
+}
+
+.nothingImg p{
+	text-align: center;
+	font-size: 14px;
+	line-height: 50px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>电子票</title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mnhcode.css"/>
+	</head>
+
+	<body id="ticketBody">
+		<header class="mui-bar mui-bar-nav">
+			<div class="haeder_titnav"></div>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">电子票</h1>
+		</header>
+		<div class="xb_mnhcontent">
+			<img id="xb_img" src=""/>
+			<p class="xb_code"></p>
+			<p class="xb_name"></p>
+			<p class="xb_xb"></p>
+			<p class="xb_time" style="margin-bottom: 30px;"></p>
+			<button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="xbclick()">完成</button>
+		</div>	
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		var codestate = localStorage.xbstate;
+		if (codestate == 'true') {			
+			success();
+		} else{
+			fail();
+		};
+//		成功
+		function success(){
+			document.getElementById('xb_img').src = '../../images/code01@2x.png';
+			document.getElementsByClassName('xb_code')[0].innerText = '扫码成功';
+			document.getElementsByClassName('xb_name')[0].innerHTML = '姓名：<span>'+localStorage.xbname+'</span>';
+			document.getElementsByClassName('xb_xb')[0].innerHTML = '电话：<span>'+localStorage.xbphone+'</span>';
+			document.getElementsByClassName('xb_time')[0].innerHTML = '时间：<span>'+localStorage.xbtime+'</span>';
+		}
+//		失败
+		function fail(){
+			document.getElementById('xb_img').src = '../../images/fail@2x.png';
+			document.getElementsByClassName('xb_code')[0].innerText = '扫码失败';
+			var xb_name = document.getElementsByClassName('xb_name')[0];
+			xb_name.style.textAlign='center';
+			xb_name.style.width='100%';
+			xb_name.style.margin='0';
+			xb_name.style.textAlign='center';
+			xb_name.innerHTML = '您未报名或已参加活动，请重新重新核对信息';
+		};
+//		点击返回
+		function xbclick(){
+			plus.webview.currentWebview().close();
+		}
+	</script>
+</html>
